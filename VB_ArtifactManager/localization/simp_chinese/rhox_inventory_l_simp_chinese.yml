@@ -1,0 +1,67 @@
+﻿l_simp_chinese:
+ 
+rhox_court_items:0 "密室"
+court_inventory:0 "$rhox_court_items$"
+court_inventory_1:0 "$rhox_court_items$"
+court_inventory_2:0 "$rhox_court_items$"
+court_inventory_3:0 "$rhox_court_items$"
+court_inventory_4:0 "$rhox_court_items$"
+court_inventory_5:0 "$rhox_court_items$"
+court_inventory_6:0 "$rhox_court_items$"
+court_inventory_7:0 "$rhox_court_items$"
+court_inventory_8:0 "$rhox_court_items$"
+court_inventory_9:0 "$rhox_court_items$"
+court_inventory_10:0 "$rhox_court_items$"
+court_inventory_11:0 "$rhox_court_items$"
+court_inventory_12:0 "$rhox_court_items$"
+court_inventory_13:0 "$rhox_court_items$"
+court_inventory_14:0 "$rhox_court_items$"
+court_inventory_15:0 "$rhox_court_items$"
+court_inventory_16:0 "$rhox_court_items$"
+
+artifact_slot_court_i_slot:0 "密室宝物"
+artifact_court_i:0 "密室宝物"
+
+
+convert_court_artifact_decision:0 "重铸无用宫廷宝物"
+convert_court_artifact_decision_tooltip:1 "将宫廷宝物重铸为密室宝物"
+convert_court_artifact_decision_effect:0 "将所有未装备的宫廷宝物重铸为可以在密室库存中装备的物品"
+convert_court_artifact_decision_desc:0 "若我不能享受这些珍宝，那么拥有它们又有什么意义呢？也许我应该把它保存起来，放在后面的密室里，这样我就可以做一些有趣的事情了。。。"
+has_non_euipped_artifact_tt:0 "至少有一件未装备的宫廷宝物"
+has_non_euipped_artifact_tt2:0 "你所有未装备的宫廷宝物都将会被重铸为密室宝物。"
+convert_court_artifact_decision_confirm:1 "开工吧"
+
+combine_relic_weapon_decision:0 "将圣物嵌入武器"
+combine_relic_weapon_decision_tooltip:1 "将圣物嵌入你正在装备的武器"
+combine_relic_weapon_decision_desc:0 "我的工匠们想出了一个好主意来增强我的武器。。。"
+combine_relic_weapon_decision_confirm:1 "愿闻其详"
+
+embed_weapon_tt:0 "至少一件可以被嵌入你武器之中的圣物"
+has_euipped_weapon_tt:0 "正在装备着一件武器"
+has_relic_tt:0 "圣物在你的密室之中"
+
+combine_historic_armor_decision:0 "将宝物嵌入护甲"
+combine_historic_armor_decision_tooltip:1 "将历史上独一无二的宝物镶嵌在你的护甲上"
+combine_historic_armor_decision_desc:0 "我的工匠们想出了一个好主意来增强我的护甲。。。"
+combine_historic_armor_decision_confirm:1 "愿闻其详"
+
+upgrade_artifact_decision:0 "升级宝物"
+upgrade_artifact_decision_tooltip:1 "升级你的宝物"
+upgrade_artifact_decision_desc:0 "我的工匠们想出了一个好主意来升级我的宝物。。。"
+upgrade_artifact_decision_confirm:1 "愿闻其详"
+
+attach_armor_tt:0 "至少一件可以被镶嵌在你的护甲上的历史文物"
+has_euipped_armor_tt:0 "正在装备着一件护甲"
+has_historical_unique_tt:0 "独一无二的宝物在你的密室之中"
+
+rhox_combine_cost_1_tt:0 "将需要#weak @gold_icon! 1000#!来完成这项工作"
+rhox_combine_cost_2_tt:0 "将需要#weak @gold_icon! 1000#!来完成这项工作"
+rhox_combine_cost_3_tt:0 "将需要#weak @gold_icon! 1000#!来完成这项工作"
+
+has_valid_artifact_for_upgrade_tt:0 "装备着一件仍有改进空间的非历史性顶级宝物。"
+has_valid_courtier_for_upgrade_tt:0 "有一位优秀的庭臣或者武艺高强的骑士。"
+
+rhox_artifact_event.2.t:0 "一件人人都能观赏的宝物..."
+rhox_artifact_event.2.desc:0 "我的文物专家[antiquarian.GetTitledFirstName]向我提出了一个惊人想法。如果在我的[that_artifact.GetName]上嵌入[this_artifact.GetName]，那当任何人看到它时都会对我表示无上的敬畏。\n\n"现在大街小巷里每个人都会谈论你的[that_artifact.GetName]，而不仅仅是宫中的那些大臣们！" [antiquarian.GetTitledFirstNameNoTooltip]带着一丝疯狂的表情说着。"
+rhox_artifact_event.2.a:0 "是个好主意！"
+padded_not_destroyed_tooltip:0 "[that_artifact.GetName]被嵌入到了[this_artifact.GetName]上"

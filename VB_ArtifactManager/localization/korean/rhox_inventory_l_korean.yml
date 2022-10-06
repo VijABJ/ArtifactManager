@@ -1,0 +1,68 @@
+﻿l_korean:
+
+rhox_court_items:0 "뒷방"
+court_inventory:0 "$rhox_court_items$"
+court_inventory_1:0 "$rhox_court_items$"
+court_inventory_2:0 "$rhox_court_items$"
+court_inventory_3:0 "$rhox_court_items$"
+court_inventory_4:0 "$rhox_court_items$"
+court_inventory_5:0 "$rhox_court_items$"
+court_inventory_6:0 "$rhox_court_items$"
+court_inventory_7:0 "$rhox_court_items$"
+court_inventory_8:0 "$rhox_court_items$"
+court_inventory_9:0 "$rhox_court_items$"
+court_inventory_10:0 "$rhox_court_items$"
+court_inventory_11:0 "$rhox_court_items$"
+court_inventory_12:0 "$rhox_court_items$"
+court_inventory_13:0 "$rhox_court_items$"
+court_inventory_14:0 "$rhox_court_items$"
+court_inventory_15:0 "$rhox_court_items$"
+court_inventory_16:0 "$rhox_court_items$"
+
+artifact_slot_court_i_slot:0 "뒷방유물"
+artifact_court_i:0 "뒷방유물"
+
+
+convert_court_artifact_decision:0 "궁정유물을 뒷방용으로 재련하기"
+convert_court_artifact_decision_tooltip:1 "안 쓰는 궁전유물들을 뒷방용으로 재련합니다."
+convert_court_artifact_decision_effect:0 "장착하지 않은 모든 궁전 유물을 뒷방 유물로 만듭니다."
+convert_court_artifact_decision_desc:0 "수많은 유물들을 쌓아놓고 있어도 즐기지 못한다면 무슨 소용이란 말인가? 몇 개를 보존해서 뒷방에서 나홀로 응큼하게 즐기는 편이 나을 수도 있겠군..."
+has_non_euipped_artifact_tt:0 "장착하지 않은 궁정유물을 최소 한 개 이상 가지고 있음."
+has_non_euipped_artifact_tt2:0 "장착하지 않은 모든 궁전유물이 뒷방용으로 바뀝니다."
+convert_court_artifact_decision_confirm:1 "시작하자"
+
+combine_relic_weapon_decision:0 "성물을 무기에 각인하기"
+combine_relic_weapon_decision_tooltip:1 "가지고 있는 성물을 무기에 각인합니다."
+combine_relic_weapon_decision_desc:0 "유물학자가 내 무기를 강화할 방법이 있다면서 찾아 왔습니다..."
+combine_relic_weapon_decision_confirm:1 "들어보자"
+
+embed_weapon_tt:0 "성스러운 유물이 무기안에 각인될 수 있습니다."
+has_euipped_weapon_tt:0 "무기를 장착중입니다."
+has_relic_tt:0 "뒷방에 성스러운 유물이 있습니다."
+
+combine_historic_armor_decision:0 "유물을 갑옷에 덧대기"
+combine_historic_armor_decision_tooltip:1 "가지고 있는 역사적 가치가 있는 유물을 갑옷에 덧댑니다."
+combine_historic_armor_decision_desc:0 "유물학자가 내 갑옷을 강화할 방법이 있다면서 찾아 왔습니다..."
+combine_historic_armor_decision_confirm:1 "들어보자"
+
+upgrade_artifact_decision:0 "유물 업그레이드 하기"
+upgrade_artifact_decision_tooltip:1 "유물 하나의 성능을 향상시킵니다."
+upgrade_artifact_decision_desc:0 "신하 중 한 명이 유물을 향살시킬 수 있다며 찾아왔습니다."
+upgrade_artifact_decision_confirm:1 "들어보자"
+
+attach_armor_tt:0 "역사적 유물이 당신의 갑옷에 덧대어질 수 있습니다."
+has_euipped_armor_tt:0 "갑옷을 착용중입니다."
+has_historical_unique_tt:0 "뒷방에 역사적 가치가 있는 물건이 있습니다."
+
+rhox_combine_cost_1_tt:0 "실제 합성을 위해서는 #weak @gold_icon! 1000#! 가 필요합니다."
+rhox_combine_cost_2_tt:0 "실제 합성을 위해서는 #weak @gold_icon! 2000#! 가 필요합니다."
+rhox_combine_cost_3_tt:0 "실제 합성을 위해서는 #weak @gold_icon! 3000#! 가 필요합니다."
+
+has_valid_artifact_for_upgrade_tt:0 "전설적이지 않으며 향상의 여지가 있는 영광 유물을 장착하고 있습니다."
+has_valid_courtier_for_upgrade_tt:0 "뛰어난 기량을 가진 가신이나 기사가 있습니다."
+
+rhox_artifact_event.2.t:0 "모두가 볼 수 있는 유물..."
+rhox_artifact_event.2.desc:0 "유물학자 [antiquarian.GetTitledFirstName](이)가 좋은 생각이 있다며 찾아왔다. 요지는 [that_artifact.GetName](을)를 내 [this_artifact.GetName]에 덧대면 사람들이 나를 볼 때마다 경의를 표할 것이라는 소리였다.\n\n"이제 몇몇 궁전 빈객 뿐만이 아니라 모두가 [this_artifact.GetType](을)를 볼 수 있게 되는 것이지요." [antiquarian.GetTitledFirstNameNoTooltip](이)가 광분에 찬 모습으로 말했다."
+rhox_artifact_event.2.a:0 "환상적인 생각이로군. 시작하게."
+padded_not_destroyed_tooltip:0 "[that_artifact.GetName](이)가 나의 [this_artifact.GetName]에 덧대어짐 "
+

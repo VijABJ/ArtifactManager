@@ -1,0 +1,313 @@
+﻿namespace = rhox_artifact_event
+
+rhox_artifact_event.1 = { #Embed a relic in pommel by Daniel Moore
+	type = character_event
+	title = artifact.4090.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { exists = scope:antiquarian }
+				desc = artifact.4090.desc.antiquarian
+			}
+			desc = artifact.4090.desc
+		}
+	}
+	theme = stewardship_wealth_focus
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+	left_portrait = {
+		character = scope:antiquarian
+		animation = personality_zealous
+	}
+	artifact = { 
+	    target = scope:this_artifact
+	    position = lower_left_portrait
+	}
+
+	artifact = { 
+	    target = scope:that_artifact
+	    position = lower_right_portrait
+	}
+
+
+	immediate = {
+		if = {
+			limit = {
+				employs_court_position = antiquarian_court_position
+				any_court_position_holder = {
+					type = antiquarian_court_position
+				}
+			}
+			random_court_position_holder = {
+				type = antiquarian_court_position
+				save_scope_as = antiquarian
+			}
+		}
+
+		random_character_artifact = {
+			limit = {
+				artifact_slot_type = primary_armament
+				is_equipped = yes
+			}
+			save_scope_as = this_artifact
+		}
+
+		random_character_artifact = {
+			limit = {
+				exists = var:relic
+				artifact_slot_type = court_i_slot
+				is_equipped = yes
+			}
+			save_scope_as = that_artifact
+		}
+	}
+
+	option = {
+		name = artifact.4090.a
+		scope:this_artifact = {
+			set_artifact_name = relic_weapon_name
+			set_artifact_description = artifact_weapon_relic_desc
+			if = {
+				limit = {NOT = { has_variable = enhanced_number }}
+				set_variable = {
+					name = enhanced_number
+					value = 1
+				}
+			}
+			else = {
+				change_variable = {
+					name = enhanced_number
+					add = 1
+				}
+			}
+			
+			if ={
+				limit = {
+					OR = {
+						NOT = { has_variable = enhanced_number }	
+						var:enhanced_number<=1
+					}	
+				}
+				root = {
+					remove_short_term_gold = 1000
+				}
+			}
+			else_if ={
+				limit = {
+					var:enhanced_number<=4
+				}
+				root = {
+					remove_short_term_gold = 2000
+				}
+			}
+			else ={
+				root = {
+					remove_short_term_gold = 3000
+				}
+				
+			}
+			
+			set_variable = added_relic	
+			hidden_effect = {
+				copy_artifact_modifiers = scope:that_artifact
+				set_artifact_rarity = illustrious
+			}
+		}
+
+		send_interface_toast = {
+			title = artifact.4090.a.tt
+			left_icon = root
+			right_icon = scope:this_artifact
+			custom_tooltip = embedded_not_destroyed_tooltip
+		}
+
+		scope:that_artifact = {
+			hidden_effect = {
+				destroy_artifact = this
+			}
+		}
+
+		stress_impact = {
+			zealous = minor_stress_gain
+			lazy  = minor_stress_gain
+		}
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = -1
+			}
+		}
+	}
+	
+
+	option = {
+		name = artifact.4090.b
+		add_piety = 100
+		stress_impact = {
+			zealous = minor_stress_loss
+			lazy  = minor_stress_loss
+		}
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_zeal = 1
+			}
+		}
+	}
+
+}
+
+
+rhox_artifact_event.2 = { #Attach artifact to your armor
+	type = character_event
+	title = rhox_artifact_event.2.t
+	desc = rhox_artifact_event.2.desc
+	theme = stewardship_wealth_focus
+	right_portrait = {
+		character = root
+		animation = happiness
+	}
+	left_portrait = {
+		character = scope:antiquarian
+		animation = personality_zealous
+	}
+	artifact = { 
+	    target = scope:this_artifact
+	    position = lower_left_portrait
+	}
+
+	artifact = { 
+	    target = scope:that_artifact
+	    position = lower_right_portrait
+	}
+
+
+	immediate = {
+		if = {
+			limit = {
+				employs_court_position = antiquarian_court_position
+				any_court_position_holder = {
+					type = antiquarian_court_position
+				}
+			}
+			random_court_position_holder = {
+				type = antiquarian_court_position
+				save_scope_as = antiquarian
+			}
+		}
+
+		random_character_artifact = {
+			limit = {
+				artifact_slot_type = armor
+				is_equipped = yes
+			}
+			save_scope_as = this_artifact
+		}
+
+		random_character_artifact = {
+			limit = {
+				exists = var:historical_unique_artifact
+				artifact_slot_type = court_i_slot
+				is_equipped = yes
+			}
+			save_scope_as = that_artifact
+		}
+	}
+
+	option = {
+		name = rhox_artifact_event.2.a
+		scope:this_artifact = {
+			set_artifact_name = relic_weapon_name
+			set_artifact_description = artifact_weapon_relic_desc
+			if = {
+				limit = {NOT = { has_variable = enhanced_number }}
+				set_variable = {
+					name = enhanced_number
+					value = 1
+				}
+			}
+			else = {
+				change_variable = {
+					name = enhanced_number
+					add = 1
+				}
+			}
+			if ={
+				limit = {
+					OR = {
+						NOT = { has_variable = enhanced_number }	
+						var:enhanced_number<=1
+					}	
+				}
+				root = {
+					remove_short_term_gold = 1000
+				}
+			}
+			else_if ={
+				limit = {
+					var:enhanced_number<=4
+				}
+				root = {
+					remove_short_term_gold = 2000
+				}
+			}
+			else ={
+				root = {
+					remove_short_term_gold = 3000
+				}
+				
+			}
+			
+			set_variable = added_relic
+			hidden_effect = {
+				copy_artifact_modifiers = scope:that_artifact
+				set_artifact_rarity = illustrious
+			}
+		}
+
+		send_interface_toast = {
+			title = artifact.4090.a.tt
+			left_icon = root
+			right_icon = scope:this_artifact
+			custom_tooltip = padded_not_destroyed_tooltip
+		}
+
+		scope:that_artifact = {
+			hidden_effect = {
+				destroy_artifact = this
+			}
+		}
+
+		stress_impact = {
+			humble = minor_stress_gain
+			content  = minor_stress_gain
+		}
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_honor  = 1
+			}
+		}
+	}
+	
+
+	option = {
+		name = artifact.4090.b
+		add_piety = 100
+		stress_impact = {
+			humble = minor_stress_loss
+			content  = minor_stress_loss
+			arrogant = minor_stress_gain
+			ambitious  = minor_stress_gain
+		}
+		ai_chance = {
+			base = 50
+			ai_value_modifier = {
+				ai_honor = -1
+			}
+		}
+	}
+
+}

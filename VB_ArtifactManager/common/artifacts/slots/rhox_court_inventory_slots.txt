@@ -1,0 +1,96 @@
+﻿
+# Royal inventory Furniture
+court_inventory_1 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_2 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_3 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_4 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_5 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_6 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_7 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_8 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+court_inventory_9 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_10 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_11 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_12 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_13 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_14 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_15 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}
+
+court_inventory_16 = {
+	type = "court_i_slot"
+	category = inventory
+	icon = trinket
+}

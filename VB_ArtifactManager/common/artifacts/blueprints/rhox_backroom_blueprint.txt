@@ -1,0 +1,531 @@
+﻿axe_back_reversal = {
+	in_type = court_i
+	in_visuals = axe_court
+	out_type = pedestal
+	out_visuals = axe_court
+}
+
+hammer_back_reversal = {
+	in_type = court_i
+	in_visuals = hammer_court
+	out_type = pedestal
+	out_visuals = hammer_court
+}
+
+spear_back_reversal = {
+	in_type = court_i
+	in_visuals = spear_court
+	out_type = pedestal
+	out_visuals = spear_court
+}
+
+mace_back_reversal = {
+	in_type = court_i
+	in_visuals = mace_court
+	out_type = pedestal
+	out_visuals = mace_court
+}
+
+dagger_back_reversal = {
+	in_type = court_i
+	in_visuals = dagger_court
+	out_type = pedestal
+	out_visuals = dagger_court
+}
+
+sword_back_reversal = {
+	in_type = court_i
+	in_visuals = sword_court
+	out_type = pedestal
+	out_visuals = sword_court
+}
+
+armor_back_reversal = {
+	in_type = court_i
+	in_visuals = armor_court
+	out_type = pedestal
+	out_visuals = armor_court
+}
+
+crown_back_reversal = {
+	in_type = court_i
+	in_visuals = crown_court
+	out_type = pedestal
+	out_visuals = crown_court
+}
+
+regalia_back_reversal = {
+	in_type = court_i
+	in_visuals = regalia_court
+	out_type = pedestal
+	out_visuals = regalia_court
+}
+
+brooch_back_reversal = {
+	in_type = court_i
+	in_visuals = brooch_court
+	out_type = pedestal
+	out_visuals = brooch_court
+}
+
+ring_back_reversal = {
+	in_type = court_i
+	in_visuals = ring_court
+	out_type = pedestal
+	out_visuals = ring_court
+}
+
+necklace_back_reversal = {
+	in_type = court_i
+	in_visuals = necklace_court
+	out_type = pedestal
+	out_visuals = necklace_court
+}
+
+monomachus_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_justinian
+	out_type = pedestal
+	out_visuals = pedestal_justinian
+}
+
+danda_back_reversal = {
+	in_type = court_i
+	in_visuals = reliquary
+	out_type = pedestal
+	out_visuals = reliquary
+}
+
+reichskrone_back_reversal = {
+	in_type = court_i
+	in_visuals = hre_crown
+	out_type = pedestal
+	out_visuals = hre_crown
+}
+
+pope_back_reversal = {
+	in_type = court_i
+	in_visuals = pope_court
+	out_type = pedestal
+	out_visuals = pope_court
+}
+
+al_taj_back_reversal = {
+	in_type = court_i
+	in_visuals = al_taj_crown
+	out_type = pedestal
+	out_visuals = al_taj_crown
+}
+
+sculpture_ark_of_covenant_back_reversal = {
+	in_type = court_i
+	in_visuals = sculpture_ark_of_covenant
+	out_type = sculpture
+	out_visuals = sculpture_ark_of_covenant
+}
+
+sculpture_babr_e_bayan_back_reversal = {
+	in_type = court_i
+	in_visuals = sculpture_babr_e_bayan
+	out_type = sculpture
+	out_visuals = sculpture_babr_e_bayan
+}
+
+pedestal_alexander_armor_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_alexander_armor
+	out_type = pedestal
+	out_visuals = pedestal_alexander_armor
+}
+pedestal_justinian_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_justinian
+	out_type = pedestal
+	out_visuals = pedestal_justinian
+}
+pedestal_cup_jamshid_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_cup_jamshid
+	out_type = pedestal
+	out_visuals = pedestal_cup_jamshid
+}
+pedestal_david_harp_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_david_harp
+	out_type = pedestal
+	out_visuals = pedestal_david_harp
+}
+pedestal_crown_iron_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_crown_iron
+	out_type = pedestal
+	out_visuals = pedestal_crown_iron
+}
+
+throne_charlemagne_back_reversal = {
+	in_type = court_i
+	in_visuals = throne_charlemagne
+	out_type = throne_special
+	out_visuals = throne_charlemagne
+}
+throne_solomon_back_reversal = {
+	in_type = court_i
+	in_visuals = throne_solomon
+	out_type = throne_special
+	out_visuals = throne_solomon
+}
+throne_scone_back_reversal = {
+	in_type = court_i
+	in_visuals = throne_scone
+	out_type = throne_special
+	out_visuals = throne_scone
+}
+throne_turquoise_back_reversal = {
+	in_type = court_i
+	in_visuals = throne_turquoise
+	out_type = throne_special
+	out_visuals = throne_turquoise
+}
+throne_peacock_back_reversal = {
+	in_type = court_i
+	in_visuals = throne_peacock
+	out_type = throne_special
+	out_visuals = throne_peacock
+}
+
+wall_banner_kaviani_back_reversal = {
+	in_type = court_i
+	in_visuals = wall_banner_kaviani
+	out_type = wall_big
+	out_visuals = wall_banner_kaviani
+}
+wall_banner_edessa_back_reversal = {
+	in_type = court_i
+	in_visuals = wall_banner_edessa
+	out_type = pedestal
+	out_visuals = wall_banner_edessa
+}
+wall_cid_sword_back_reversal = {
+	in_type = court_i
+	in_visuals = wall_cid_sword
+	out_type = pedestal
+	out_visuals = wall_cid_sword
+}
+wall_muhammad_sword_back_reversal = {
+	in_type = court_i
+	in_visuals = wall_muhammad_sword
+	out_type = pedestal
+	out_visuals = wall_muhammad_sword
+}
+wall_khanda_sword_back_reversal = {
+	in_type = court_i
+	in_visuals = wall_khanda_sword
+	out_type = pedestal
+	out_visuals = wall_khanda_sword
+}
+
+pedestal_christian_relic_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_christian_relic
+	out_type = pedestal
+	out_visuals = pedestal_christian_relic
+}
+pedestal_islamic_relic_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_islamic_relic
+	out_type = pedestal
+	out_visuals = pedestal_islamic_relic
+}
+pedestal_buddhism_relic_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_buddhism_relic
+	out_type = pedestal
+	out_visuals = pedestal_buddhism_relic
+}
+
+wall_sword_attila_back_reversal = {
+	in_type = court_i
+	in_visuals = wall_sword_attila
+	out_type = pedestal
+	out_visuals = wall_sword_attila
+}
+
+sculpture_cabinet_pentapyrgion_back_reversal = {
+	in_type = court_i
+	in_visuals = sculpture_cabinet_pentapyrgion
+	out_type = sculpture
+	out_visuals = sculpture_cabinet_pentapyrgion
+}
+
+pedestal_branch_relic_zoroastr_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_branch_relic_zoroastr
+	out_type = pedestal
+	out_visuals = pedestal_branch_relic_zoroastr
+}
+pedestal_branch_relic_germanic_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_branch_relic_germanic
+	out_type = pedestal
+	out_visuals = pedestal_branch_relic_germanic
+}
+pedestal_branch_relic_slavic_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_branch_relic_slavic
+	out_type = pedestal
+	out_visuals = pedestal_branch_relic_slavic
+}
+pedestal_branch_relic_boog_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_branch_relic_boog
+	out_type = pedestal
+	out_visuals = pedestal_branch_relic_boog
+}
+pedestal_branch_relic_hinduism_back_reversal = {
+	in_type = court_i
+	in_visuals = pedestal_branch_relic_hinduism
+	out_type = pedestal
+	out_visuals = pedestal_branch_relic_hinduism
+}
+
+banner_islam_back_reversal = {
+	in_type = court_i
+	in_visuals = banner_islam
+	out_type = wall_big
+	out_visuals = banner_islam
+}
+
+excalibur_back_reversal = {
+	in_type = court_i
+	in_visuals = excalibur
+	out_type = pedestal
+	out_visuals = excalibur
+}
+
+buddha_tooth_back_reversal = {
+	in_type = court_i
+	in_visuals = buddha_tooth
+	out_type = pedestal
+	out_visuals = buddha_tooth
+}
+
+head_back_reversal = {
+	in_type = court_i
+	in_visuals = head
+	out_type = pedestal
+	out_visuals = head
+}
+
+chest_back_reversal = {
+	in_type = court_i
+	in_visuals = chest
+	out_type = sculpture
+	out_visuals = chest
+}
+
+chest_back_reversal = {
+	in_type = court_i
+	in_visuals = chest
+	out_type = sculpture
+	out_visuals = chest
+}
+diwan_back_reversal = {
+	in_type = court_i
+	in_visuals = diwan
+	out_type = cabinet
+	out_visuals = diwan
+}
+table_back_reversal = {
+	in_type = court_i
+	in_visuals = table
+	out_type = cabinet
+	out_visuals = table
+}
+cabinet_back_reversal = {
+	in_type = court_i
+	in_visuals = cabinet
+	out_type = cabinet
+	out_visuals = cabinet
+}
+
+throne_back_reversal = {
+	in_type = court_i
+	in_visuals = throne
+	out_type = throne
+	out_visuals = throne
+}
+
+tapestry_back_reversal = {
+	in_type = court_i
+	in_visuals = tapestry
+	out_type = wall_big
+	out_visuals = tapestry
+}
+small_animal_hide_back_reversal = {
+	in_type = court_i
+	in_visuals = small_animal_hide
+	out_type = wall_small
+	out_visuals = small_animal_hide
+}
+medium_animal_hide_back_reversal = {
+	in_type = court_i
+	in_visuals = medium_animal_hide
+	out_type = wall_big
+	out_visuals = medium_animal_hide
+}
+large_animal_hide_back_reversal = {
+	in_type = court_i
+	in_visuals = large_animal_hide
+	out_type = wall_big
+	out_visuals = large_animal_hide
+}
+
+small_box_back_reversal = {
+	in_type = court_i
+	in_visuals = small_box
+	out_type = pedestal
+	out_visuals = small_box
+}
+medium_box_back_reversal = {
+	in_type = court_i
+	in_visuals = medium_box
+	out_type = pedestal
+	out_visuals = medium_box
+}
+goblet_back_reversal = {
+	in_type = court_i
+	in_visuals = goblet
+	out_type = pedestal
+	out_visuals = goblet
+}
+
+banner_back_reversal = {
+	in_type = court_i
+	in_visuals = banner
+	out_type = wall_big
+	out_visuals = banner
+}
+wall_shield_back_reversal = {
+	in_type = court_i
+	in_visuals = wall_shield
+	out_type = wall_shield
+	out_visuals = wall_shield
+}
+wall_shield_medi_back_reversal = {
+	in_type = court_i
+	in_visuals = wall_shield_medi
+	out_type = wall_shield_special
+	out_visuals = wall_shield_medi
+}
+animal_trophy_back_reversal = {
+	in_type = court_i
+	in_visuals = animal_trophy
+	out_type = animal_skull
+	out_visuals = animal_trophy
+}
+
+statue_back_reversal = {
+	in_type = court_i
+	in_visuals = statue
+	out_type = sculpture
+	out_visuals = statue
+}
+
+statue_mena_back_reversal = {
+	in_type = court_i
+	in_visuals = statue_mena
+	out_type = pedestal
+	out_visuals = statue_mena
+}
+scroll_back_reversal = {
+	in_type = court_i
+	in_visuals = scroll
+	out_type = pedestal
+	out_visuals = scroll
+}
+pouch_back_reversal = {
+	in_type = court_i
+	in_visuals = pouch
+	out_type = pedestal
+	out_visuals = pouch
+}
+urn_back_reversal = {
+	in_type = court_i
+	in_visuals = urn
+	out_type = pedestal
+	out_visuals = urn
+}
+
+indian_book_back_reversal = {
+	in_type = court_i
+	in_visuals = indian_book
+	out_type = book
+	out_visuals = indian_book
+}
+book_back_reversal = {
+	in_type = court_i
+	in_visuals = book
+	out_type = book
+	out_visuals = book
+}
+
+reliquary_back_reversal = {
+	in_type = court_i
+	in_visuals = reliquary
+	out_type = pedestal
+	out_visuals = reliquary
+}
+cross_back_reversal = {
+	in_type = court_i
+	in_visuals = cross
+	out_type = pedestal
+	out_visuals = cross
+}
+rock_back_reversal = {
+	in_type = court_i
+	in_visuals = rock
+	out_type = pedestal
+	out_visuals = rock
+}
+human_skull_back_reversal = {
+	in_type = court_i
+	in_visuals = human_skull
+	out_type = pedestal
+	out_visuals = human_skull
+}
+diamond_back_reversal = {
+	in_type = court_i
+	in_visuals = diamond
+	out_type = pedestal
+	out_visuals = diamond
+}
+riches_back_reversal = {
+	in_type = court_i
+	in_visuals = riches
+	out_type = pedestal
+	out_visuals = riches
+}
+
+flask_back_reversal = {
+	in_type = court_i
+	in_visuals = flask
+	out_type = elixir
+	out_visuals = flask
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

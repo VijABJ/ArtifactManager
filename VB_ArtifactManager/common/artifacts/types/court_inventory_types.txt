@@ -1,0 +1,3 @@
+﻿court_i = {
+	slot = court_i_slot
+}

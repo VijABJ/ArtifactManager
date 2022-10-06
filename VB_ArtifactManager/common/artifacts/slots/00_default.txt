@@ -1,0 +1,141 @@
+﻿###################
+# INVENTORY SLOTS #
+###################
+# inventory slots available to all characters by default
+###
+# Character Inventory
+# NOTE: these are currently WIP placeholders!
+crown = {
+	type = "helmet"
+	category = inventory
+}
+
+regalia = {
+	type = "regalia"
+	category = inventory
+}
+
+armor = {
+	type = "armor"
+	category = inventory
+}
+
+weapon = {
+	type = "primary_armament"
+	category = inventory
+}
+
+trinket_1 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}
+
+trinket_2 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}
+
+trinket_3 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}
+
+trinket_4 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}
+
+# Royal Court Furniture
+wall_big_1 = {
+	type = "wall_big"
+	category = court
+	icon = trinket
+}
+
+wall_big_2 = {
+	type = "wall_big"
+	category = court
+	icon = trinket
+}
+
+wall_big_3 = {
+	type = "wall_big"
+	category = court
+	icon = trinket
+}
+
+wall_small_1 = {
+	type = "wall_small"
+	category = court
+	icon = trinket
+}
+
+wall_small_2 = {
+	type = "wall_small"
+	category = court
+	icon = trinket
+}
+
+wall_small_3 = {
+	type = "wall_small"
+	category = court
+	icon = trinket
+}
+
+throne = {
+	type = "throne"
+	category = court
+	icon = trinket
+}
+
+sculpture_1 = {
+	type = "sculpture"
+	category = court
+	icon = trinket
+}
+
+sculpture_2 = {
+	type = "sculpture"
+	category = court
+	icon = trinket
+}
+
+lectern_1 = {
+	type = "book"
+	category = court
+	icon = trinket
+}
+
+lectern_2 = {
+	type = "book"
+	category = court
+	icon = trinket
+}
+
+pedestal_1 = {
+	type = "pedestal"
+	category = court
+	icon = trinket
+}
+
+pedestal_2 = {
+	type = "pedestal"
+	category = court
+	icon = trinket
+}
+
+pedestal_3 = {
+	type = "pedestal"
+	category = court
+	icon = trinket
+}
+
+pedestal_4 = {
+	type = "pedestal"
+	category = court
+	icon = trinket
+}
