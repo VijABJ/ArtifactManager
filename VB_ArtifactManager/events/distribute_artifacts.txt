@@ -1,0 +1,135 @@
+distributeartifacts.1 = {
+  type = character_event
+	desc = "It is time to find a new home for my [target.GetName]. But who deserves to be its new owner?"
+  title = "Distribute [target.GetName]"
+	theme = vassal
+
+  immediate = {
+    random_vassal = {
+      limit = { 
+        is_physically_able_ai_adult = yes
+      }
+      save_scope_as = r_vassal
+    }
+    random_knight = {
+      limit = {
+        is_physically_able_ai_adult = yes
+      }
+      save_scope_as = r_knight
+    }
+    random_close_or_extended_family_member = {
+      save_scope_as = r_dyny
+    }
+  }
+
+  option = {
+	  name = "My loyal vassal, [r_vassal.GetFirstName]"
+     trigger = {
+      exists = scope:r_vassal 
+    }
+    scope:r_vassal = {
+      add_opinion = {
+        target = scope:root
+        modifier = grateful_opinion
+        opinion = 5
+      }
+    }
+    scope:target = {
+      set_owner = scope:r_vassal
+    }
+    stress_impact = {
+		  greedy = medium_stress_impact_gain
+      charitable = small_stress_impact_loss
+	  }
+	}
+
+  option = {
+	  name = "My gallant knight, [r_knight.GetFirstName]"
+     trigger = {
+      exists = scope:r_knight
+    }
+    scope:r_knight = {
+      add_opinion = {
+        target = scope:root
+        modifier = grateful_opinion
+        opinion = 5
+      }
+    }
+    scope:target = {
+      set_owner = scope:r_knight  
+    }
+    stress_impact = {
+		  greedy = medium_stress_impact_gain
+      charitable = small_stress_impact_loss
+	  }
+	}
+
+  option = {
+	  name = "My family member, [r_dyny.GetFirstName]"
+    highlight_portrait = r_dyny
+    trigger = {
+      exists = scope:r_dyny
+    }
+    scope:r_dyny = {
+      add_opinion = {
+        target = scope:root
+        modifier = grateful_opinion
+        opinion = 5
+      }
+    }
+    scope:target = {
+      set_owner = scope:r_dyny
+    }
+    stress_impact = {
+		  greedy = medium_stress_impact_gain
+      charitable = small_stress_impact_loss
+	  }
+	}
+
+  option = {
+    name = "How about... ME?!"
+    trigger = {
+      has_trait = lunatic
+    }
+    trait = lunatic_1
+  }
+
+  option = {
+    name = "Give away MY treasure?!"
+    trigger = {
+      has_trait = greedy
+      NOT = {
+        has_trait = lunatic
+      }
+    }
+    trait = greedy
+  }
+
+  option = {
+    name = "Nevermind"
+    trigger = {
+      NOR = {
+        has_trait = greedy
+        has_trait = lunatic
+      }
+    }
+    trait = greedy
+  }
+
+  left_portrait = {
+		character = root
+	}
+	right_portrait = {
+		character = scope:r_vassal
+	}
+	lower_center_portrait = {
+		character = scope:r_knight
+	}
+	lower_right_portrait = {
+		character = scope:r_dyny
+	}
+  artifact = {
+    target = scope:target
+    position = lower_left_portrait
+  }
+}
