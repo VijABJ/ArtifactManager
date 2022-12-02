@@ -1,3 +1,5 @@
+﻿namespace = distributeartifacts
+
 distributeartifacts.1 = {
   type = character_event
 	desc = "It is time to find a new home for my [target.GetName]. But who deserves to be its new owner?"
@@ -29,7 +31,7 @@ distributeartifacts.1 = {
     }
     scope:r_vassal = {
       add_opinion = {
-        target = scope:root
+        target = root
         modifier = grateful_opinion
         opinion = 5
       }
@@ -39,7 +41,7 @@ distributeartifacts.1 = {
     }
     stress_impact = {
 		  greedy = medium_stress_impact_gain
-      charitable = small_stress_impact_loss
+      generous = small_stress_impact_loss
 	  }
 	}
 
@@ -50,7 +52,7 @@ distributeartifacts.1 = {
     }
     scope:r_knight = {
       add_opinion = {
-        target = scope:root
+        target = root
         modifier = grateful_opinion
         opinion = 5
       }
@@ -60,7 +62,7 @@ distributeartifacts.1 = {
     }
     stress_impact = {
 		  greedy = medium_stress_impact_gain
-      charitable = small_stress_impact_loss
+      generous = small_stress_impact_loss
 	  }
 	}
 
@@ -72,17 +74,18 @@ distributeartifacts.1 = {
     }
     scope:r_dyny = {
       add_opinion = {
-        target = scope:root
+        target = root
         modifier = grateful_opinion
         opinion = 5
       }
     }
+
     scope:target = {
       set_owner = scope:r_dyny
     }
     stress_impact = {
 		  greedy = medium_stress_impact_gain
-      charitable = small_stress_impact_loss
+      generous = small_stress_impact_loss
 	  }
 	}
 
