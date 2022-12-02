@@ -66,8 +66,6 @@ window = {
 						min_width = 120
 						layoutpolicy_horizontal = expanding
 		
-						#datacontext = "[GetScriptedGui('cac_setting_set_initial')]"
-						#onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 						onclick = "[GetVariableSystem.Set( 'artifacts_active_tab', 'personal_artifacts_tab' )]"
 						down = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'personal_artifacts_tab' )]"
 		
@@ -92,8 +90,6 @@ window = {
 						min_width = 120
 						layoutpolicy_horizontal = expanding
 		
-						#datacontext = "[GetScriptedGui('cac_setting_set_initial')]"
-						#onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 						onclick = "[GetVariableSystem.Set( 'artifacts_active_tab', 'court_artifacts_tab' )]"
 						down = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'court_artifacts_tab' )]"
 		
@@ -118,8 +114,6 @@ window = {
 						min_width = 120
 						layoutpolicy_horizontal = expanding
 		
-						#datacontext = "[GetScriptedGui('cac_setting_set_initial')]"
-						#onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
 						onclick = "[GetVariableSystem.Set( 'artifacts_active_tab', 'backroom_artifacts_tab' )]"
 						down = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'backroom_artifacts_tab' )]"
 		
@@ -504,7 +498,7 @@ window = {
 			vbox = {
 				layoutpolicy_horizontal = expanding
 				layoutpolicy_vertical = expanding
-				min_width = 220
+				min_width = 150
 				parentanchor = top|left
 	
 				vbox = {
@@ -1820,7 +1814,7 @@ types InventoryViewTypes
 					}
 
 					onclick = "[GetScriptedGui('distribute_artifact').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target', Artifact.MakeScope).End)]"
-					tooltip = "Gift Artifact"
+					tooltip = "gift_artifact_interaction"
 				}
 
 				button_round = {
@@ -1836,7 +1830,7 @@ types InventoryViewTypes
 
 					onclick = "[InventoryView.Close]"
 					onclick = "[GetScriptedGui('distribute_artifact').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target', Artifact.MakeScope).End)]"
-					tooltip = "Gift Artifact"
+					tooltip = "gift_artifact_interaction"
 				}
 				####################################</DISTRIBUTE-ARTIFACTS>#########################
 
