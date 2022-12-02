@@ -1,7 +1,7 @@
 ﻿l_german:
   at_least_one_artifact_needs_repair_desc:0 "Mindestens ein Artefakt muss repariert werden."
   repair_artifacts:0 "Artefakte reparieren"
-  repair_artifacts_tooltip:0 "Repariere alle Eure [artifact|E]e"
+  repair_artifacts_tooltip:0 "Repariert alle Eure [artifact|E]e"
   repair_artifacts_desc:0 "Einige meiner Artefakte haben den Zahn der Zeit gespürt. Ich könnte etwas Hilfe gebrauchen, um jedem einzelnen von ihnen seinen alten Glanz zurückzugeben."
   repair_all_employ_suggestion:0 "Vielleicht solltet Ihr Euren $ANTIQUARIAN$ beauftragen"
   repair_all_summon_antiquarian:0 "Ruft Euren $ANTIQUARIAN$!"

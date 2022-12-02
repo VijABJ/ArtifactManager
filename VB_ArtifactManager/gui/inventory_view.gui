@@ -674,7 +674,25 @@ window = {
 								text = "Compact View"
 							}
 						}
+
+						button_checkbox_label = {
+							name = "keep_open_on_distro_toggle"
+							layoutpolicy_horizontal = expanding
 	
+							onclick = "[VariableSystem.Toggle( 'keep_open_on_distro' )]"
+							tooltip = "Close inventory window when distributing artifact"
+	
+							blockoverride "checkbox"
+							{
+								checked = "[VariableSystem.Exists( 'keep_open_on_distro' )]"
+							}
+	
+							blockoverride "text"
+							{
+								text = "Keep open on distribute"
+							}
+						}
+						
 						expand = {}
 	
 						#button_round = {
@@ -1126,7 +1144,6 @@ window = {
 				}
 
 				expand = {}
-
 			}
 			#end of antiquarian area
 
@@ -1792,7 +1809,23 @@ types InventoryViewTypes
 
 				####################################<DISTRIBUTE-ARTIFACTS>##########################
 				button_round = {
-					name = "distribute"
+					name = "distribute_no_close"
+					visible = "[And(VariableSystem.Exists( 'keep_open_on_distro'), Artifact.GetOwner.IsLocalPlayer)]"
+					size = { 28 28 }
+
+					button_icon_highlight = {
+						parentanchor = center
+						size = { 20 20 }
+						texture = "gfx/interface/icons/flat_icons/move_capital.dds"
+					}
+
+					onclick = "[GetScriptedGui('distribute_artifact').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target', Artifact.MakeScope).End)]"
+					tooltip = "Gift Artifact"
+				}
+
+				button_round = {
+					name = "distribute_and_close"
+					visible = "[And(Not(VariableSystem.Exists( 'keep_open_on_distro')), Artifact.GetOwner.IsLocalPlayer)]"
 					size = { 28 28 }
 
 					button_icon_highlight = {
@@ -1803,7 +1836,6 @@ types InventoryViewTypes
 
 					onclick = "[InventoryView.Close]"
 					onclick = "[GetScriptedGui('distribute_artifact').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('target', Artifact.MakeScope).End)]"
-          			visible = "[Artifact.GetOwner.IsLocalPlayer]"
 					tooltip = "Gift Artifact"
 				}
 				####################################</DISTRIBUTE-ARTIFACTS>#########################
