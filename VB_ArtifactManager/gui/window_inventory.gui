@@ -505,7 +505,7 @@ window = {
 					name = "right_side"
 					layoutpolicy_vertical = expanding
 					layoutpolicy_horizontal = expanding
-					minimumsize = { 552 -1 }
+					minimumsize = { 250 -1 }
 					margin_left = -2
 	
 					vbox = {
@@ -530,7 +530,7 @@ window = {
 							margin_left = -6
 	
 							button_tab = { # Show all artifacts tab
-								size = { 60 42 }
+								size = { 50 42 }
 	
 								tooltip = ARTIFACT_SORTING_TAB_ALL_TOOLTIP
 								onclick = "[InventoryView.ClearSelectedSlot]"
