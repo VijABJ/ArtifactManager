@@ -179,7 +179,7 @@ window = {
 							parentanchor = vcenter|left
 							position = { 0 -50 }
 						}
-		
+
 						widget_inventory_slot = {
 							name = "armor_slot"
 							datacontext = "[Inventory.GetSlot('armor')]"
@@ -686,39 +686,9 @@ window = {
 								text = "Keep open on distribute"
 							}
 						}
-						
+
 						expand = {}
-	
-						#button_round = {
-							#name = "auto_reforge"
-							#size = { 35 35 }
-		
-							#button_icon_highlight = {
-								#size = { 25 25 }
-								#parentanchor = center
-								#texture = "gfx/interface/icons/flat_icons/auto_reforge.dds"
-								#visible = "[GetPlayer.MakeScope.Var('auto_repair').IsSet]"
-								#tooltip = "ACTION_AUTO_REPAIR_TT"
-							#}
-							#button_icon_highlight = {
-								#size = { 25 25 }
-								#parentanchor = center
-								#texture = "gfx/interface/icons/flat_icons/auto_reforge_equipped.dds"
-								#visible = "[GetPlayer.MakeScope.Var('auto_repair_exhibited').IsSet]"
-								#tooltip = "ACTION_AUTO_REPAIR_WORN_TT"
-							#}
-							#button_icon_highlight = {
-								#size = { 25 25 }
-								#parentanchor = center
-								#texture = "gfx/interface/icons/flat_icons/not_auto_reforge.dds"
-								#visible = "[And(Not(GetPlayer.MakeScope.Var('auto_repair').IsSet), Not(GetPlayer.MakeScope.Var('auto_repair_exhibited').IsSet))]"
-								#tooltip = "ACTION_NOT_AUTO_REPAIR_TT"
-							#}
-	
-							#visible = "[Artifact.GetOwner.IsLocalPlayer]"
-							#onclick = "[GetScriptedGui('auto_repair_sgui_toggle').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
-							##enabled = "[Not(GetPlayer.MakeScope.Var('auto_repair').IsSet)]"
-						#}
+
 					}
 	
 					hbox = { # claims sorting
@@ -1091,15 +1061,6 @@ window = {
 							}
 
 							button_decision_entry = {
-								name = "repair_artifacts_decision"
-								datacontext = "[GetDecisionWithKey('repair_artifacts')]"
-								visible = "[And( Character.IsLocalPlayer, Decision.IsShownForPlayer )]"
-								size = { 350 45 }
-								onclick = "[InventoryView.Close]"
-								onclick = "[OpenDecisionDetailView( Decision.Self )]"
-							}
-
-							button_decision_entry = {
 								name = "weapon_relic_combine_decision"
 								datacontext = "[GetDecisionWithKey('combine_relic_weapon_decision')]"
 								visible = "[And( Character.IsLocalPlayer, Decision.IsShownForPlayer )]"
@@ -1131,6 +1092,53 @@ window = {
 								size = { 350 45 }
 								onclick = "[InventoryView.Close]"
 								onclick = "[OpenDecisionDetailView( Decision.Self )]"
+							}
+
+							hbox = {
+								#size = { 350 60 }
+								#layoutpolicy_horizontal = expanding
+								#parentanchor = top|left
+								spacing = 10
+
+								hbox = {
+									spacing = 5
+									button_round = {
+										name = "repair_all"
+										size = { 35 35 }
+										visible = "[Artifact.GetOwner.IsLocalPlayer]"
+										enabled = "[GetScriptedGui('AM_has_repairables').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+										button_icon_highlight = {
+											size = { 30 30 }
+											parentanchor = center
+											texture = "gfx/interface/icons/flat_icons/reforge.dds"
+										}
+										tooltip = "REPAIR_ALL_ARTIFACTS"
+										onclick = "[GetVariableSystem.Set('repair_all_artifacts', 'yes')]"
+									}
+									text_single = {
+										text = "REPAIR_ALL_ARTIFACTS_BRIEF"
+									}
+								}								
+								hbox = {
+									spacing = 5
+									button_round = {
+										name = "sell_all_unused"
+										size = { 35 35 }
+										visible = "[Artifact.GetOwner.IsLocalPlayer]"
+										enabled = "[GetScriptedGui('AM_has_unused_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+										button_icon_highlight = {
+											size = { 30 30 }
+											parentanchor = center
+											texture = "gfx/interface/icons/flat_icons/prison_ransom.dds"
+										}
+										tooltip = "SELL_ALL_UNUSED_ARTIFACTS"
+										onclick = "[GetVariableSystem.Set('auction_unused_artifact', 'yes')]"
+									}
+									text_single = {
+										text = "SELL_ALL_UNUSED_ARTIFACTS_BRIEF"
+									}
+									expand = {}
+								}
 							}
 	
 						}
@@ -1766,23 +1774,7 @@ types InventoryViewTypes
 				}
 				
 				####################################<ART_AUCT>####################################
-				# For Compatibility with the Auction Off Artifact mod by KeizerHarm
-				button_round = {
-					visible = "[And( Artifact.GetOwner.IsLocalPlayer, GetVariableSystem.Exists('window_auction_artifact' ) )]"
-					
-					name = "auction_off"
-					size = { 28 28 }
-
-					button_icon_highlight = {
-						parentanchor = center
-						size = { 20 20 }
-						texture = "gfx/interface/icons/flat_icons/prison_ransom.dds"
-					}
-
-					onclick = "[GetVariableSystem.Set('window_auction_artifact', 'yes')]"
-					onclick = "[GetScriptedGui('art_auct_set_artifact_id').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('artifact', Artifact.MakeScope).End)]"
-					tooltip = "AUCTION_OFF_ARTIFACT_TT"
-				}
+				art_auc_btn_simple = {}
 				####################################</ART_AUCT>####################################
 
 				button_round = {
@@ -2158,24 +2150,9 @@ types InventoryViewTypes
 				}
 				
 				####################################<ART_AUCT>####################################
-				# For Compatibility with the Auction Off Artifact mod by KeizerHarm
-				button_round = {
-					visible = "[And( Artifact.GetOwner.IsLocalPlayer, GetVariableSystem.Exists('window_auction_artifact' ) )]"
-					
-					name = "auction_off_compact"
-					size = { 25 25 }
+				art_auc_btn_simple = {}
+				####################################</ART_AUCT>###################################
 
-					button_icon_highlight = {
-						parentanchor = center
-						size = { 15 15 }
-						texture = "gfx/interface/icons/flat_icons/prison_ransom.dds"
-					}
-
-					onclick = "[GetVariableSystem.Set('window_auction_artifact', 'yes')]"
-					onclick = "[GetScriptedGui('art_auct_set_artifact_id').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('artifact', Artifact.MakeScope).End)]"
-					tooltip = "AUCTION_OFF_ARTIFACT_TT"
-				}
-				####################################</ART_AUCT>####################################
 				expand = {}
 			}
 		}

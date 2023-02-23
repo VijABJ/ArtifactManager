@@ -1,0 +1,36 @@
+﻿artifact_market_value = {
+	value = 50
+	if = {
+		limit = { is_unique = yes }
+		multiply = 3
+	}
+
+	if = { # Multiply base cost with artifact rarity - Except for trinkets
+		limit = {
+			rarity = illustrious
+		}
+		multiply = 5
+	}
+	else_if = {
+		limit = {
+			rarity = famed
+		}
+		multiply = 2.5
+	}
+	else_if = {
+		limit = {
+			rarity = masterwork
+		}
+		multiply = 1.5
+	}
+	multiply = {
+		value = artifact_durability
+		divide = artifact_max_durability
+	}
+	min = 15
+}
+
+artifact_piety_value = {
+	value = artifact_market_value
+	multiply = 3
+}

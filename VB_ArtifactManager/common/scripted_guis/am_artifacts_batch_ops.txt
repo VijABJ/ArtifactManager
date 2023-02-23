@@ -1,0 +1,85 @@
+
+AM_sell_unused_artifacts = {
+    scope = character
+
+    effect = {
+		every_character_artifact = {
+			limit = {
+				is_equipped = no
+			}
+			save_scope_as = this_artifact
+            # gold
+			if = { 
+				limit ={
+					exists = artifact_market_value
+				}
+				root = {
+					add_gold = {
+						value = scope:this_artifact.artifact_market_value
+					}
+				}
+				destroy_artifact = scope:this_artifact
+			}
+			else = {
+				root = {
+					add_gold = {
+						value = scope:this_artifact.artifact_wealth_quality_average_value
+						multiply = 3.5
+					}
+				}
+				destroy_artifact = scope:this_artifact
+			}
+
+            # piety
+            if = {
+                limit = {
+                    faith = {
+                        has_doctrine = tenet_aniconism
+                    }
+                    scope:artifact = {
+                        exists = var:relic
+                    }
+                }
+                root = {
+                    add_piety = {
+                        value = scope:artifact.artifact_piety_value    
+                    }
+                }
+            }
+		}
+    }
+}
+
+AM_repair_all_artifacts = {
+    scope = character
+
+    effect = {
+		every_character_artifact = {
+            limit = {
+                artifact_durability < artifact_max_durability
+            }
+			save_scope_as = this_artifact
+            # gold
+			if = { 
+				limit ={
+					exists = artifact_market_value
+				}
+				root = {
+					remove_short_term_gold = {
+						value = scope:this_artifact.repair_artifact_cost
+					}
+				}
+			}
+			else = {
+				root = {
+					remove_short_term_gold = {
+						value = scope:this_artifact.artifact_wealth_quality_average_value
+						multiply = 3.5
+					}
+				}
+			}
+            # repair this thing
+            add_durability = artifact_max_durability
+		}
+    }
+}

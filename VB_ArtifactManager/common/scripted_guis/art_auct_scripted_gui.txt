@@ -1,0 +1,66 @@
+﻿art_auct_set_artifact_id = {
+	scope = character
+	saved_scopes = { artifact }
+	is_shown = { always = yes }
+	effect = {
+		remove_variable = art_auct_selected_artifact
+		remove_variable = art_auct_selected_artifact_value
+		remove_variable = art_auct_selected_artifact_piety_value
+
+		set_variable = {
+			name = art_auct_selected_artifact
+			value = scope:artifact
+			months = 3
+		}
+		set_variable = {
+			name = art_auct_selected_artifact_value
+			value = scope:artifact.artifact_market_value
+			months = 3
+		}
+		if = {
+			limit = {
+				faith = {
+					has_doctrine = tenet_aniconism
+				}
+				scope:artifact = {
+					exists = var:relic
+				}
+			}
+			set_variable = {
+				name = art_auct_selected_artifact_piety_value
+				value = scope:artifact.artifact_piety_value
+				months = 3
+			}
+		}
+	}
+}
+
+art_auct_sell_artifact = {
+	scope = character
+	is_shown = { always = yes }
+	saved_scopes = { artifact_to_destroy }
+	effect = {
+		if = {
+			limit = { exists = var:art_auct_selected_artifact_piety_value }
+			add_piety = var:art_auct_selected_artifact_piety_value
+		} else = {
+			add_gold = var:art_auct_selected_artifact_value
+		}
+
+		destroy_artifact = scope:artifact_to_destroy
+
+		remove_variable = art_auct_selected_artifact
+		remove_variable = art_auct_selected_artifact_value
+		remove_variable = art_auct_selected_artifact_piety_value
+	}
+}
+
+art_auct_close_window = {
+	scope = character
+	is_shown = { always = yes }
+	effect = {
+		remove_variable = art_auct_selected_artifact
+		remove_variable = art_auct_selected_artifact_value
+		remove_variable = art_auct_selected_artifact_piety_value
+	}
+}

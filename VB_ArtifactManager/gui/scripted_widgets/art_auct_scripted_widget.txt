@@ -1,0 +1,3 @@
+﻿gui/art_auc_auction_off_window.gui = auction_off_artifact_window
+gui/auction_unused_artifact_window.gui = auction_unused_artifact_window
+gui/repair_all_artifacts_window.gui = repair_all_artifacts_window

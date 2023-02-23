@@ -1,0 +1,25 @@
+
+AM_has_repairables = {
+    scope = character
+
+	is_shown = {
+        employs_court_position = antiquarian_court_position
+        custom_description = {
+            text = "at_least_one_artifact_needs_repair_desc"
+            any_character_artifact = {
+                artifact_durability < artifact_max_durability
+            }
+        }
+	}
+}
+
+AM_has_unused_artifacts = {
+    scope = character
+
+	is_shown = {
+        any_character_artifact = {
+            is_equipped = no
+        }
+	}
+}
+

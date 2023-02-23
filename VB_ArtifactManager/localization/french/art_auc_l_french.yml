@@ -1,0 +1,7 @@
+﻿l_french:
+ AUCTION_OFF_ARTIFACT_EFFECT_HEADER:0 "#T Effect:#!"
+ AUCTION_OFF_ARTIFACT:0 "Vendre l'artefact au enchéres"
+ AUCTION_OFF_ARTIFACT_TT:0 "#T $AUCTION_OFF_ARTIFACT$#!\nVendre cet artefact pour une somme d'argent."
+ AUCTION_OFF_ARTIFACT_EFFECTS:0 "[Artifact.GetName] est vendu pour [gold_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_value').GetValue|0] [gold|E]."
+ AUCTION_OFF_ARTIFACT_EFFECTS_ICONOCLAST:0 "[Artifact.GetName] est un artefact religieux, Conformément à votre [GetPlayer.GetFaith.GetAdjective] foi, il ne sera pas vendu, mais détruit vous rapportant ainsi [piety_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_piety_value').GetValue|0] [piety|E]."
+ AUCTION_OFF_ARTIFACT_BUTTON_TXT:0 "Vendre!"
