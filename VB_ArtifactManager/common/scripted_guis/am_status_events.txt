@@ -36,6 +36,7 @@ AM_has_unused_court_artifacts = {
                 has_global_variable = am_option_receiver_close_family
                 has_global_variable = am_option_receiver_dynasty
                 has_global_variable = am_option_receiver_vassals
+                has_global_variable = am_option_receiver_knights
                 has_global_variable = am_option_receiver_courtiers
             }
         }
@@ -55,6 +56,7 @@ AM_has_unused_inventory_artifacts = {
                 has_global_variable = am_option_receiver_close_family
                 has_global_variable = am_option_receiver_dynasty
                 has_global_variable = am_option_receiver_vassals
+                has_global_variable = am_option_receiver_knights
                 has_global_variable = am_option_receiver_courtiers
             }
         }

@@ -36,6 +36,7 @@
   RECEIVER_CLOSE_FAMILY:0 "Close Family"
   RECEIVER_DYNASTY:0 "Dynasty"
   RECEIVER_VASSALS:0 "Vassals"
+  RECEIVER_KNIGHTS:0 "Knights"
   RECEIVER_COURTIERS:0 "Courtiers"
 
   # giveaway options

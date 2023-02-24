@@ -140,6 +140,15 @@ AM_giveaway_inventory_artifacts = {
 
                 if = {
                     limit = {
+                       NOT = { has_global_variable = am_option_receiver_knights }
+                    }
+                    random_knight = {
+                        add_to_temporary_list = potential_receivers
+                    }
+                }
+                
+                if = {
+                    limit = {
                        NOT = { has_global_variable = am_option_receiver_courtiers }
                     }
                     random_courtier = {
@@ -224,6 +233,15 @@ AM_giveaway_court_artifacts = {
                        NOT = { has_global_variable = am_option_receiver_vassals }
                     }
                     random_vassal = {
+                        add_to_temporary_list = potential_receivers
+                    }
+                }
+
+                if = {
+                    limit = {
+                       NOT = { has_global_variable = am_option_receiver_knights }
+                    }
+                    random_knight = {
                         add_to_temporary_list = potential_receivers
                     }
                 }
