@@ -2,6 +2,7 @@
   PERSONAL_ARTIFACTS_TAB_TITLE:0 "Equipped Artifacts"
   COURT_ARTIFACTS_TAB_TITLE:0 "Royal Court"
   BACKROOM_ARTIFACTS_TAB_TITLE:0 "Backroom Storage"
+  ARTIFACTS_BATCH_OPERATIONS:0 "Batch Operations"
   # inventory screen
   REPAIR_ALL_ARTIFACTS:0 "Repair all artifacts"
   REPAIR_ALL_ARTIFACTS_BRIEF:0 "Repair all"
@@ -15,3 +16,30 @@
   REPAIR_ALL_ARTIFACTS_EFFECT_HEADER:0 "Effects"
   REPAIR_ALL_ARTIFACTS_EFFECTS:0 "All artifacts will be repaired, for gold cost (this might take you to negative gold)"
   REPAIR_ALL_ARTIFACTS_BUTTON_TXT:0 "Perform the bulk repair"
+
+  # gifting
+  GIFT_INVENTORY_ARTIFACTS:0 "Give away all unused inventory artifacts"
+  GIFT_INVENTORY_ARTIFACTS_BRIEF:0 "Give away inventory artifacts"
+  GIFT_COURT_ARTIFACTS:0 "Give away all unused court artifacts "
+  GIFT_COURT_ARTIFACTS_BRIEF:0 "Give away court artifacts "
+  SHOW_ADVANCED_OPTIONS:0 "Show giveaway options"
+  HIDE_ADVANCED_OPTIONS:0 "Hide giveaway options"
+  #
+  GIVEAWAY_SELECTED_ARTIFACTS_BUTTON_TXT:0 "Give them all away!"
+  GIVEAWAY_INVENTORY_ARTIFACTS_EFFECTS_HEADER:0 "Effects"
+  GIVEAWAY_INVENTORY_ARTIFACTS_EFFECTS:0 "Unused inventory artifacts of the allowed quality will be given away to selected category of people."
+  GIVEAWAY_COURT_ARTIFACTS_EFFECTS_HEADER:0 "Effects"
+  GIVEAWAY_COURT_ARTIFACTS_EFFECTS:0 "Unused court artifacts of the allowed quality will be given away to selected category of people."
+
+  # gift receiver options
+  RECEIVER_OPTIONS:0 "Eligible Recipients"
+  RECEIVER_CLOSE_FAMILY:0 "Close Family"
+  RECEIVER_DYNASTY:0 "Dynasty"
+  RECEIVER_VASSALS:0 "Vassals"
+  RECEIVER_COURTIERS:0 "Courtiers"
+
+  # giveaway options
+  GIFTING_OPTIONS:0 "Permitted Quality"
+  OPTION_ILLUSTRIOUS:0 "Illustrious"
+  OPTION_FAMED:0 "Famed"
+  OPTION_MASTERWORK:0 "Masterwork"

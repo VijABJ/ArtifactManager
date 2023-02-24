@@ -83,3 +83,183 @@ AM_repair_all_artifacts = {
 		}
     }
 }
+
+AM_giveaway_inventory_artifacts = {
+    scope = character
+
+    effect = {
+        every_character_artifact = {
+            limit = {
+                is_equipped = no
+                category = inventory
+                OR = {
+                    rarity = common
+                    AND = {
+                        rarity = masterwork
+                        NOT = { has_global_variable = am_option_masterwork }
+                    }
+                    AND = {
+                        rarity = famed
+                        NOT = { has_global_variable = am_option_famed }
+                    }
+                    AND = {
+                        rarity = illustrious
+                        NOT = { has_global_variable = am_option_illustrious }
+                    }
+                }
+            }
+            save_scope_as = this_artifact
+
+            root = { 
+                if = {
+                    limit = {
+                       NOT = { has_global_variable = am_option_receiver_close_family  }
+                    }
+                    random_close_family_member = {
+                        add_to_temporary_list = potential_receivers
+                    }
+                }
+
+                if = {
+                    limit = {
+                       NOT = { has_global_variable = am_option_receiver_dynasty }
+                    }
+                    random_dynasty_member = {
+                        add_to_temporary_list = potential_receivers
+                    }
+                }
+
+                if = {
+                    limit = {
+                       NOT = { has_global_variable = am_option_receiver_vassals }
+                    }
+                    random_vassal = {
+                        add_to_temporary_list = potential_receivers
+                    }
+                }
+
+                if = {
+                    limit = {
+                       NOT = { has_global_variable = am_option_receiver_courtiers }
+                    }
+                    random_courtier = {
+                        add_to_temporary_list = potential_receivers
+                    }
+                }
+
+                random_in_list = {
+                    list = potential_receivers
+                    save_scope_as = gift_recipient
+                }
+            }
+
+            if = {
+                exists = scope:gift_recipient
+
+                set_owner = {
+                    target = scope:gift_recipient
+                }
+
+                scope:gift_recipient = {
+
+                    add_opinion = {
+                        target = root
+                        modifier = grateful_opinion
+                        opinion = 10
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+AM_giveaway_court_artifacts = {
+    scope = character
+
+    effect = {
+        every_character_artifact = {
+            limit = {
+                is_equipped = no
+                category = court
+                OR = {
+                    rarity = common
+                    AND = {
+                        rarity = masterwork
+                        NOT = { has_global_variable = am_option_masterwork }
+                    }
+                    AND = {
+                        rarity = famed
+                        NOT = { has_global_variable = am_option_famed }
+                    }
+                    AND = {
+                        rarity = illustrious
+                        NOT = { has_global_variable = am_option_illustrious }
+                    }
+                }
+            }
+            save_scope_as = this_artifact
+
+            root = { 
+                if = {
+                    limit = {
+                       NOT = { has_global_variable = am_option_receiver_close_family  }
+                    }
+                    random_close_family_member = {
+                        add_to_temporary_list = potential_receivers
+                    }
+                }
+
+                if = {
+                    limit = {
+                       NOT = { has_global_variable = am_option_receiver_dynasty }
+                    }
+                    random_dynasty_member = {
+                        add_to_temporary_list = potential_receivers
+                    }
+                }
+
+                if = {
+                    limit = {
+                       NOT = { has_global_variable = am_option_receiver_vassals }
+                    }
+                    random_vassal = {
+                        add_to_temporary_list = potential_receivers
+                    }
+                }
+
+                if = {
+                    limit = {
+                       NOT = { has_global_variable = am_option_receiver_courtiers }
+                    }
+                    random_courtier = {
+                        add_to_temporary_list = potential_receivers
+                    }
+                }
+
+                random_in_list = {
+                    list = potential_receivers
+                    save_scope_as = gift_recipient
+                }
+            }
+
+            if = {
+                exists = scope:gift_recipient
+
+                set_owner = {
+                    target = scope:gift_recipient
+                }
+
+                scope:gift_recipient = {
+
+                    add_opinion = {
+                        target = root
+                        modifier = grateful_opinion
+                        opinion = 10
+                    }
+                }
+
+            }
+        }
+    }
+}

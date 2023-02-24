@@ -23,3 +23,42 @@ AM_has_unused_artifacts = {
 	}
 }
 
+AM_has_unused_court_artifacts = {
+    scope = character
+
+	is_shown = {
+        AND = {
+            any_character_artifact = {
+                is_equipped = no
+                category = court
+            }
+            NAND = {
+                has_global_variable = am_option_receiver_close_family
+                has_global_variable = am_option_receiver_dynasty
+                has_global_variable = am_option_receiver_vassals
+                has_global_variable = am_option_receiver_courtiers
+            }
+        }
+	}
+}
+
+AM_has_unused_inventory_artifacts = {
+    scope = character
+
+	is_shown = {
+        AND = {
+            any_character_artifact = {
+                is_equipped = no
+                category = inventory
+            }
+            NAND = {
+                has_global_variable = am_option_receiver_close_family
+                has_global_variable = am_option_receiver_dynasty
+                has_global_variable = am_option_receiver_vassals
+                has_global_variable = am_option_receiver_courtiers
+            }
+        }
+	}
+}
+
+

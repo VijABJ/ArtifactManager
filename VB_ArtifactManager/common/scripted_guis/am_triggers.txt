@@ -1,0 +1,163 @@
+am_option_toggle_receiver_close_family = {
+    scope = character
+    is_shown = {
+        NOT = {
+            has_global_variable = am_option_receiver_close_family
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_option_receiver_close_family
+                }
+            }
+            set_global_variable = am_option_receiver_close_family
+        }
+        else = {
+            remove_global_variable  =  am_option_receiver_close_family
+        }
+
+    }
+}
+
+am_option_toggle_receiver_dynasty = {
+    scope = character
+    is_shown = {
+        NOT = {
+            has_global_variable = am_option_receiver_dynasty
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_option_receiver_dynasty
+                }
+            }
+            set_global_variable = am_option_receiver_dynasty
+        }
+        else = {
+            remove_global_variable  =  am_option_receiver_dynasty
+        }
+
+    }
+}
+
+am_option_toggle_receiver_vassals = {
+    scope = character
+    is_shown = {
+        NOT = {
+            has_global_variable = am_option_receiver_vassals
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_option_receiver_vassals
+                }
+            }
+            set_global_variable = am_option_receiver_vassals
+        }
+        else = {
+            remove_global_variable  =  am_option_receiver_vassals
+        }
+
+    }
+}
+
+am_option_toggle_receiver_courtiers = {
+    scope = character
+    is_shown = {
+        NOT = {
+            has_global_variable = am_option_receiver_courtiers
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_option_receiver_courtiers
+                }
+            }
+            set_global_variable = am_option_receiver_courtiers
+        }
+        else = {
+            remove_global_variable  =  am_option_receiver_courtiers
+        }
+
+    }
+}
+
+
+###################################################
+
+am_option_toggle_illustrious = {
+    scope = character
+    is_shown = {
+        NOT = {
+            has_global_variable = am_option_illustrious
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_option_illustrious
+                }
+            }
+            set_global_variable = am_option_illustrious
+        }
+        else = {
+            remove_global_variable  =  am_option_illustrious
+        }
+
+    }
+}
+
+am_option_toggle_famed = {
+    scope = character
+    is_shown = {
+        NOT = {
+            has_global_variable = am_option_famed
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_option_famed
+                }
+            }
+            set_global_variable = am_option_famed
+        }
+        else = {
+            remove_global_variable  =  am_option_famed
+        }
+
+    }
+}
+
+am_option_toggle_masterwork = {
+    scope = character
+    is_shown = {
+        NOT = {
+            has_global_variable = am_option_masterwork
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_option_masterwork
+                }
+            }
+            set_global_variable = am_option_masterwork
+        }
+        else = {
+            remove_global_variable  =  am_option_masterwork
+        }
+
+    }
+}

@@ -18,6 +18,7 @@ window = {
 		on_start = "[GetVariableSystem.Clear( 'court_artifacts' )]"
 		on_start = "[GetVariableSystem.Clear( 'claims' )]"
 		on_start = "[GetVariableSystem.Set( 'artifacts_active_tab', 'personal_artifacts_tab' )]"
+		on_start = "[GetVariableSystem.Set( 'operations_active_tab', 'tab_operations_list' )]"
 	}
 
 	state = {
@@ -988,7 +989,7 @@ window = {
 					widget = {
 						#parentanchor = top|hcenter
 						#position = { 0 -12 }
-						size = { 450 400 }
+						size = { 450 300 }
 						allow_outside = yes
 
 						vbox = {
@@ -1093,56 +1094,320 @@ window = {
 								onclick = "[InventoryView.Close]"
 								onclick = "[OpenDecisionDetailView( Decision.Self )]"
 							}
-
-							hbox = {
-								#size = { 350 60 }
-								#layoutpolicy_horizontal = expanding
-								#parentanchor = top|left
-								spacing = 10
-
-								hbox = {
-									spacing = 5
-									button_round = {
-										name = "repair_all"
-										size = { 35 35 }
-										visible = "[Artifact.GetOwner.IsLocalPlayer]"
-										enabled = "[GetScriptedGui('AM_has_repairables').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
-										button_icon_highlight = {
-											size = { 30 30 }
-											parentanchor = center
-											texture = "gfx/interface/icons/flat_icons/reforge.dds"
-										}
-										tooltip = "REPAIR_ALL_ARTIFACTS"
-										onclick = "[GetVariableSystem.Set('repair_all_artifacts', 'yes')]"
-									}
-									text_single = {
-										text = "REPAIR_ALL_ARTIFACTS_BRIEF"
-									}
-								}								
-								hbox = {
-									spacing = 5
-									button_round = {
-										name = "sell_all_unused"
-										size = { 35 35 }
-										visible = "[Artifact.GetOwner.IsLocalPlayer]"
-										enabled = "[GetScriptedGui('AM_has_unused_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
-										button_icon_highlight = {
-											size = { 30 30 }
-											parentanchor = center
-											texture = "gfx/interface/icons/flat_icons/prison_ransom.dds"
-										}
-										tooltip = "SELL_ALL_UNUSED_ARTIFACTS"
-										onclick = "[GetVariableSystem.Set('auction_unused_artifact', 'yes')]"
-									}
-									text_single = {
-										text = "SELL_ALL_UNUSED_ARTIFACTS_BRIEF"
-									}
-									expand = {}
-								}
-							}
-	
 						}
 					}
+				}
+
+				vbox = {
+					layoutpolicy_horizontal = expanding
+					parentanchor = top|left
+					visible = "[Character.IsLocalPlayer]"
+
+					text_label_center = {
+						layoutpolicy_horizontal = expanding
+						align = center|nobaseline
+						text = "ARTIFACTS_BATCH_OPERATIONS"
+						margin = { 0 2 }
+						max_width = 440
+					}
+
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						#layoutpolicy_vertical = expanding
+						parentanchor = top|left
+						min_width = 350
+
+						hbox = {
+							spacing = 10
+							hbox = {
+								spacing = 5
+								
+								button_round = {
+									name = "repair_all"
+									size = { 35 35 }
+									visible = "[Artifact.GetOwner.IsLocalPlayer]"
+									enabled = "[GetScriptedGui('AM_has_repairables').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+									button_icon_highlight = {
+										size = { 30 30 }
+										parentanchor = center
+										texture = "gfx/interface/icons/flat_icons/reforge.dds"
+									}
+									tooltip = "REPAIR_ALL_ARTIFACTS"
+									onclick = "[GetVariableSystem.Set('repair_all_artifacts', 'yes')]"
+								}
+								text_single = {
+									text = "REPAIR_ALL_ARTIFACTS_BRIEF"
+								}
+							}								
+							hbox = {
+								spacing = 5
+								button_round = {
+									name = "sell_all_unused"
+									size = { 35 35 }
+									visible = "[Artifact.GetOwner.IsLocalPlayer]"
+									enabled = "[GetScriptedGui('AM_has_unused_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+									button_icon_highlight = {
+										size = { 30 30 }
+										parentanchor = center
+										texture = "gfx/interface/icons/flat_icons/prison_ransom.dds"
+									}
+									tooltip = "SELL_ALL_UNUSED_ARTIFACTS"
+									onclick = "[GetVariableSystem.Set('auction_unused_artifact', 'yes')]"
+								}
+								text_single = {
+									text = "SELL_ALL_UNUSED_ARTIFACTS_BRIEF"
+								}
+							}
+						}
+
+						hbox = {
+							spacing = 5
+							button_round = {
+								name = "gift_inventory_artifacts"
+								size = { 35 35 }
+								visible = "[Artifact.GetOwner.IsLocalPlayer]"
+								enabled = "[GetScriptedGui('AM_has_unused_inventory_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+								#datacontext = "[GetScriptedGui('AM_has_unused_inventory_artifacts')]"
+								#enabled = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+
+								button_icon_highlight = {
+									size = { 30 30 }
+									parentanchor = center
+									texture = "gfx/interface/icons/flat_icons/duel.dds"
+								}
+								tooltip = "GIFT_INVENTORY_ARTIFACTS"
+								onclick = "[GetVariableSystem.Set('giveaway_inventory_artifacts', 'yes')]"
+							}
+							text_single = {
+								text = "GIFT_INVENTORY_ARTIFACTS_BRIEF"
+							}
+						}
+
+						hbox = {
+							spacing = 5
+							button_round = {
+								name = "gift_court_artifacts"
+								size = { 35 35 }
+								visible = "[Artifact.GetOwner.IsLocalPlayer]"
+								enabled = "[GetScriptedGui('AM_has_unused_court_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+								button_icon_highlight = {
+									size = { 30 30 }
+									parentanchor = center
+									texture = "gfx/interface/icons/flat_icons/royal_court.dds"
+								}
+								tooltip = "GIFT_COURT_ARTIFACTS"
+								onclick = "[GetVariableSystem.Set('giveaway_court_artifacts', 'yes')]"
+							}
+							text_single = {
+								text = "GIFT_COURT_ARTIFACTS_BRIEF"
+							}
+						}
+
+						hbox = {
+							spacing = 5
+							visible = "[GetVariableSystem.HasValue( 'operations_active_tab', 'tab_operations_list' )]"
+							button_round = {
+								name = "option_toggle_show"
+								size = { 35 35 }
+								button_icon_highlight = {
+									size = { 30 30 }
+									parentanchor = center
+									texture = "gfx/interface/icons/flat_icons/dots.dds"
+								}
+								onclick = "[GetVariableSystem.Set( 'operations_active_tab', 'tab_operations_options' )]"
+							}
+
+							text_single = {
+								text = "SHOW_ADVANCED_OPTIONS"
+							}
+						}
+
+						hbox = {
+							spacing = 5
+							visible = "[GetVariableSystem.HasValue( 'operations_active_tab', 'tab_operations_options' )]"
+							button_round = {
+								name = "option_toggle_hide"
+								size = { 35 35 }
+								button_icon_highlight = {
+									size = { 30 30 }
+									parentanchor = center
+									texture = "gfx/interface/icons/flat_icons/cancel.dds"
+								}
+								onclick = "[GetVariableSystem.Set( 'operations_active_tab', 'tab_operations_list' )]"
+							}
+
+							text_single = {
+								text = "HIDE_ADVANCED_OPTIONS"
+							}
+						}
+
+					}
+
+					vbox = {
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						parentanchor = top|left
+						min_width = 350
+						spacing = 5
+						visible = "[GetVariableSystem.HasValue( 'operations_active_tab', 'tab_operations_options' )]"
+
+						divider_light = {
+							layoutpolicy_horizontal = expanding
+						}
+
+						text_single = {
+							text = "RECEIVER_OPTIONS"
+						}
+
+						hbox = {
+							spacing = 5
+
+							button_checkbox_label = {
+								name = "gift_option_close_family"
+								layoutpolicy_horizontal = expanding
+
+								datacontext = "[GetScriptedGui('am_option_toggle_receiver_close_family')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "RECEIVER_CLOSE_FAMILY"
+								}
+							}
+
+							button_checkbox_label = {
+								name = "gift_option_dynasty"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_receiver_dynasty')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "RECEIVER_DYNASTY"
+								}
+							}
+						}
+
+						hbox = {
+							spacing = 5
+
+							button_checkbox_label = {
+								name = "gift_option_vassals"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_receiver_vassals')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "RECEIVER_VASSALS"
+								}
+							}
+
+							button_checkbox_label = {
+								name = "gift_option_courtiers"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_receiver_courtiers')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "RECEIVER_COURTIERS"
+								}
+							}
+						}
+
+						divider_light = {
+							layoutpolicy_horizontal = expanding
+						}
+
+						text_single = {
+							text = "GIFTING_OPTIONS"
+						}
+
+						hbox = {
+							spacing = 5
+
+							button_checkbox_label = {
+								name = "gift_available_illustrious"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_illustrious')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "OPTION_ILLUSTRIOUS"
+								}
+							}
+
+							button_checkbox_label = {
+								name = "gift_available_famed"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_famed')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "OPTION_FAMED"
+								}
+							}
+
+							button_checkbox_label = {
+								name = "gift_available_masterwork"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_masterwork')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "OPTION_MASTERWORK"
+								}
+							}
+
+						}
+
+					}
+
 				}
 
 				expand = {}
