@@ -63,4 +63,12 @@ AM_has_unused_inventory_artifacts = {
 	}
 }
 
+AMX_CombineArtifactsMechanicActive = {
+    scope = character
+
+    is_shown = {
+        has_game_rule = amx_combine_artifacts_enabled
+    }
+}
+
 

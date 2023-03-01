@@ -114,6 +114,7 @@ window = {
 						size = { 120 50 }
 						min_width = 120
 						layoutpolicy_horizontal = expanding
+						visible = "[GetScriptedGui('AMX_CombineArtifactsMechanicActive').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
 		
 						onclick = "[GetVariableSystem.Set( 'artifacts_active_tab', 'backroom_artifacts_tab' )]"
 						down = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'backroom_artifacts_tab' )]"
@@ -252,42 +253,42 @@ window = {
 							name = "wall_big_1_slot"
 							datacontext = "[Inventory.GetSlot('wall_big_1')]"
 							parentanchor = vcenter|right
-							position = { 0 -123 }
+							position = { -10 -123 }
 						}
 						
 						widget_inventory_slot = {
 							name = "wall_big_2_slot"
 							datacontext = "[Inventory.GetSlot('wall_big_2')]"
 							parentanchor = vcenter|right
-							position = { 0 0 }
+							position = { -10 0 }
 						}
 						
 						widget_inventory_slot = {
 							name = "wall_big_3_slot"
 							datacontext = "[Inventory.GetSlot('wall_big_3')]"
 							parentanchor = vcenter|right
-							position = { 0 123 }
+							position = { -10 123 }
 						}
 						
 						widget_inventory_slot = {
 							name = "wall_small_1_slot"
 							datacontext = "[Inventory.GetSlot('wall_small_1')]"
 							parentanchor = vcenter|left
-							position = { 0 -123 }
+							position = { 10 -123 }
 						}
 						
 						widget_inventory_slot = {
 							name = "wall_small_2_slot"
 							datacontext = "[Inventory.GetSlot('wall_small_2')]"
 							parentanchor = vcenter|left
-							position = { 0 0 }
+							position = { 10 0 }
 						}
 						
 						widget_inventory_slot = {
 							name = "wall_small_3_slot"
 							datacontext = "[Inventory.GetSlot('wall_small_3')]"
 							parentanchor = vcenter|left
-							position = { 0 123 }
+							position = { 10 123 }
 						}
 
 						widget = { #Pedestal Buttons
@@ -484,10 +485,7 @@ window = {
 							position = { 185 500 }
 						}
 						
-						
 					}
-	
-
 
 					expand = {}
 				}
@@ -993,7 +991,7 @@ window = {
 						allow_outside = yes
 
 						vbox = {
-							
+
 							hbox = {
 								spacing = 10
 

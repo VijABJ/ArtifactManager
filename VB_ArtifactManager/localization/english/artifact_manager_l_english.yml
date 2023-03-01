@@ -44,3 +44,19 @@
   OPTION_ILLUSTRIOUS:0 "Illustrious"
   OPTION_FAMED:0 "Famed"
   OPTION_MASTERWORK:0 "Masterwork"
+
+  # gamerule - toggle combine artifacts
+  rule_amx_combine_artifacts:0 "#G AMX: #! Combine Artifacts"
+  #setting_amx_combine_artifacts_desc:0 "Enable/Disable mechanics for combining artifacts"
+  setting_amx_combine_artifacts_enabled:0 "Enable"
+  setting_amx_combine_artifacts_enabled_desc:0 "Mechanics for combining artifacts will be enabled."
+  setting_amx_combine_artifacts_disabled:0 "Disable"
+  setting_amx_combine_artifacts_disabled_desc:0 "Mechanics for combining artifacts will be disabled."
+
+  # gamerule - toggle upgrade artifact decision
+  rule_amx_upgrade_artifact_decision:0 "#G AMX: #! Upgrade Artifact Decision"
+  setting_amx_upgrade_artifacts_decision_enabled:0 "Enable"
+  setting_amx_upgrade_artifacts_decision_enabled_desc:0 "Enable the decision to upgrade an artifact."
+  setting_amx_upgrade_artifacts_decision_disabled:0 "Disable"
+  setting_amx_upgrade_artifacts_decision_disabled_desc:0 "Disable the decision to upgrade an artifact."
+

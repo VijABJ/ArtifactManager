@@ -9,7 +9,7 @@
 		highest_held_title_tier >= tier_county
 		exists = capital_province
 		has_dlc_feature = royal_court
-		
+		has_game_rule = amx_combine_artifacts_enabled
 	}
 	
 	is_valid = {
@@ -58,7 +58,7 @@ combine_relic_weapon_decision = {
 		highest_held_title_tier >= tier_county
 		exists = capital_province
 		has_dlc_feature = royal_court
-		
+		has_game_rule = amx_combine_artifacts_enabled
 	}
 	
 	is_valid = {
@@ -130,7 +130,7 @@ combine_historic_armor_decision = {
 		highest_held_title_tier >= tier_county
 		exists = capital_province
 		has_dlc_feature = royal_court
-		
+		has_game_rule = amx_combine_artifacts_enabled
 	}
 	
 	is_valid = {
@@ -204,7 +204,7 @@ upgrade_artifact_decision = {
 		highest_held_title_tier >= tier_county
 		exists = capital_province
 		has_dlc_feature = royal_court
-		
+		has_game_rule = amx_upgrade_artifacts_decision_enabled
 	}
 	
 	is_valid = {
@@ -230,8 +230,6 @@ upgrade_artifact_decision = {
 				}
 			}
 		}
-		
-		
 	}
 	
 

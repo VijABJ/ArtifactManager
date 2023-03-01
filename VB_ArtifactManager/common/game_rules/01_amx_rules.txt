@@ -1,0 +1,14 @@
+# combine artifacts mechanics
+amx_combine_artifacts = {
+    default = amx_combine_artifacts_enabled
+
+    amx_combine_artifacts_enabled = {}
+    amx_combine_artifacts_disabled = {}
+}
+
+amx_upgrade_artifact_decision = {
+    default = amx_upgrade_artifacts_decision_enabled
+    
+    amx_upgrade_artifacts_decision_enabled = {}
+    amx_upgrade_artifacts_decision_disabled = {}
+}
