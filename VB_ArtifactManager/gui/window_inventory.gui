@@ -1281,10 +1281,10 @@ window = {
 							}
 
 							button_checkbox_label = {
-								name = "gift_option_dynasty"
+								name = "gift_option_extended_family"
 								layoutpolicy_horizontal = expanding
 		
-								datacontext = "[GetScriptedGui('am_option_toggle_receiver_dynasty')]"
+								datacontext = "[GetScriptedGui('am_option_toggle_receiver_extended_family')]"
 								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
 		
 								blockoverride "checkbox"
@@ -1294,9 +1294,15 @@ window = {
 		
 								blockoverride "text"
 								{
-									text = "RECEIVER_DYNASTY"
+									text = "RECEIVER_EXTENDED_FAMILY"
 								}
 							}
+
+
+						}
+
+						hbox = {
+							spacing = 5
 
 							button_checkbox_label = {
 								name = "gift_option_vassals"
@@ -1315,11 +1321,6 @@ window = {
 									text = "RECEIVER_VASSALS"
 								}
 							}
-
-						}
-
-						hbox = {
-							spacing = 5
 
 							button_checkbox_label = {
 								name = "gift_option_knights"

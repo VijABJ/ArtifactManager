@@ -122,9 +122,9 @@ AM_giveaway_inventory_artifacts = {
 
                 if = {
                     limit = {
-                       NOT = { has_global_variable = am_option_receiver_dynasty }
+                       NOT = { has_global_variable = am_option_receiver_extended_family }
                     }
-                    random_dynasty_member = {
+                    random_close_or_extended_family_member = {
                         add_to_temporary_list = potential_receivers
                     }
                 }
@@ -146,7 +146,7 @@ AM_giveaway_inventory_artifacts = {
                         add_to_temporary_list = potential_receivers
                     }
                 }
-                
+
                 if = {
                     limit = {
                        NOT = { has_global_variable = am_option_receiver_courtiers }
@@ -221,9 +221,9 @@ AM_giveaway_court_artifacts = {
 
                 if = {
                     limit = {
-                       NOT = { has_global_variable = am_option_receiver_dynasty }
+                       NOT = { has_global_variable = am_option_receiver_extended_family }
                     }
-                    random_dynasty_member = {
+                    random_close_or_extended_family_member = {
                         add_to_temporary_list = potential_receivers
                     }
                 }

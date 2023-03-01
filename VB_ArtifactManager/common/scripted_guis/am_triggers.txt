@@ -21,24 +21,24 @@ am_option_toggle_receiver_close_family = {
     }
 }
 
-am_option_toggle_receiver_dynasty = {
+am_option_toggle_receiver_extended_family = {
     scope = character
     is_shown = {
         NOT = {
-            has_global_variable = am_option_receiver_dynasty
+            has_global_variable = am_option_receiver_extended_family
         }
     }
     effect = {
         if = {
             limit = {
                 NOT = {
-                    has_global_variable = am_option_receiver_dynasty
+                    has_global_variable = am_option_receiver_extended_family
                 }
             }
-            set_global_variable = am_option_receiver_dynasty
+            set_global_variable = am_option_receiver_extended_family
         }
         else = {
-            remove_global_variable  =  am_option_receiver_dynasty
+            remove_global_variable  =  am_option_receiver_extended_family
         }
 
     }
