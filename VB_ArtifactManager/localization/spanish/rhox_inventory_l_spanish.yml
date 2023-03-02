@@ -1,0 +1,67 @@
+l_spanish:
+ 
+rhox_court_items:0 "Tesorería"
+court_inventory:0 "$rhox_court_items$"
+court_inventory_1:0 "$rhox_court_items$"
+court_inventory_2:0 "$rhox_court_items$"
+court_inventory_3:0 "$rhox_court_items$"
+court_inventory_4:0 "$rhox_court_items$"
+court_inventory_5:0 "$rhox_court_items$"
+court_inventory_6:0 "$rhox_court_items$"
+court_inventory_7:0 "$rhox_court_items$"
+court_inventory_8:0 "$rhox_court_items$"
+court_inventory_9:0 "$rhox_court_items$"
+court_inventory_10:0 "$rhox_court_items$"
+court_inventory_11:0 "$rhox_court_items$"
+court_inventory_12:0 "$rhox_court_items$"
+court_inventory_13:0 "$rhox_court_items$"
+court_inventory_14:0 "$rhox_court_items$"
+court_inventory_15:0 "$rhox_court_items$"
+court_inventory_16:0 "$rhox_court_items$"
+
+artifact_slot_court_i_slot:0 "Artefacto de la tesorería"
+artifact_court_i:0 "Artefacto de la tesorería"
+
+
+convert_court_artifact_decision:0 "Transformar artefactos de la corte sin usar"
+convert_court_artifact_decision_tooltip:1 "Modifica artefactos de la corte para la cámara del tesoro"
+convert_court_artifact_decision_effect:0 "Modifica todos los artefactos de la corte desequipados para poder exhibirlos en la cámara del tesoro"
+convert_court_artifact_decision_desc:0 "¿Qué sentido tiene poseer todos estas riquezas si no puedo disfrutarlas? Tal vez debería conservarlas en la cámara del tesoro…"
+has_non_euipped_artifact_tt:0 "Ten un artefacto de la corte desequipado como mínimo"
+has_non_euipped_artifact_tt2:0 "Todos tus artefactos de la corte sin exhibir serán convertidos en artefactos de la tesorería."
+convert_court_artifact_decision_confirm:1 "¡Vamos a hacerlo!"
+
+combine_relic_weapon_decision:0 "Incrustar una reliquia en un arma"
+combine_relic_weapon_decision_tooltip:1 "Incrusta una reliquia sagrada en el arma que tengas equipada"
+combine_relic_weapon_decision_desc:0 "Mi anticuario tuvo una ocurrencia para mejorar mi arma…"
+combine_relic_weapon_decision_confirm:1 "Oigamos su idea"
+
+embed_weapon_tt:0 "Una reliquia sagrada puede ser incrustada en tu arma"
+has_euipped_weapon_tt:0 "Tienes un arma equipada"
+has_relic_tt:0 "Tienes una reliquia sagrada en la cámara del tesoro"
+
+combine_historic_armor_decision:0 "Engastar un artefacto en una armadura"
+combine_historic_armor_decision_tooltip:1 "Engasta un artefacto histórico único en tu armadura"
+combine_historic_armor_decision_desc:0 "Mi anticuario tuvo una ocurrencia para mejorar mi armadura..."
+combine_historic_armor_decision_confirm:1 "Oigamos su idea"
+
+upgrade_artifact_decision:0 "Mejorar un artefacto"
+upgrade_artifact_decision_tooltip:1 "Mejora uno de tus artefactos"
+upgrade_artifact_decision_desc:0 "Uno de tus cortesanos tuvo una ocurrencia para mejorar tu artefacto."
+upgrade_artifact_decision_confirm:1 "Oigamos su idea"
+
+attach_armor_tt:0 "Se podría engastar un artefacto histórico en tu armadura"
+has_euipped_armor_tt:0 "Tienes un armadura equipada"
+has_historical_unique_tt:0 "Tienes un artefacto de gran valor histórico en la cámara del tesoro"
+
+rhox_combine_cost_1_tt:0 "Se necesitan #weak @gold_icon! 1000#! para combinar los objetos"
+rhox_combine_cost_2_tt:0 "Se necesitan #weak @gold_icon! 2000#! para combinar los objetos"
+rhox_combine_cost_3_tt:0 "Se necesitan #weak @gold_icon! 3000#! para combinar los objetos"
+
+has_valid_artifact_for_upgrade_tt:0 "Tienes un artefacto ilustre no histórico que aún puede ser mejorado."
+has_valid_courtier_for_upgrade_tt:0 "Uno de tus cortesanos o caballeros tiene una destreza excelente."
+
+rhox_artifact_event.2.t:0 "Un artefacto digno de ser admirado…"
+rhox_artifact_event.2.desc:0 "Mi anticuario [antiquarian.GetTitledFirstName] se me ha aproximado con una idea. Engastando mi [that_artifact.GetName] en mi [this_artifact.GetName], todo el mundo quedará asombrado cada vez que vean el artefacto.\n\n"Ahora todos podrán admirar tu [that_artifact.GetName] en lugar de solo algunos invitados!" Exclamó [antiquarian.GetTitledFirstNameNoTooltip] con una semblante emocionado."
+rhox_artifact_event.2.a:0 "Ha sido una gran idea."
+padded_not_destroyed_tooltip:0 "[that_artifact.GetName] ha sido engastado en mi [this_artifact.GetName]"
