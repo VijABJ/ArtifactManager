@@ -365,6 +365,16 @@ window = {
 									alpha = 0
 								}
 							}
+
+							# edit artifact description button
+							button_edit_text = {
+								visible = "[Artifact.GetOwner.IsLocalPlayer]"
+								onclick = "[GetScriptedGui('ead_edit_artifact_desc').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('selected_artifact', Artifact.MakeScope).End)]"
+								tooltip = ead_edit_artifact_desc_tt
+								parentanchor = right
+								size = { 25 25 }
+							}
+
 						}
 					}
 				}

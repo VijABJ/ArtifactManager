@@ -1,4 +1,62 @@
-l_spanish:
+﻿l_spanish:
   PERSONAL_ARTIFACTS_TAB_TITLE:0 "Artefactos equipados"
   COURT_ARTIFACTS_TAB_TITLE:0 "Corte Real"
   BACKROOM_ARTIFACTS_TAB_TITLE:0 "Cámara del tesoro"
+  ARTIFACTS_BATCH_OPERATIONS:0 "Operaciones en lote"
+  # inventory screen
+  REPAIR_ALL_ARTIFACTS:0 "Reparar todos los artefactos"
+  REPAIR_ALL_ARTIFACTS_BRIEF:0 "Reparar todo"
+  SELL_ALL_UNUSED_ARTIFACTS:0 "Vender todos los artefactos sin usar"
+  SELL_ALL_UNUSED_ARTIFACTS_BRIEF:0 "Vender todo"
+  # sell unused dialog
+  AUCTION_UNUSED_ARTIFACTS_EFFECT_HEADER:0 "Efectos"
+  AUCTION_UNUSED_ARTIFACTS_EFFECTS:0 "Todos aquellos artefactos que no usamos serán subastados por oro."
+  AUCTION_UNUSED_ARTIFACTS_BUTTON_TXT:0 "Vender esos artefactos"
+  # repair all dialog
+  REPAIR_ALL_ARTIFACTS_EFFECT_HEADER:0 "Efectos"
+  REPAIR_ALL_ARTIFACTS_EFFECTS:0 "Todos los artefactos serán reparados, por un precio (podria poner las cuentas de oro en negativo)"
+  REPAIR_ALL_ARTIFACTS_BUTTON_TXT:0 "Repararlos en massa"
+
+  # gifting
+  GIFT_INVENTORY_ARTIFACTS:0 "Regalar todos los artefactos de inventario sin usar"
+  GIFT_INVENTORY_ARTIFACTS_BRIEF:0 "Regalar artefactos de inventario"
+  GIFT_COURT_ARTIFACTS:0 "Regalar todos los artefactos de la corte sin usar"
+  GIFT_COURT_ARTIFACTS_BRIEF:0 "Regalar artefacos de la corte"
+  SHOW_ADVANCED_OPTIONS:0 "Mostrar opciones de regalo"
+  HIDE_ADVANCED_OPTIONS:0 "Ocultar opciones de regalo"
+  #
+  GIVEAWAY_SELECTED_ARTIFACTS_BUTTON_TXT:0 "¡Regaladlos todos!"
+  GIVEAWAY_INVENTORY_ARTIFACTS_EFFECTS_HEADER:0 "Efectos"
+  GIVEAWAY_INVENTORY_ARTIFACTS_EFFECTS:0 "Los artefactos de inventario dentro de la calidad permitida que no usamos serán regalados a personas de las categorías seleccionadas."
+  GIVEAWAY_COURT_ARTIFACTS_EFFECTS_HEADER:0 "Efectos"
+  GIVEAWAY_COURT_ARTIFACTS_EFFECTS:0 "Los artefactos de la corte dentro de la calidad permitida que no usamos serán regalados a personas de las categorías seleccionadas."
+
+  # gift receiver options
+  RECEIVER_OPTIONS:0 "Posibles beneficiarios"
+  RECEIVER_CLOSE_FAMILY:0 "Familia cercana"
+  RECEIVER_EXTENDED_FAMILY:0 "Familia extendida"
+  RECEIVER_VASSALS:0 "Vasallos"
+  RECEIVER_KNIGHTS:0 "Caballeros"
+  RECEIVER_COURTIERS:0 "Cortesanos"
+
+  # giveaway options
+  GIFTING_OPTIONS:0 "Calidad permitida"
+  OPTION_ILLUSTRIOUS:0 "Ilustre"
+  OPTION_FAMED:0 "Célebre"
+  OPTION_MASTERWORK:0 "Obra maestra"
+
+  # gamerule - toggle combine artifacts
+  rule_amx_combine_artifacts:0 "#G AMX: #! Combinar Artefactos"
+  #setting_amx_combine_artifacts_desc:0 "Enable/Disable mechanics for combining artifacts"
+  setting_amx_combine_artifacts_enabled:0 "Permitir"
+  setting_amx_combine_artifacts_enabled_desc:0 "Habilitar las mecánicas para combinar artefactos."
+  setting_amx_combine_artifacts_disabled:0 "Desactivado"
+  setting_amx_combine_artifacts_disabled_desc:0 "Deshabilitar las mecánicas para combinar artefactos."
+
+  # gamerule - toggle upgrade artifact decision
+  rule_amx_upgrade_artifact_decision:0 "#G AMX: #! Decisión para mejorar Artefactos"
+  setting_amx_upgrade_artifacts_decision_enabled:0 "Permitir"
+  setting_amx_upgrade_artifacts_decision_enabled_desc:0 "Está disponible la decisión de mejorar un artefacto."
+  setting_amx_upgrade_artifacts_decision_disabled:0 "Desactivada"
+  setting_amx_upgrade_artifacts_decision_disabled_desc:0 "No podrás tomar la decisión de mejorar un artefacto."
+

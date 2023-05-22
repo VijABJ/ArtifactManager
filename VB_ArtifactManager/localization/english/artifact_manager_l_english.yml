@@ -3,6 +3,18 @@
   COURT_ARTIFACTS_TAB_TITLE:0 "Royal Court"
   BACKROOM_ARTIFACTS_TAB_TITLE:0 "Backroom Storage"
   ARTIFACTS_BATCH_OPERATIONS:0 "Batch Operations"
+  # options checkboxes
+  COMPACT_VIEW_OPTION:0 "Compact View"
+  KEEP_OPEN_ON_DISTRO_OPTION:0 "Keep open on distribute"
+  # distribute artifact event strings
+  DISTRIBUTE_ARTIFACT_DESC:0 "It is time to find a new home for my [target.GetName]. But who deserves to be its new owner?"
+  DISTRIBUTE_ARTIFACT_TITLE:0 "Distribute [target.GetName]"
+  MY_LOYAL_VASSAL_TARGET:0 "My loyal vassal, [r_vassal.GetFirstName]"
+  MY_GALLANT_KNIGHT_TARGET:0 "My gallant knight, [r_knight.GetFirstName]"
+  MY_FAMILY_MEMBER_TARGET:0 "My family member, [r_dyny.GetFirstName]"
+  NEVERMIND_TARGET:0 "Nevermind"
+  GREEDY_OWNER_TARGET:0 "Give away MY treasure?!"
+  LUNATIC_OWNER_TARGET:0 "How about... ME?!"
   # inventory screen
   REPAIR_ALL_ARTIFACTS:0 "Repair all artifacts"
   REPAIR_ALL_ARTIFACTS_BRIEF:0 "Repair all"
@@ -59,4 +71,14 @@
   setting_amx_upgrade_artifacts_decision_enabled_desc:0 "Enable the decision to upgrade an artifact."
   setting_amx_upgrade_artifacts_decision_disabled:0 "Disable"
   setting_amx_upgrade_artifacts_decision_disabled_desc:0 "Disable the decision to upgrade an artifact."
+
+  # upgrading artifacts
+  UPGRADE_THIS_ARTIFACT:0 "Upgrade and maximize"
+  UPGRADE_THIS_ARTIFACT_DESC:0 "Upgrades all modifiers to maximum, and makes this artifact illustrious"
+  UPGRADE_THIS_ARTIFACT_TT:0 "#T $UPGRADE_THIS_ARTIFACT$#!\n$UPGRADE_THIS_ARTIFACT_DESC$."
+
+  UPGRADE_SPECIFIC_ARTIFACT:0 "Upgrading an artifact"
+  UPGRADE_SPECIFIC_ARTIFACT_EFFECTS_HEADER:0 "Will happen:"
+  UPGRADE_SPECIFIC_ARTIFACT_EFFECTS:0 "[Artifact.GetName] is upgraded, requires [gold_i][GetPlayer.MakeScope.Var('AM_upgrade_op_gold_cost').GetValue|0] [gold|E]."
+  UPGRADE_SPECIFIC_ARTIFACT_BUTTON_TXT:0 "Perform Upgrade"
 

@@ -2,8 +2,8 @@
 
 distributeartifacts.1 = {
   type = character_event
-	desc = "It is time to find a new home for my [target.GetName]. But who deserves to be its new owner?"
-  title = "Distribute [target.GetName]"
+	desc = "DISTRIBUTE_ARTIFACT_DESC"
+  title = "DISTRIBUTE_ARTIFACT_TITLE"
 	theme = vassal
 
   immediate = {
@@ -25,7 +25,7 @@ distributeartifacts.1 = {
   }
 
   option = {
-	  name = "My loyal vassal, [r_vassal.GetFirstName]"
+	  name = "MY_LOYAL_VASSAL_TARGET"
      trigger = {
       exists = scope:r_vassal 
     }
@@ -46,7 +46,7 @@ distributeartifacts.1 = {
 	}
 
   option = {
-	  name = "My gallant knight, [r_knight.GetFirstName]"
+	  name = "MY_GALLANT_KNIGHT_TARGET"
      trigger = {
       exists = scope:r_knight
     }
@@ -67,7 +67,7 @@ distributeartifacts.1 = {
 	}
 
   option = {
-	  name = "My family member, [r_dyny.GetFirstName]"
+	  name = "MY_FAMILY_MEMBER_TARGET"
     highlight_portrait = r_dyny
     trigger = {
       exists = scope:r_dyny
@@ -90,7 +90,7 @@ distributeartifacts.1 = {
 	}
 
   option = {
-    name = "How about... ME?!"
+    name = "LUNATIC_OWNER_TARGET"
     trigger = {
       has_trait = lunatic
     }
@@ -98,7 +98,7 @@ distributeartifacts.1 = {
   }
 
   option = {
-    name = "Give away MY treasure?!"
+    name = "GREEDY_OWNER_TARGET"
     trigger = {
       has_trait = greedy
       NOT = {
@@ -109,7 +109,7 @@ distributeartifacts.1 = {
   }
 
   option = {
-    name = "Nevermind"
+    name = "NEVERMIND_TARGET"
     trigger = {
       NOR = {
         has_trait = greedy

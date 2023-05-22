@@ -1,0 +1,7 @@
+﻿ead_edit_artifact_desc = {
+	scope = character
+	
+	effect = {
+		trigger_event = { id = ead_desc_edit_event.1 }
+	}
+}

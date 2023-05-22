@@ -1,0 +1,66 @@
+﻿namespace = ead_desc_edit_event
+
+#Artifact Desc Edit
+
+ead_desc_edit_event.1 = {
+	type = character_event
+	title = ead_desc_edit_event.1.title
+	desc = ead_desc_edit_event.1.desc
+	theme = default
+	right_portrait = root
+	orphan = yes
+	
+	artifact = {
+		target = scope:selected_artifact
+		position = lower_center_portrait
+	}
+
+	widget = {
+		gui = "event_window_widget_enter_text"
+		container = "dynamic_birth_name"
+		controller = {
+			type = text
+			data = {
+				key = test_saved_text
+				default = ead_default
+			}
+		}
+		setup_scope = {
+			root = { save_scope_as = text_target }
+		}
+	}
+
+	option = {
+		name = artifact_new_desc
+		store_localized_text_in_death = test_saved_text
+		scope:selected_artifact = {
+			set_artifact_description = ead_artifact_desc
+		}
+		remove_variable = test_saved_text
+	}
+	
+	option = {
+		name = artifact_append_desc
+		store_localized_text_in_death = test_saved_text
+		scope:selected_artifact = {
+			set_artifact_description = ead_artifact_desc_append
+		}
+		remove_variable = test_saved_text
+	}
+	
+	option = {
+		name = artifact_append_at_end
+		store_localized_text_in_death = test_saved_text
+		scope:selected_artifact = {
+			set_artifact_description = ead_artifact_desc_append_end
+		}
+		remove_variable = test_saved_text
+	}
+	
+	after = {
+		remove_localized_text = test_saved_text
+	}
+}
+	
+	
+
