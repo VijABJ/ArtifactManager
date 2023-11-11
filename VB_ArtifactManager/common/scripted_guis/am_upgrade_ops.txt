@@ -132,6 +132,19 @@ AM_perform_artifact_upgrade = {
 			if ={
 				limit = { 
                     OR ={
+                        has_artifact_modifier = artifact_prowess_no_decorations_modifier
+                        has_artifact_modifier = artifact_prowess_no_decorations_medium_tier_modifier
+                    }
+				}
+                remove_artifact_modifier = artifact_prowess_no_decorations_modifier
+                remove_artifact_modifier = artifact_prowess_no_decorations_medium_tier_modifier
+                
+				add_artifact_modifier = artifact_prowess_no_decorations_high_tier_modifier 
+			}
+
+			if ={
+				limit = { 
+                    OR ={
                         has_artifact_modifier = artifact_knight_limit_1_modifier
                     }
 				}
@@ -636,45 +649,45 @@ AM_perform_artifact_upgrade = {
 			if ={
 				limit = { 
                     OR ={
-                        has_artifact_modifier = artifact_minor_prestige_1_modifier
-                        has_artifact_modifier = artifact_minor_prestige_2_modifier
-                        has_artifact_modifier = artifact_minor_prestige_3_modifier
-                        has_artifact_modifier = artifact_minor_prestige_4_modifier
-                        has_artifact_modifier = artifact_minor_prestige_5_modifier
-                        has_artifact_modifier = artifact_minor_prestige_6_modifier
-                        has_artifact_modifier = artifact_minor_prestige_7_modifier
+                        has_artifact_modifier = artifact_monthly_minor_prestige_1_modifier
+                        has_artifact_modifier = artifact_monthly_minor_prestige_2_modifier
+                        has_artifact_modifier = artifact_monthly_minor_prestige_3_modifier
+                        has_artifact_modifier = artifact_monthly_minor_prestige_4_modifier
+                        has_artifact_modifier = artifact_monthly_minor_prestige_5_modifier
+                        has_artifact_modifier = artifact_monthly_minor_prestige_6_modifier
+                        has_artifact_modifier = artifact_monthly_minor_prestige_7_modifier
                     }
 				}
-                remove_artifact_modifier = artifact_minor_prestige_1_modifier
-                remove_artifact_modifier = artifact_minor_prestige_2_modifier
-                remove_artifact_modifier = artifact_minor_prestige_3_modifier
-                remove_artifact_modifier = artifact_minor_prestige_4_modifier
-                remove_artifact_modifier = artifact_minor_prestige_5_modifier
-                remove_artifact_modifier = artifact_minor_prestige_6_modifier
-                remove_artifact_modifier = artifact_minor_prestige_7_modifier
+                remove_artifact_modifier = artifact_monthly_minor_prestige_1_modifier
+                remove_artifact_modifier = artifact_monthly_minor_prestige_2_modifier
+                remove_artifact_modifier = artifact_monthly_minor_prestige_3_modifier
+                remove_artifact_modifier = artifact_monthly_minor_prestige_4_modifier
+                remove_artifact_modifier = artifact_monthly_minor_prestige_5_modifier
+                remove_artifact_modifier = artifact_monthly_minor_prestige_6_modifier
+                remove_artifact_modifier = artifact_monthly_minor_prestige_7_modifier
                 
-				add_artifact_modifier = artifact_minor_prestige_8_modifier 
+				add_artifact_modifier = artifact_monthly_minor_prestige_8_modifier 
 			}
 
 			if ={
 				limit = { 
                     OR ={
-                        has_artifact_modifier = artifact_prestige_1_modifier
-                        has_artifact_modifier = artifact_prestige_2_modifier
-                        has_artifact_modifier = artifact_prestige_3_modifier
-                        has_artifact_modifier = artifact_prestige_4_modifier
-                        has_artifact_modifier = artifact_prestige_5_modifier
-                        has_artifact_modifier = artifact_prestige_6_modifier
-                        has_artifact_modifier = artifact_prestige_7_modifier
+                        has_artifact_modifier = artifact_monthly_prestige_1_modifier
+                        has_artifact_modifier = artifact_monthly_prestige_2_modifier
+                        has_artifact_modifier = artifact_monthly_prestige_3_modifier
+                        has_artifact_modifier = artifact_monthly_prestige_4_modifier
+                        has_artifact_modifier = artifact_monthly_prestige_5_modifier
+                        has_artifact_modifier = artifact_monthly_prestige_6_modifier
+                        has_artifact_modifier = artifact_monthly_prestige_7_modifier
                     }
 				}
-                remove_artifact_modifier = artifact_prestige_1_modifier
-                remove_artifact_modifier = artifact_prestige_2_modifier
-                remove_artifact_modifier = artifact_prestige_3_modifier
-                remove_artifact_modifier = artifact_prestige_4_modifier
-                remove_artifact_modifier = artifact_prestige_5_modifier
-                remove_artifact_modifier = artifact_prestige_6_modifier
-                remove_artifact_modifier = artifact_prestige_7_modifier
+                remove_artifact_modifier = artifact_monthly_prestige_1_modifier
+                remove_artifact_modifier = artifact_monthly_prestige_2_modifier
+                remove_artifact_modifier = artifact_monthly_prestige_3_modifier
+                remove_artifact_modifier = artifact_monthly_prestige_4_modifier
+                remove_artifact_modifier = artifact_monthly_prestige_5_modifier
+                remove_artifact_modifier = artifact_monthly_prestige_6_modifier
+                remove_artifact_modifier = artifact_monthly_prestige_7_modifier
                 
 				add_artifact_modifier = artifact_prestige_8_modifier 
 			}
@@ -989,20 +1002,20 @@ AM_perform_artifact_upgrade = {
 				add_artifact_modifier = artifact_zealot_tax_contribution_mult_4_modifier 
 			}
 
-			if ={
-				limit = { 
-                    OR ={
-                        has_artifact_modifier = artifact_courtly_levy_contribution_mult_1_modifier
-                        has_artifact_modifier = artifact_courtly_levy_contribution_mult_2_modifier
-                        has_artifact_modifier = artifact_courtly_levy_contribution_mult_3_modifier
-                    }
-				}
-                remove_artifact_modifier = artifact_courtly_levy_contribution_mult_1_modifier
-                remove_artifact_modifier = artifact_courtly_levy_contribution_mult_2_modifier
-                remove_artifact_modifier = artifact_courtly_levy_contribution_mult_3_modifier
-                
-				add_artifact_modifier = artifact_courtly_levy_contribution_mult_4_modifier 
-			}
+			#if ={
+			#	limit = { 
+            #        OR ={
+            #            has_artifact_modifier = artifact_courtly_levy_contribution_mult_1_modifier
+            #            has_artifact_modifier = artifact_courtly_levy_contribution_mult_2_modifier
+            #            has_artifact_modifier = artifact_courtly_levy_contribution_mult_3_modifier
+            #        }
+			#	}
+            #    remove_artifact_modifier = artifact_courtly_levy_contribution_mult_1_modifier
+            #    remove_artifact_modifier = artifact_courtly_levy_contribution_mult_2_modifier
+            #    remove_artifact_modifier = artifact_courtly_levy_contribution_mult_3_modifier
+            #    
+			#	add_artifact_modifier = artifact_courtly_levy_contribution_mult_4_modifier 
+			#}
 
 			if ={
 				limit = { 
@@ -1019,20 +1032,20 @@ AM_perform_artifact_upgrade = {
 				add_artifact_modifier = artifact_glory_hound_levy_contribution_mult_4_modifier 
 			}
 
-			if ={
-				limit = { 
-                    OR ={
-                        has_artifact_modifier = artifact_parochial_levy_contribution_mult_1_modifier
-                        has_artifact_modifier = artifact_parochial_levy_contribution_mult_2_modifier
-                        has_artifact_modifier = artifact_parochial_levy_contribution_mult_3_modifier
-                    }
-				}
-                remove_artifact_modifier = artifact_parochial_levy_contribution_mult_1_modifier
-                remove_artifact_modifier = artifact_parochial_levy_contribution_mult_2_modifier
-                remove_artifact_modifier = artifact_parochial_levy_contribution_mult_3_modifier
-                
-				add_artifact_modifier = artifact_parochial_levy_contribution_mult_4_modifier 
-			}
+			#if ={
+			#	limit = { 
+            #        OR ={
+            #            has_artifact_modifier = artifact_parochial_levy_contribution_mult_1_modifier
+            #            has_artifact_modifier = artifact_parochial_levy_contribution_mult_2_modifier
+            #            has_artifact_modifier = artifact_parochial_levy_contribution_mult_3_modifier
+            #        }
+			#	}
+            #    remove_artifact_modifier = artifact_parochial_levy_contribution_mult_1_modifier
+            #    remove_artifact_modifier = artifact_parochial_levy_contribution_mult_2_modifier
+            #    remove_artifact_modifier = artifact_parochial_levy_contribution_mult_3_modifier
+            #    
+			#	add_artifact_modifier = artifact_parochial_levy_contribution_mult_4_modifier 
+			#}
 
 			if ={
 				limit = { 
@@ -1935,6 +1948,21 @@ AM_perform_artifact_upgrade = {
 			if ={
 				limit = { 
                     OR ={
+                        has_artifact_modifier = artifact_negate_health_penalty_add_1_modifier
+                        has_artifact_modifier = artifact_negate_health_penalty_add_2_modifier
+                        has_artifact_modifier = artifact_negate_health_penalty_add_3_modifier
+                    }
+				}
+                remove_artifact_modifier = artifact_negate_health_penalty_add_1_modifier
+                remove_artifact_modifier = artifact_negate_health_penalty_add_2_modifier
+                remove_artifact_modifier = artifact_negate_health_penalty_add_3_modifier
+                
+				add_artifact_modifier = artifact_negate_health_penalty_add_4_modifier 
+			}
+
+			if ={
+				limit = { 
+                    OR ={
                         has_artifact_modifier = artifact_health_gain_1_modifier
                         has_artifact_modifier = artifact_health_gain_2_modifier
                         has_artifact_modifier = artifact_health_gain_3_modifier
@@ -2037,6 +2065,39 @@ AM_perform_artifact_upgrade = {
                 remove_artifact_modifier = artifact_archer_cavalry_screen_add_3_modifier
                 
 				add_artifact_modifier = artifact_archer_cavalry_screen_add_4_modifier 
+			}
+
+			if ={
+				limit = { 
+                    OR ={
+                        has_artifact_modifier = artifact_city_holding_build_speed_add_1_modifier
+                    }
+				}
+                remove_artifact_modifier = artifact_city_holding_build_speed_add_1_modifier
+                
+				add_artifact_modifier = artifact_city_holding_build_speed_add_2_modifier 
+			}
+
+			if ={
+				limit = { 
+                    OR ={
+                        has_artifact_modifier = artifact_church_holding_build_speed_add_1_modifier
+                    }
+				}
+                remove_artifact_modifier = artifact_church_holding_build_speed_add_1_modifier
+                
+				add_artifact_modifier = artifact_church_holding_build_speed_add_2_modifier 
+			}
+
+			if ={
+				limit = { 
+                    OR ={
+                        has_artifact_modifier = artifact_castle_holding_build_speed_add_1_modifier
+                    }
+				}
+                remove_artifact_modifier = artifact_castle_holding_build_speed_add_1_modifier
+                
+				add_artifact_modifier = artifact_castle_holding_build_speed_add_2_modifier 
 			}
 
             remove_variable = AM_upgrade_op_selected_artifact

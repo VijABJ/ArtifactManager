@@ -7,16 +7,16 @@ amx_combine_artifacts = {
 }
 
 # upgrade decision, which is a bit of a hack at the moment
-amx_upgrade_artifact_decision = {
-    default = amx_upgrade_artifacts_decision_enabled
+amx_direct_upgrade_artifact = {
+    default = amx_direct_upgrade_artifacts_enabled
     
-    amx_upgrade_artifacts_decision_enabled = {}
-    amx_upgrade_artifacts_decision_disabled = {}
+    amx_direct_upgrade_artifacts_enabled = {}
+    amx_direct_upgrade_artifacts_disabled = {}
 }
 
 # enable vanity tab
 amx_vanity_artifacts = {
-    default = amx_vanity_artifacts_enabled
+    default = amx_vanity_artifacts_disabled
 
     amx_vanity_artifacts_enabled = {}
     amx_vanity_artifacts_disabled = {}
@@ -24,8 +24,16 @@ amx_vanity_artifacts = {
 
 # enable library tab
 amx_library_artifacts = {
-    default = amx_library_artifacts_enabled
+    default = amx_library_artifacts_disabled
 
     amx_library_artifacts_enabled = {}
     amx_library_artifacts_disabled = {}
+}
+
+# enable armory tab
+amx_armory_artifacts = {
+    default = amx_armory_artifacts_disabled
+
+    amx_armory_artifacts_enabled = {}
+    amx_armory_artifacts_disabled = {}
 }

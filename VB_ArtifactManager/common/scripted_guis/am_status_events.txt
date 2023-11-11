@@ -129,7 +129,7 @@ AM_is_upgradeable_artifact = {
         AND = {
             employs_court_position = antiquarian_court_position
             court_position:antiquarian_court_position = { aptitude:antiquarian_court_position >= 4  }
-            #has_game_rule = amx_upgrade_artifacts_decision_enabled
+            has_game_rule = amx_direct_upgrade_artifacts_enabled
             scope:target = {
                 NOT = {
                     exists = var:historical_unique_artifact
@@ -742,6 +742,14 @@ AMX_CombineArtifactsMechanicActive = {
     }
 }
 
+AMX_DirectUpgradeArtifactsAllowed = {
+    scope = character
+
+    is_shown = {
+        has_game_rule = amx_direct_upgrade_artifacts_enabled
+    }
+}
+
 AMX_VanityArtifactsAllowed = {
     scope = character
 
@@ -758,3 +766,10 @@ AMX_LibraryArtifactsAllowed = {
     }
 }
 
+AMX_ArmoryArtifactsAllowed = {
+    scope = character
+
+    is_shown = {
+        has_game_rule = amx_armory_artifacts_enabled
+    }
+}

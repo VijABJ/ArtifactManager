@@ -53,89 +53,89 @@ trinket_4 = {
 wall_big_1 = {
 	type = "wall_big"
 	category = court
-	icon = trinket
+	icon = banner
 }
 
 wall_big_2 = {
 	type = "wall_big"
 	category = court
-	icon = trinket
+	icon = banner
 }
 
 wall_big_3 = {
 	type = "wall_big"
 	category = court
-	icon = trinket
+	icon = banner
 }
 
 wall_small_1 = {
 	type = "wall_small"
 	category = court
-	icon = trinket
+	icon = fur
 }
 
 wall_small_2 = {
 	type = "wall_small"
 	category = court
-	icon = trinket
+	icon = fur
 }
 
 wall_small_3 = {
 	type = "wall_small"
 	category = court
-	icon = trinket
+	icon = fur
 }
 
 throne = {
 	type = "throne"
 	category = court
-	icon = trinket
+	icon = throne
 }
 
 sculpture_1 = {
 	type = "sculpture"
 	category = court
-	icon = trinket
+	icon = furniture
 }
 
 sculpture_2 = {
 	type = "sculpture"
 	category = court
-	icon = trinket
+	icon = furniture
 }
 
 lectern_1 = {
 	type = "book"
 	category = court
-	icon = trinket
+	icon = book
 }
 
 lectern_2 = {
 	type = "book"
 	category = court
-	icon = trinket
+	icon = book
 }
 
 pedestal_1 = {
 	type = "pedestal"
 	category = court
-	icon = trinket
+	icon = pedestal
 }
 
 pedestal_2 = {
 	type = "pedestal"
 	category = court
-	icon = trinket
+	icon = pedestal
 }
 
 pedestal_3 = {
 	type = "pedestal"
 	category = court
-	icon = trinket
+	icon = pedestal
 }
 
 pedestal_4 = {
 	type = "pedestal"
 	category = court
-	icon = trinket
+	icon = pedestal
 }

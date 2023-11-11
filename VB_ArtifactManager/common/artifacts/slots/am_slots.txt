@@ -1,0 +1,319 @@
+
+######################################################
+## for the vanity room
+######################################################
+
+vanity_banner_1 = {
+	type = "wall_big"
+	category = court
+	icon = banner
+}
+
+vanity_banner_2 = {
+	type = "wall_big"
+	category = court
+	icon = banner
+}
+
+vanity_ornament_1 = {
+	type = "wall_small"
+	category = court
+	icon = fur
+}
+
+vanity_ornament_2 = {
+	type = "wall_small"
+	category = court
+	icon = fur
+}
+
+vanity_ornament_3 = {
+	type = "wall_small"
+	category = court
+	icon = fur
+}
+
+vanity_ornament_4 = {
+	type = "wall_small"
+	category = court
+	icon = fur
+}
+
+vanity_furniture_1 = {
+	type = "sculpture"
+	category = court
+	icon = furniture
+}
+
+vanity_furniture_2 = {
+	type = "sculpture"
+	category = court
+	icon = furniture
+}
+
+vanity_pedestal_1 = {
+	type = "pedestal"
+	category = court
+	icon = pedestal
+}
+
+vanity_pedestal_2 = {
+	type = "pedestal"
+	category = court
+	icon = pedestal
+}
+
+vanity_pedestal_3 = {
+	type = "pedestal"
+	category = court
+	icon = pedestal
+}
+
+vanity_pedestal_4 = {
+	type = "pedestal"
+	category = court
+	icon = pedestal
+}
+
+vanity_pedestal_5 = {
+	type = "pedestal"
+	category = court
+	icon = pedestal
+}
+
+vanity_pedestal_6 = {
+	type = "pedestal"
+	category = court
+	icon = pedestal
+}
+
+vanity_pedestal_7 = {
+	type = "pedestal"
+	category = court
+	icon = pedestal
+}
+
+vanity_pedestal_8 = {
+	type = "pedestal"
+	category = court
+	icon = pedestal
+}
+
+######################################################
+## for the library
+######################################################
+
+library_book_1 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_book_2 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_book_3 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_book_4 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_book_5 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_book_6 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_book_7 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_book_8 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_book_9 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_book_10 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_book_11 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_book_12 = {
+	type = "book"
+	category = court
+	icon = book
+}
+
+library_wall_ornament_1 = {
+	type = "wall_small"
+	category = court
+	icon = fur
+}
+
+library_furniture_1 = {
+	type = "sculpture"
+	category = court
+	icon = furniture
+}
+
+
+######################################################
+## for the library
+######################################################
+
+armory_banner_1 = {
+	type = "wall_big"
+	category = court
+	icon = banner
+}
+
+armory_banner_2 = {
+	type = "wall_big"
+	category = court
+	icon = banner
+}
+
+armory_banner_3 = {
+	type = "wall_big"
+	category = court
+	icon = banner
+}
+
+armory_banner_4 = {
+	type = "wall_big"
+	category = court
+	icon = banner
+}
+
+armory_banner_5 = {
+	type = "wall_big"
+	category = court
+	icon = banner
+}
+
+armory_set_1_helmet = {
+	type = "helmet"
+	category = inventory
+    icon = crown
+}
+
+armory_set_1_offhand = {
+	type = "regalia"
+	category = inventory
+    icon = regalia
+}
+
+armory_set_1_armor = {
+	type = "armor"
+	category = inventory
+    icon = armor
+}
+
+armory_set_1_weapon = {
+	type = "primary_armament"
+	category = inventory
+    icon = weapon
+}
+
+armory_set_2_helmet = {
+	type = "helmet"
+	category = inventory
+    icon = crown
+}
+
+armory_set_2_offhand = {
+	type = "regalia"
+	category = inventory
+    icon = regalia
+}
+
+armory_set_2_armor = {
+	type = "armor"
+	category = inventory
+    icon = armor
+}
+
+armory_set_2_weapon = {
+	type = "primary_armament"
+	category = inventory
+    icon = weapon
+}
+
+armory_trinket_1 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}
+
+armory_trinket_2 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}
+
+armory_trinket_3 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}
+
+armory_trinket_4 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}
+
+armory_trinket_5 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}
+
+armory_trinket_6 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}
+
+armory_trinket_7 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}
+
+armory_trinket_8 = {
+	type = "miscellaneous"
+	category = inventory
+	icon = trinket
+}

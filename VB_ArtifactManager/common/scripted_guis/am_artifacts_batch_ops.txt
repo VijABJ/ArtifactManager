@@ -335,6 +335,7 @@ AM_giveaway_court_artifacts = {
                 if = {
                     limit = {
                        NOT = { has_global_variable = am_option_receiver_close_family  }
+                       is_landed = yes
                     }
                     random_close_family_member = {
                         add_to_temporary_list = potential_receivers
@@ -344,6 +345,7 @@ AM_giveaway_court_artifacts = {
                 if = {
                     limit = {
                        NOT = { has_global_variable = am_option_receiver_extended_family }
+                       is_landed = yes
                     }
                     random_close_or_extended_family_member = {
                         add_to_temporary_list = potential_receivers
@@ -362,6 +364,7 @@ AM_giveaway_court_artifacts = {
                 if = {
                     limit = {
                        NOT = { has_global_variable = am_option_receiver_knights }
+                       is_landed = yes
                     }
                     random_knight = {
                         add_to_temporary_list = potential_receivers

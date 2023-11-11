@@ -87,7 +87,7 @@ window = {
 					button_tab = {
 						name = "personal_artifacts_tab"
 						size = { 120 50 }
-						min_width = 120
+						min_width = 160
 						layoutpolicy_horizontal = expanding
 		
 						onclick = "[GetVariableSystem.Set( 'artifacts_active_tab', 'personal_artifacts_tab' )]"
@@ -114,6 +114,7 @@ window = {
 						min_width = 120
 						layoutpolicy_horizontal = expanding
 		
+						visible = "[Character.HasRoyalCourt]"
 						onclick = "[GetVariableSystem.Set( 'artifacts_active_tab', 'court_artifacts_tab' )]"
 						down = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'court_artifacts_tab' )]"
 		
@@ -139,12 +140,11 @@ window = {
 						layoutpolicy_horizontal = expanding
 		
 						datacontext = "[GetScriptedGui('AMX_VanityArtifactsAllowed')]"
-						visible = "[ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+						visible = "[And(Character.HasRoyalCourt,ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
 						onclick = "[GetVariableSystem.Set( 'artifacts_active_tab', 'vanity_artifacts_tab' )]"
 						down = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'vanity_artifacts_tab' )]"
 		
 						hbox = {
-		
 							expand = {}
 		
 							text_single = {
@@ -154,23 +154,21 @@ window = {
 							}
 		
 							expand = {}
-		
 						}
 					}
 
 					button_tab = {
 						name = "library_artifacts_tab"
-						size = { 120 50 }
-						min_width = 120
+						size = { 80 50 }
+						min_width = 80
 						layoutpolicy_horizontal = expanding
 		
 						datacontext = "[GetScriptedGui('AMX_LibraryArtifactsAllowed')]"
-						visible = "[ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+						visible = "[And(Character.HasRoyalCourt,ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
 						onclick = "[GetVariableSystem.Set( 'artifacts_active_tab', 'library_artifacts_tab' )]"
 						down = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'library_artifacts_tab' )]"
 		
 						hbox = {
-		
 							expand = {}
 		
 							text_single = {
@@ -180,7 +178,30 @@ window = {
 							}
 		
 							expand = {}
+						}
+					}
+
+					button_tab = {
+						name = "armory_artifacts_tab"
+						size = { 80 50 }
+						min_width = 80
+						layoutpolicy_horizontal = expanding
 		
+						datacontext = "[GetScriptedGui('AMX_ArmoryArtifactsAllowed')]"
+						visible = "[And(Character.HasRoyalCourt,ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+						onclick = "[GetVariableSystem.Set( 'artifacts_active_tab', 'armory_artifacts_tab' )]"
+						down = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'armory_artifacts_tab' )]"
+		
+						hbox = {
+							expand = {}
+		
+							text_single = {
+								margin_left = 5
+								text = "ARMORY_ARTIFACTS_TAB_TITLE"
+								default_format = "#high"
+							}
+		
+							expand = {}
 						}
 					}
 
@@ -320,21 +341,21 @@ window = {
 							name = "wall_small_1_slot"
 							datacontext = "[Inventory.GetSlot('wall_small_1')]"
 							parentanchor = vcenter|left
-							position = { 30 -250 }
+							position = { 0 -300 }
 						}
 						
 						widget_inventory_slot = {
 							name = "wall_small_2_slot"
 							datacontext = "[Inventory.GetSlot('wall_small_2')]"
 							parentanchor = vcenter|left
-							position = { 15 -110 }
+							position = { 0 -170 }
 						}
 						
 						widget_inventory_slot = {
 							name = "wall_small_3_slot"
 							datacontext = "[Inventory.GetSlot('wall_small_3')]"
 							parentanchor = vcenter|left
-							position = { 0 20 }
+							position = { 0 -40 }
 						}
 
 						# right side wall ornaments
@@ -342,21 +363,21 @@ window = {
 							name = "wall_big_1_slot"
 							datacontext = "[Inventory.GetSlot('wall_big_1')]"
 							parentanchor = vcenter|right
-							position = { -30 -250 }
+							position = { 0 -300 }
 						}
 						
 						widget_inventory_slot = {
 							name = "wall_big_2_slot"
 							datacontext = "[Inventory.GetSlot('wall_big_2')]"
 							parentanchor = vcenter|right
-							position = { -20 -110 }
+							position = { 0 -170 }
 						}
 						
 						widget_inventory_slot = {
 							name = "wall_big_3_slot"
 							datacontext = "[Inventory.GetSlot('wall_big_3')]"
 							parentanchor = vcenter|right
-							position = { 0 20 }
+							position = { 0 -40 }
 						}
 						
 						# pedestal things
@@ -370,28 +391,28 @@ window = {
 								name = "pedestal_1_slot"
 								datacontext = "[Inventory.GetSlot('pedestal_1')]"
 								parentanchor = center
-								position = { -30 -30 }
+								position = { -40 80 }
 							}
 							
 							widget_inventory_slot = {
 								name = "pedestal_2_slot"
 								datacontext = "[Inventory.GetSlot('pedestal_2')]"
 								parentanchor = center
-								position = { 150 -30 }
+								position = { 160 80 }
 							}
 							
 							widget_inventory_slot = {
 								name = "pedestal_3_slot"
 								datacontext = "[Inventory.GetSlot('pedestal_3')]"
 								parentanchor = center
-								position = { -40 100 }
+								position = { -40 220 }
 							}
 							
 							widget_inventory_slot = {
 								name = "pedestal_4_slot"
 								datacontext = "[Inventory.GetSlot('pedestal_4')]"
 								parentanchor = center
-								position = { 160 100 }
+								position = { 160 220 }
 							}
 						}
 
@@ -399,28 +420,28 @@ window = {
 							name = "sculpture_1_slot"
 							datacontext = "[Inventory.GetSlot('sculpture_1')]"
 							parentanchor = bottom|hcenter
-							position = { -220 -140 }
+							position = { -225 -80 }
 						}
 
 						widget_inventory_slot = {
 							name = "sculpture_2_slot"
 							datacontext = "[Inventory.GetSlot('sculpture_2')]"
 							parentanchor = bottom|hcenter
-							position = { 220 -140 }
+							position = { 225 -80 }
 						}
 
 						widget_inventory_slot = {
 							name = "lectern_1_slot"
 							datacontext = "[Inventory.GetSlot('lectern_1')]"
 							parentanchor = bottom|hcenter
-							position = { -100 -124 }
+							position = { -225 -210 }
 						}
 
 						widget_inventory_slot = {
 							name = "lectern_2_slot"
 							datacontext = "[Inventory.GetSlot('lectern_2')]"
 							parentanchor = bottom|hcenter
-							position = { 100 -124 }
+							position = { 225 -210 }
 						}
 						
 					}
@@ -434,6 +455,136 @@ window = {
 					parentanchor = top|left
 					visible = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'vanity_artifacts_tab' )]"
 
+					widget = {
+
+						background = {
+							texture = "gfx/interface/icons/inventory/vanity_room_background.dds"
+							#fittype = centercrop
+							fittype = fill
+							alpha = 0.6
+							margin_bottom = -50
+							margin_left = -10
+							margin_right = -10
+							margin_top = -60
+						}
+
+						name = "vanity_artifacts"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 560 0 }
+
+						widget_inventory_slot = {
+							name = "vanity_banner_1_slot"
+							datacontext = "[Inventory.GetSlot('vanity_banner_1')]"
+							parentanchor = top|hcenter
+							position = { -220 80 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_banner_2_slot"
+							datacontext = "[Inventory.GetSlot('vanity_banner_2')]"
+							parentanchor = top|hcenter
+							position = { -110 80 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_ornament_1_slot"
+							datacontext = "[Inventory.GetSlot('vanity_ornament_1')]"
+							parentanchor = top|hcenter
+							position = { 100 80 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_ornament_2_slot"
+							datacontext = "[Inventory.GetSlot('vanity_ornament_2')]"
+							parentanchor = top|hcenter
+							position = { 220 80 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_ornament_3_slot"
+							datacontext = "[Inventory.GetSlot('vanity_ornament_3')]"
+							parentanchor = top|hcenter
+							position = { 100 200 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_ornament_4_slot"
+							datacontext = "[Inventory.GetSlot('vanity_ornament_4')]"
+							parentanchor = top|hcenter
+							position = { 220 200 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_furniture_1_slot"
+							datacontext = "[Inventory.GetSlot('vanity_furniture_1')]"
+							parentanchor = top|hcenter
+							position = { 100 320 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_furniture_2_slot"
+							datacontext = "[Inventory.GetSlot('vanity_furniture_2')]"
+							parentanchor = top|hcenter
+							position = { 220 320 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_pedestal_1_slot"
+							datacontext = "[Inventory.GetSlot('vanity_pedestal_1')]"
+							parentanchor = top|hcenter
+							position = { -220 460 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_pedestal_2_slot"
+							datacontext = "[Inventory.GetSlot('vanity_pedestal_2')]"
+							parentanchor = top|hcenter
+							position = { -220 580 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_pedestal_3_slot"
+							datacontext = "[Inventory.GetSlot('vanity_pedestal_3')]"
+							parentanchor = top|hcenter
+							position = { -100 460 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_pedestal_4_slot"
+							datacontext = "[Inventory.GetSlot('vanity_pedestal_4')]"
+							parentanchor = top|hcenter
+							position = { -100 580 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_pedestal_5_slot"
+							datacontext = "[Inventory.GetSlot('vanity_pedestal_5')]"
+							parentanchor = top|hcenter
+							position = { 100 460 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_pedestal_6_slot"
+							datacontext = "[Inventory.GetSlot('vanity_pedestal_6')]"
+							parentanchor = top|hcenter
+							position = { 100 580 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_pedestal_7_slot"
+							datacontext = "[Inventory.GetSlot('vanity_pedestal_7')]"
+							parentanchor = top|hcenter
+							position = { 220 460 }
+						}
+
+						widget_inventory_slot = {
+							name = "vanity_pedestal_8_slot"
+							datacontext = "[Inventory.GetSlot('vanity_pedestal_8')]"
+							parentanchor = top|hcenter
+							position = { 220 580 }
+						}
+					}
 				}
 				# END VANITY ARTIFACTS
 
@@ -444,9 +595,302 @@ window = {
 					parentanchor = top|left
 					visible = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'library_artifacts_tab' )]"
 
+					widget = {
+						background = {
+							texture = "gfx/interface/icons/inventory/artifacts_library_background.dds"
+							#fittype = centercrop
+							fittype = fill
+							alpha = 0.6
+							margin_bottom = -50
+							margin_left = -10
+							margin_right = -10
+							margin_top = -60
+						}
+
+						name = "library_artifacts"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 560 0 }
+
+						widget_inventory_slot = {
+							name = "library_book_1_slot"
+							datacontext = "[Inventory.GetSlot('library_book_1')]"
+							parentanchor = top|hcenter
+							position = { -230 80 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_book_2_slot"
+							datacontext = "[Inventory.GetSlot('library_book_2')]"
+							parentanchor = top|hcenter
+							position = { -120 80 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_book_3_slot"
+							datacontext = "[Inventory.GetSlot('library_book_3')]"
+							parentanchor = top|hcenter
+							position = { -230 210 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_book_4_slot"
+							datacontext = "[Inventory.GetSlot('library_book_4')]"
+							parentanchor = top|hcenter
+							position = { -120 210 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_book_5_slot"
+							datacontext = "[Inventory.GetSlot('library_book_5')]"
+							parentanchor = top|hcenter
+							position = { -230 340 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_book_6_slot"
+							datacontext = "[Inventory.GetSlot('library_book_6')]"
+							parentanchor = top|hcenter
+							position = { -120 340 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_book_7_slot"
+							datacontext = "[Inventory.GetSlot('library_book_7')]"
+							parentanchor = top|hcenter
+							position = { -230 470 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_book_8_slot"
+							datacontext = "[Inventory.GetSlot('library_book_8')]"
+							parentanchor = top|hcenter
+							position = { -120 470 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_wall_ornament_1_slot"
+							datacontext = "[Inventory.GetSlot('library_wall_ornament_1')]"
+							parentanchor = top|hcenter
+							position = { 200 80 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_furniture_1_slot"
+							datacontext = "[Inventory.GetSlot('library_furniture_1')]"
+							parentanchor = top|hcenter
+							position = { 200 300 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_book_9_slot"
+							datacontext = "[Inventory.GetSlot('library_book_9')]"
+							parentanchor = top|hcenter
+							position = { 100 450 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_book_10_slot"
+							datacontext = "[Inventory.GetSlot('library_book_10')]"
+							parentanchor = top|hcenter
+							position = { 220 450 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_book_11_slot"
+							datacontext = "[Inventory.GetSlot('library_book_11')]"
+							parentanchor = top|hcenter
+							position = { 100 580 }
+						}
+
+						widget_inventory_slot = {
+							name = "library_book_12_slot"
+							datacontext = "[Inventory.GetSlot('library_book_12')]"
+							parentanchor = top|hcenter
+							position = { 220 580 }
+						}
+
+					}
 				}
 				# END LIBRARY ARTIFACTS
 
+				# ARMORY ARTIFACTS DISPLAY
+				hbox = {
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					parentanchor = top|left
+					visible = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'armory_artifacts_tab' )]"
+
+					widget = {
+						background = {
+							texture = "gfx/interface/icons/inventory/armory_extras_background.dds"
+							#fittype = centercrop
+							fittype = fill
+							alpha = 0.6
+							margin_bottom = -50
+							margin_left = -10
+							margin_right = -10
+							margin_top = -60
+						}
+
+						name = "armory_artifacts"
+						layoutpolicy_horizontal = expanding
+						layoutpolicy_vertical = expanding
+						size = { 560 0 }
+
+						widget_inventory_slot = {
+							name = "armory_banner_1_slot"
+							datacontext = "[Inventory.GetSlot('armory_banner_1')]"
+							parentanchor = top|hcenter
+							position = { -230 60 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_banner_2_slot"
+							datacontext = "[Inventory.GetSlot('armory_banner_2')]"
+							parentanchor = top|hcenter
+							position = { -120 60 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_banner_3_slot"
+							datacontext = "[Inventory.GetSlot('armory_banner_3')]"
+							parentanchor = top|hcenter
+							position = { 0 60 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_banner_4_slot"
+							datacontext = "[Inventory.GetSlot('armory_banner_4')]"
+							parentanchor = top|hcenter
+							position = { 230 60 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_banner_5_slot"
+							datacontext = "[Inventory.GetSlot('armory_banner_5')]"
+							parentanchor = top|hcenter
+							position = { 120 60 }
+						}
+
+						############################################################
+
+						widget_inventory_slot = {
+							name = "armory_set_1_helmet_slot"
+							datacontext = "[Inventory.GetSlot('armory_set_1_helmet')]"
+							parentanchor = top|hcenter
+							position = { -230 190 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_set_1_armor_slot"
+							datacontext = "[Inventory.GetSlot('armory_set_1_armor')]"
+							parentanchor = top|hcenter
+							position = { -230 320 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_set_1_weapon_slot"
+							datacontext = "[Inventory.GetSlot('armory_set_1_weapon')]"
+							parentanchor = top|hcenter
+							position = { -120 190 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_set_1_offhand_slot"
+							datacontext = "[Inventory.GetSlot('armory_set_1_offhand')]"
+							parentanchor = top|hcenter
+							position = { -120 320 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_trinket_1_slot"
+							datacontext = "[Inventory.GetSlot('armory_trinket_1')]"
+							parentanchor = top|hcenter
+							position = { -230 450 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_trinket_2_slot"
+							datacontext = "[Inventory.GetSlot('armory_trinket_2')]"
+							parentanchor = top|hcenter
+							position = { -230 570 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_trinket_3_slot"
+							datacontext = "[Inventory.GetSlot('armory_trinket_3')]"
+							parentanchor = top|hcenter
+							position = { -120 450 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_trinket_4_slot"
+							datacontext = "[Inventory.GetSlot('armory_trinket_4')]"
+							parentanchor = top|hcenter
+							position = { -120 570 }
+						}
+
+						#######################
+
+						widget_inventory_slot = {
+							name = "armory_set_2_helmet_slot"
+							datacontext = "[Inventory.GetSlot('armory_set_2_helmet')]"
+							parentanchor = top|hcenter
+							position = { 230 190 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_set_2_armor_slot"
+							datacontext = "[Inventory.GetSlot('armory_set_2_armor')]"
+							parentanchor = top|hcenter
+							position = { 230 320 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_set_2_weapon_slot"
+							datacontext = "[Inventory.GetSlot('armory_set_2_weapon')]"
+							parentanchor = top|hcenter
+							position = { 120 190 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_set_2_offhand_slot"
+							datacontext = "[Inventory.GetSlot('armory_set_2_offhand')]"
+							parentanchor = top|hcenter
+							position = { 120 320 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_trinket_5_slot"
+							datacontext = "[Inventory.GetSlot('armory_trinket_5')]"
+							parentanchor = top|hcenter
+							position = { 230 450 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_trinket_6_slot"
+							datacontext = "[Inventory.GetSlot('armory_trinket_6')]"
+							parentanchor = top|hcenter
+							position = { 230 570 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_trinket_7_slot"
+							datacontext = "[Inventory.GetSlot('armory_trinket_7')]"
+							parentanchor = top|hcenter
+							position = { 120 450 }
+						}
+
+						widget_inventory_slot = {
+							name = "armory_trinket_8_slot"
+							datacontext = "[Inventory.GetSlot('armory_trinket_8')]"
+							parentanchor = top|hcenter
+							position = { 120 570 }
+						}
+					}
+				}
+				# END ARMORY ARTIFACTS
 
 				## end of tab panels
 				#############################################################
@@ -459,8 +903,8 @@ window = {
 			vbox = {
 				layoutpolicy_horizontal = expanding
 				layoutpolicy_vertical = expanding
-				min_width = 300
-				max_width = 300
+				min_width = 600
+				max_width = 600
 				margin_bottom = 15
 				parentanchor = top|left
 	
@@ -1071,7 +1515,7 @@ window = {
 				
 									text_single = {
 										margin_left = 5
-										text = "MAINTENANCE_ACTIONS"
+										text = "ARTIFACT_MAINTENANCE_ACTIONS"
 										default_format = "#medium"
 									}
 				
@@ -1094,7 +1538,7 @@ window = {
 				
 									text_single = {
 										margin_left = 5
-										text = "DISTRIBUTE_ACTIONS"
+										text = "ARTIFACT_DISTRIBUTE_ACTIONS"
 										default_format = "#medium"
 									}
 				
@@ -1126,7 +1570,7 @@ window = {
 										layoutpolicy_horizontal = expanding
 										text_single = {
 											align = left
-											text = "OPERATIONS_OPTIONS"
+											text = "ARTIFACT_OPERATIONS_OPTIONS"
 										}
 										expand = {}
 									}
@@ -1260,8 +1704,7 @@ window = {
 											onclick = "[GetVariableSystem.Set('repair_selected_artifacts', 'yes')]"
 										}
 										text_single = {
-											#text = "REPAIR_SELECTED_ARTIFACTS_BRIEF"
-											text ="Repair Selected"
+											text = "REPAIR_SELECTED_ARTIFACTS_BRIEF"
 										}
 										expand = {}
 									}								
@@ -1314,8 +1757,7 @@ window = {
 											onclick = "[GetVariableSystem.Set('auction_selected_unused_artifact', 'yes')]"
 										}
 										text_single = {
-											#text = "SELL_SELECTED_UNUSED_ARTIFACTS_BRIEF"
-											text = "Sell Selected"
+											text = "SELL_SELECTED_UNUSED_ARTIFACTS_BRIEF"
 										}
 										expand = {}
 									}
@@ -2263,7 +2705,9 @@ types InventoryViewTypes
 					## UPGRADING AN ARTIFACT ##
 					button_round = {
 						name = "upgrade_qualifying_artifact"
-						visible = "[Artifact.GetOwner.IsLocalPlayer]"
+						datacontext = "[GetScriptedGui('AMX_ArmoryArtifactsAllowed')]"
+						visible = "[And(Artifact.GetOwner.IsLocalPlayer,ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+						#visible = "[Artifact.GetOwner.IsLocalPlayer]"
 						enabled = "[GetScriptedGui('AM_is_upgradeable_artifact').IsShown(GuiScope.SetRoot(Character.MakeScope).AddScope('target', Artifact.MakeScope).End)]"
 
 						size = { 28 28 }
