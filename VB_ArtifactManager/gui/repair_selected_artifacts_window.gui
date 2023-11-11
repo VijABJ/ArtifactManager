@@ -33,7 +33,7 @@ window = {
 
 			blockoverride "header_text"
 			{
-				text = "REPAIR_ALL_ARTIFACTS"
+				text = "REPAIR_SELECTED_ARTIFACTS"
 			}
 
 			blockoverride "button_close"

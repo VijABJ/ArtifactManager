@@ -20,11 +20,12 @@ something you'd like available, and I'll take it down.
 
 ADDED FEATURES:
 [oList]
+[*] Added game rules for stuff.
 [*] Integrated edit artifact description mod.
 [*] Mass distribute artifacts with minimal clicks.
 [*] Repair ALL with one click.
 [*] Sell ALL unused with one click.
-[*] Combine and Upgrade artifacts game rules.  Combine is currently in TODO.
+[*] Combine and Upgrade artifacts game rules.  Combine is now an ongoing task.
 [*] Upgrading artifacts in-place.
 [/oList]
 
@@ -52,6 +53,12 @@ FILTERS for bulk operations are available.  You can filter whom to give it to, a
 [b]Changes Since (reverse chronological)[/b]
 
 [list]
+[*] WIP Combine artifacts.  Not useable yet.
+[*] Filters for repair and selling artifacts.
+[*] Gifting court artifacts now only pick landed targets, except courtiers.
+[*] Added icons for the other artifact types.
+[*] Added artifact owner face at top left.
+[*] Updated for 1.11
 [*] Removed all of Rhox' stuff, replacement code under way. !!THIS WILL PROBABLY BREAK YOUR EXISTING SAVE GAME!!.
 [*] Updated for 1.9.*
 [*] Added more localization entries (Thanks to Alba Vituli for checking these).

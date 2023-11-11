@@ -406,3 +406,83 @@ AM_giveaway_court_artifacts = {
         }
     }
 }
+
+AM_perform_artifact_combination = {
+    scope = character
+
+    effect = {
+        if = {
+            AND = {
+                exists = var:AM_CAP_artifact_primary
+                exists = var:AM_CAP_artifact_secondary
+            }
+
+            var:AM_CAP_artifact_primary = {
+                save_scope_as = this_artifact
+            }
+
+            var:AM_CAP_artifact_secondary = {
+                save_scope_as = that_artifact
+            }
+
+            scope:this_artifact = {
+                hidden_effect = {
+                    copy_artifact_modifiers = scope:that_artifact
+                    if = {
+                        limit = { rarity = illustrious}
+                        root = { remove_short_term_gold = 6500 }
+                    }
+                    else_if = {
+                        limit = { rarity = famed }
+                        root = { remove_short_term_gold = 5000 }
+                        set_artifact_rarity = illustrious
+                    }
+                    else_if = {
+                        limit = { rarity = masterwork }
+                        root = { remove_short_term_gold = 3500 }
+                        set_artifact_rarity = famed
+                    }
+                    else = {
+                        root = { remove_short_term_gold = 2000 }
+                        set_artifact_rarity = masterwork
+                    }
+                }
+            }
+
+            scope:that_artifact = {
+                hidden_effect = {
+                    if = {
+                        limit = { rarity = illustrious}
+                        root = { remove_short_term_gold = 4000 }
+                    }
+                    else_if = {
+                        limit = { rarity = famed }
+                        root = { remove_short_term_gold = 3000 }
+                        set_artifact_rarity = illustrious
+                    }
+                    else_if = {
+                        limit = { rarity = masterwork }
+                        root = { remove_short_term_gold = 2000 }
+                        set_artifact_rarity = famed
+                    }
+                    else = {
+                        root = { remove_short_term_gold = 1000 }
+                        set_artifact_rarity = masterwork
+                    }
+                    destroy_artifact = this
+                }
+            }
+
+            root = {
+                add_character_flag = {
+                    flag = performed_artifact_voodoo
+                    years = 5
+                }
+            }
+            
+            remove_variable = AM_CAP_artifact_primary
+            remove_variable = AM_CAP_artifact_secondary
+        }
+    }
+
+}

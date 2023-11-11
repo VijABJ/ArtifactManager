@@ -1,0 +1,144 @@
+window = {
+	name = "combine_artifacts_window"
+	position = { 0 20 }
+	parentanchor = center
+	layer = frontend
+
+	using = Window_Background
+	using = Window_Decoration_Spike
+
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+		using = Sound_WindowShow_Standard
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+		using = Sound_WindowHide_Standard
+	}
+
+	visible = "[And(GetVariableSystem.HasValue('combine_artifacts_dialog', 'yes'),IsInGame)]"
+    #datacontext = "[GetPlayer.MakeScope.Var('AM_upgrade_op_selected_artifact').Artifact]"
+	vbox = {
+		margin_bottom = 28
+		set_parent_size_to_minimum = yes
+
+		using = Window_Margins
+		using = Window_Background
+
+		header_pattern = {
+			layoutpolicy_horizontal = expanding
+			minimumsize = { 100% 0 }
+
+			blockoverride "header_text"
+			{
+				text = "COMBINE_SELECTED_ARTIFACTS"
+			}
+
+			blockoverride "button_close"
+			{
+				onclick = "[GetVariableSystem.Set('combine_artifacts_dialog', 'no')]"
+                #onclick = "[GetScriptedGui('AM_upgrade_artifact_closed').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+		}
+
+		vbox = {
+			margin_bottom = 5
+			minimumsize = { 500 -1 }
+	
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+	
+			background = {
+				using = Background_Area_With_Header
+			}
+	
+			text_single = {
+				text = "COMBINE_SELECTED_ARTIFACTS_EFFECTS_HEADER"
+				layoutpolicy_horizontal = expanding
+				margin = { 15 4 }
+			}
+	
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 10 0 }
+				margin_top = 2
+				spacing = 2
+	
+				text_multi = {
+					name = "combine_selected_artifacts_notice"
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					autoresize = yes
+					max_width = 450
+					margin_top = 10
+					text = "COMBINE_SELECTED_ARTIFACTS_EFFECTS"
+                    #text = "[Artifact.GetName] is upgraded, requires [gold_i][GetPlayer.MakeScope.Var('AM_combine_op_gold_cost').GetValue|0] [gold|E]."
+				}
+	
+				expand = {}
+			}
+            
+            hbox = {
+                spacing  = 60
+                margin_top = 20
+
+                vbox = {
+                    spacing = 5
+                    layoutpolicy_horizontal = expanding
+
+                    text_label_center = {
+                        text = "COMBINE_PRIMARY_ITEM_LABEL"
+                    }
+
+                    hbox = {
+                        datacontext = "[GetPlayer.MakeScope.Var('AM_CAP_artifact_primary').Artifact]"
+                        widget = {
+                            size = { 80 80 }
+
+                            button_artifact = {}
+
+                            tooltipwidget = {
+                                artifact_tooltip = {}
+                            }
+                        }
+                    }
+                }
+
+                vbox = {
+                    spacing = 5
+                    layoutpolicy_horizontal = expanding
+
+                    text_label_center = {
+                        text = "COMBINE_SECONDARY_ITEM_LABEL"
+                    }
+
+                    hbox = {
+                        datacontext = "[GetPlayer.MakeScope.Var('AM_CAP_artifact_secondary').Artifact]"
+                        widget = {
+                            size = { 80 80 }
+
+                            button_artifact = {}
+
+                            tooltipwidget = {
+                                artifact_tooltip = {}
+                            }
+                        }
+                    }
+                }
+            }
+		}
+
+		expand = { minimumsize = { 0 10 } }
+
+		button_primary_big = {
+			text = "COMBINE_SELECTED_ARTIFACTS_BUTTON_TXT"
+
+			clicksound = "event:/DLC/EP1/SFX/UI/artifact_reforge"
+			onclick = "[GetVariableSystem.Set('combine_artifacts_dialog', 'no')]"
+            onclick = "[GetScriptedGui('AM_perform_artifact_combination').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+		}
+	}
+}

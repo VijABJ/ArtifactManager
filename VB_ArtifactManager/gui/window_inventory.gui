@@ -2095,7 +2095,7 @@ window = {
 										texture = "gfx/interface/icons/flat_icons/duel.dds"
 									}
 									tooltip = "COMBINE_INVENTORY_ARTIFACTS_TT"
-									onclick = "[GetVariableSystem.Set('combine_inventory_artifacts', 'yes')]"
+									onclick = "[GetVariableSystem.Set('combine_artifacts_dialog', 'yes')]"
 								}
 								text_single = {
 									text = "COMBINE_INVENTORY_ARTIFACTS_BRIEF"

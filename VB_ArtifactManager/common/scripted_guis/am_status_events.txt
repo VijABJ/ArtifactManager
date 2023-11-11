@@ -781,6 +781,7 @@ AM_has_picked_combination = {
             exists = var:AM_CAP_artifact_secondary
             exists = var:AM_CAP_artifact_primary
             #all_inventory_artifact_slots  = full
+            root = { NOT = { has_character_flag = performed_artifact_voodoo } }
         }
     }
 
