@@ -750,11 +750,11 @@ AM_is_artifact_combinable_as_primary = {
             employs_court_position = antiquarian_court_position
             court_position:antiquarian_court_position = { aptitude:antiquarian_court_position >= 4  }
             has_game_rule = amx_combine_artifacts_enabled
-            scope:target = {
-                NOT = {
-                    exists = var:historical_unique_artifact
-                }
-            } 
+            #scope:target = {
+            #    NOT = {
+            #        exists = var:historical_unique_artifact
+            #    }
+            #} 
         }
     }
 }
@@ -771,6 +771,20 @@ AM_is_artifact_combinable_as_secondary = {
     }
 }
 
+AM_has_picked_combination = {
+	scope = character
+    is_shown = {
+        AND = {
+            employs_court_position = antiquarian_court_position
+            court_position:antiquarian_court_position = { aptitude:antiquarian_court_position >= 4  }
+            has_game_rule = amx_combine_artifacts_enabled
+            exists = var:AM_CAP_artifact_secondary
+            exists = var:AM_CAP_artifact_primary
+            #all_inventory_artifact_slots  = full
+        }
+    }
+
+}
 
 AMX_DirectUpgradeArtifactsAllowed = {
     scope = character

@@ -66,8 +66,8 @@ window = {
 				layoutpolicy_horizontal = expanding
 				layoutpolicy_vertical = growing
 
-				max_width = 600
-				min_width = 600
+				max_width = 580
+				min_width = 580
 
 				text_label_center = {
 					layoutpolicy_horizontal = expanding
@@ -318,7 +318,7 @@ window = {
 							#fittype = centercrop
 							fittype = fill
 							alpha = 0.6
-							margin_bottom = -50
+							margin_bottom = -80
 							margin_left = -10
 							margin_right = -10
 							margin_top = -60
@@ -458,11 +458,11 @@ window = {
 					widget = {
 
 						background = {
-							texture = "gfx/interface/icons/inventory/vanity_room_background.dds"
+							#texture = "gfx/interface/icons/inventory/vanity_room_background.dds"
 							#fittype = centercrop
 							fittype = fill
 							alpha = 0.6
-							margin_bottom = -50
+							margin_bottom = -80
 							margin_left = -10
 							margin_right = -10
 							margin_top = -60
@@ -597,11 +597,11 @@ window = {
 
 					widget = {
 						background = {
-							texture = "gfx/interface/icons/inventory/artifacts_library_background.dds"
+							#texture = "gfx/interface/icons/inventory/artifacts_library_background.dds"
 							#fittype = centercrop
 							fittype = fill
 							alpha = 0.6
-							margin_bottom = -50
+							margin_bottom = -80
 							margin_left = -10
 							margin_right = -10
 							margin_top = -60
@@ -723,11 +723,11 @@ window = {
 
 					widget = {
 						background = {
-							texture = "gfx/interface/icons/inventory/armory_extras_background.dds"
+							#texture = "gfx/interface/icons/inventory/armory_extras_background.dds"
 							#fittype = centercrop
 							fittype = fill
 							alpha = 0.6
-							margin_bottom = -50
+							margin_bottom = -80
 							margin_left = -10
 							margin_right = -10
 							margin_top = -60
@@ -905,7 +905,9 @@ window = {
 				layoutpolicy_vertical = expanding
 				min_width = 600
 				max_width = 600
-				margin_bottom = 15
+				margin_bottom = 80
+				margin_right = 10
+				margin_left = 10
 				parentanchor = top|left
 	
 				text_label_center = {
@@ -956,7 +958,7 @@ window = {
 									text_single = {
 										min_width = 30
 										align = center
-										text = "[Inventory.GetNumOfArtifactInCategory( 'inventory' )]"
+										text = "[Inventory.GetNumOfArtifacts]"
 									}
 								}
 							}
@@ -1356,6 +1358,7 @@ window = {
 				layoutpolicy_horizontal = expanding
 				layoutpolicy_vertical = expanding
 				min_width = 300
+				margin_right = 20
 
 				hbox = {
 					layoutpolicy_horizontal = expanding
@@ -2837,9 +2840,9 @@ types InventoryViewTypes
 
 					hbox = {
 						datacontext = "[GetScriptedGui('AMX_CombineArtifactsMechanicActive')]"
-						visible = "[ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+						visible = "[And(Artifact.GetOwner.IsLocalPlayer,ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
 						button_round = {
-							name = "combine_op_add_primary"
+							name = "COMBINE_OP_PRIMARY"
 							datacontext = "[GetScriptedGui('AM_is_artifact_combinable_as_primary')]"
 							enabled = "[And(Artifact.GetOwner.IsLocalPlayer,ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
 
@@ -2852,15 +2855,15 @@ types InventoryViewTypes
 							}
 
 							onclick = "[GetScriptedGui('combine_artifacts_set_primary').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('artifact', Artifact.MakeScope).End)]"
-							tooltip = "combine_op_add_primary_tt"
+							tooltip = "COMBINE_OP_PRIMARY_TT"
 						}
 					}
 
 					hbox = {
 						datacontext = "[GetScriptedGui('AMX_CombineArtifactsMechanicActive')]"
-						visible = "[ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+						visible = "[And(Artifact.GetOwner.IsLocalPlayer,ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
 						button_round = {
-							name = "combine_op_add_secondary"
+							name = "COMBINE_OP_SECONDARY"
 							datacontext = "[GetScriptedGui('AM_is_artifact_combinable_as_secondary')]"
 							enabled = "[ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
 							size = { 28 28 }
@@ -2872,7 +2875,7 @@ types InventoryViewTypes
 							}
 
 							onclick = "[GetScriptedGui('combine_artifacts_set_secondary').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('artifact', Artifact.MakeScope).End)]"
-							tooltip = "combine_op_add_secondary_tt"
+							tooltip = "COMBINE_OP_SECONDARY_TT"
 						}
 					}
 				}

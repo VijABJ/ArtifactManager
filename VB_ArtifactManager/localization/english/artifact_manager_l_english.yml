@@ -24,10 +24,15 @@
   ARTIFACT_DISTRIBUTE_ACTIONS:0 "Distribution"
   ARTIFACT_ADVANCED_ACTIONS:0 "Advanced"
   ARTIFACT_OPERATIONS_OPTIONS:0 "Allowed Quality"
+  # Combining artifacts
   COMBINE_PRIMARY_ITEM_LABEL:0 "Primary"
   COMBINE_SECONDARY_ITEM_LABEL:0 "Secondary"
   COMBINE_INVENTORY_ARTIFACTS_BRIEF:0 "Combine secondary item to primary item."
   COMBINE_INVENTORY_ARTIFACTS_TT:0 "Create new artifact using two selected items."
+  COMBINE_OP_PRIMARY:0 "Add as primary artifact for combination operation."
+  COMBINE_OP_PRIMARY_TT:0 "$COMBINE_OP_PRIMARY$"
+  COMBINE_OP_SECONDARY:0 "Add as secondary artifact for combination operation."
+  COMBINE_OP_SECONDARY_TT:0 "$COMBINE_OP_SECONDARY$"
     # inventory screen
   REPAIR_ALL_ARTIFACTS:0 "Repair all artifacts"
   REPAIR_ALL_ARTIFACTS_BRIEF:0 "Repair all"
@@ -40,11 +45,17 @@
   # sell unused dialog
   AUCTION_UNUSED_ARTIFACTS_EFFECT_HEADER:0 "Effects"
   AUCTION_UNUSED_ARTIFACTS_EFFECTS:0 "Unused artifacts will be traded for gold."
-  AUCTION_UNUSED_ARTIFACTS_BUTTON_TXT:0 "Trade away the unused artifacts"
+  AUCTION_UNUSED_ARTIFACTS_BUTTON_TXT:0 "Trade away the unused artifacts."
+  AUCTION_SELECTED_UNUSED_ARTIFACTS_EFFECT_HEADER:0 "Effects"
+  AUCTION_SELECTED_UNUSED_ARTIFACTS_EFFECTS:0 "Unused selected artifacts will be traded for gold."
+  AUCTION_SELECTED_UNUSED_ARTIFACTS_BUTTON_TXT:0 "Trade away the selected unused artifacts."
   # repair all dialog
   REPAIR_ALL_ARTIFACTS_EFFECT_HEADER:0 "Effects"
-  REPAIR_ALL_ARTIFACTS_EFFECTS:0 "All artifacts will be repaired, for gold cost (this might take you to negative gold)"
-  REPAIR_ALL_ARTIFACTS_BUTTON_TXT:0 "Perform the bulk repair"
+  REPAIR_ALL_ARTIFACTS_EFFECTS:0 "All artifacts will be repaired, for gold cost (this might take you to negative gold)."
+  REPAIR_ALL_ARTIFACTS_BUTTON_TXT:0 "Repair all artifacts."
+  REPAIR_SELECTED_ARTIFACTS_EFFECT_HEADER:0 "Effects"
+  REPAIR_SELECTED_ARTIFACTS_EFFECTS:0 "All selected artifacts will be repaired, for gold cost (this might take you to negative gold)."
+  REPAIR_SELECTED_ARTIFACTS_BUTTON_TXT:0 "Repair the selected artifacts."
 
   # gifting
   GIFT_INVENTORY_ARTIFACTS:0 "Give away all unused inventory artifacts"
