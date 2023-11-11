@@ -1545,6 +1545,32 @@ window = {
 									expand = {}
 								}
 							}
+
+							button_tab = {
+								name = "advanced_actions_tab"
+								size = { 120 30 }
+								min_width = 80
+								layoutpolicy_horizontal = expanding
+
+								datacontext = "[GetScriptedGui('AMX_CombineArtifactsMechanicActive')]"
+								visible = "[ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								onclick = "[GetVariableSystem.Set( 'operations_panel_active', 'advanced_actions_tab' )]"
+								down = "[GetVariableSystem.HasValue( 'operations_panel_active', 'advanced_actions_tab' )]"
+				
+								hbox = {
+				
+									expand = {}
+				
+									text_single = {
+										margin_left = 5
+										text = "ARTIFACT_ADVANCED_ACTIONS"
+										default_format = "#medium"
+									}
+				
+									expand = {}
+								}
+							}
+
 						}
 
 						# operations panel
@@ -1762,7 +1788,6 @@ window = {
 										expand = {}
 									}
 
-
 									expand = {}
 								}
 							}
@@ -1799,6 +1824,7 @@ window = {
 
 							hbox = {
 								spacing = 5
+								margin_bottom = 20
 								button_round = {
 									name = "gift_court_artifacts"
 									size = { 35 35 }
@@ -1821,7 +1847,7 @@ window = {
 								layoutpolicy_horizontal = expanding
 							}
 
-							text_single = {
+							text_label_center = {
 								text = "RECEIVER_OPTIONS"
 							}
 
@@ -1867,6 +1893,7 @@ window = {
 
 							hbox = {
 								spacing = 5
+								margin_bottom = 20
 
 								button_checkbox_label = {
 									name = "gift_option_vassals"
@@ -1927,7 +1954,7 @@ window = {
 								layoutpolicy_horizontal = expanding
 							}
 
-							text_single = {
+							text_label_center = {
 								text = "GIFTING_OPTIONS"
 							}
 
@@ -1989,10 +2016,92 @@ window = {
 								}
 
 							}
-
+							expand = {}
 						}
 
 
+						vbox = {
+							layoutpolicy_horizontal = expanding
+							layoutpolicy_vertical = expanding
+							parentanchor = top|left
+							min_width = 300
+							visible = "[GetVariableSystem.HasValue( 'operations_panel_active', 'advanced_actions_tab' )]"
+
+							hbox = {
+								spacing  = 60
+								margin_top = 20
+
+								vbox = {
+									spacing = 5
+									layoutpolicy_horizontal = expanding
+
+									text_label_center = {
+										text = "COMBINE_PRIMARY_ITEM_LABEL"
+									}
+
+
+									hbox = {
+										datacontext = "[GetPlayer.MakeScope.Var('AM_CAP_artifact_primary').Artifact]"
+										widget = {
+											size = { 80 80 }
+
+											button_artifact = {}
+
+											tooltipwidget = {
+												artifact_tooltip = {}
+											}
+										}
+									}
+								}
+
+								vbox = {
+									spacing = 5
+									layoutpolicy_horizontal = expanding
+
+									text_label_center = {
+										text = "COMBINE_SECONDARY_ITEM_LABEL"
+									}
+
+									hbox = {
+										datacontext = "[GetPlayer.MakeScope.Var('AM_CAP_artifact_secondary').Artifact]"
+										widget = {
+											size = { 80 80 }
+
+											button_artifact = {}
+
+											tooltipwidget = {
+												artifact_tooltip = {}
+											}
+										}
+									}
+								}
+							}
+
+							hbox = {
+								spacing = 5
+								margin_top = 20
+								button_round = {
+									name = "combine_inventory_artifacts"
+									size = { 35 35 }
+									visible = "[Artifact.GetOwner.IsLocalPlayer]"
+									enabled = "[GetScriptedGui('AM_has_picked_combination').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+
+									button_icon_highlight = {
+										size = { 30 30 }
+										parentanchor = center
+										texture = "gfx/interface/icons/flat_icons/duel.dds"
+									}
+									tooltip = "COMBINE_INVENTORY_ARTIFACTS_TT"
+									onclick = "[GetVariableSystem.Set('combine_inventory_artifacts', 'yes')]"
+								}
+								text_single = {
+									text = "COMBINE_INVENTORY_ARTIFACTS_BRIEF"
+								}
+							}
+
+							expand = {}
+
+						}
 
 					}
 					# end of the tabs
@@ -2705,9 +2814,8 @@ types InventoryViewTypes
 					## UPGRADING AN ARTIFACT ##
 					button_round = {
 						name = "upgrade_qualifying_artifact"
-						datacontext = "[GetScriptedGui('AMX_ArmoryArtifactsAllowed')]"
+						datacontext = "[GetScriptedGui('AMX_DirectUpgradeArtifactsAllowed')]"
 						visible = "[And(Artifact.GetOwner.IsLocalPlayer,ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
-						#visible = "[Artifact.GetOwner.IsLocalPlayer]"
 						enabled = "[GetScriptedGui('AM_is_upgradeable_artifact').IsShown(GuiScope.SetRoot(Character.MakeScope).AddScope('target', Artifact.MakeScope).End)]"
 
 						size = { 28 28 }
@@ -2725,6 +2833,47 @@ types InventoryViewTypes
 						onclick = "[GetScriptedGui('AM_upgrade_artifact_set_id').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('artifact', Artifact.MakeScope).End)]"
 
 						tooltip = "UPGRADE_THIS_ARTIFACT_TT"
+					}
+
+					hbox = {
+						datacontext = "[GetScriptedGui('AMX_CombineArtifactsMechanicActive')]"
+						visible = "[ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+						button_round = {
+							name = "combine_op_add_primary"
+							datacontext = "[GetScriptedGui('AM_is_artifact_combinable_as_primary')]"
+							enabled = "[And(Artifact.GetOwner.IsLocalPlayer,ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+
+							size = { 28 28 }
+
+							button_icon_highlight = {
+								parentanchor = center
+								size = { 20 20 }
+								texture = "gfx/interface/icons/flat_icons/paste.dds"
+							}
+
+							onclick = "[GetScriptedGui('combine_artifacts_set_primary').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('artifact', Artifact.MakeScope).End)]"
+							tooltip = "combine_op_add_primary_tt"
+						}
+					}
+
+					hbox = {
+						datacontext = "[GetScriptedGui('AMX_CombineArtifactsMechanicActive')]"
+						visible = "[ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+						button_round = {
+							name = "combine_op_add_secondary"
+							datacontext = "[GetScriptedGui('AM_is_artifact_combinable_as_secondary')]"
+							enabled = "[ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+							size = { 28 28 }
+
+							button_icon_highlight = {
+								parentanchor = center
+								size = { 20 20 }
+								texture = "gfx/interface/icons/flat_icons/plus.dds"
+							}
+
+							onclick = "[GetScriptedGui('combine_artifacts_set_secondary').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('artifact', Artifact.MakeScope).End)]"
+							tooltip = "combine_op_add_secondary_tt"
+						}
 					}
 				}
 			}

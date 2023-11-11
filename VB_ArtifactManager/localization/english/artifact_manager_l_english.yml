@@ -1,4 +1,5 @@
 ﻿l_english:
+  SELECT_ARTIFACT_PANEL:0 "Select Artifact Panel"
   PERSONAL_ARTIFACTS_TAB_TITLE:0 "Equipped Artifacts"
   COURT_ARTIFACTS_TAB_TITLE:0 "Royal Court"
   BACKROOM_ARTIFACTS_TAB_TITLE:0 "Backroom Storage"
@@ -21,7 +22,12 @@
   # Batch op tabs
   ARTIFACT_MAINTENANCE_ACTIONS:0 "Maintenance"
   ARTIFACT_DISTRIBUTE_ACTIONS:0 "Distribution"
+  ARTIFACT_ADVANCED_ACTIONS:0 "Advanced"
   ARTIFACT_OPERATIONS_OPTIONS:0 "Allowed Quality"
+  COMBINE_PRIMARY_ITEM_LABEL:0 "Primary"
+  COMBINE_SECONDARY_ITEM_LABEL:0 "Secondary"
+  COMBINE_INVENTORY_ARTIFACTS_BRIEF:0 "Combine secondary item to primary item."
+  COMBINE_INVENTORY_ARTIFACTS_TT:0 "Create new artifact using two selected items."
     # inventory screen
   REPAIR_ALL_ARTIFACTS:0 "Repair all artifacts"
   REPAIR_ALL_ARTIFACTS_BRIEF:0 "Repair all"

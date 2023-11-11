@@ -742,6 +742,36 @@ AMX_CombineArtifactsMechanicActive = {
     }
 }
 
+AM_is_artifact_combinable_as_primary = {
+	scope = character
+	saved_scope = { target }
+    is_shown = {
+        AND = {
+            employs_court_position = antiquarian_court_position
+            court_position:antiquarian_court_position = { aptitude:antiquarian_court_position >= 4  }
+            has_game_rule = amx_combine_artifacts_enabled
+            scope:target = {
+                NOT = {
+                    exists = var:historical_unique_artifact
+                }
+            } 
+        }
+    }
+}
+
+AM_is_artifact_combinable_as_secondary = {
+	scope = character
+	saved_scope = { target }
+    is_shown = {
+        AND = {
+            employs_court_position = antiquarian_court_position
+            court_position:antiquarian_court_position = { aptitude:antiquarian_court_position >= 4  }
+            has_game_rule = amx_combine_artifacts_enabled
+        }
+    }
+}
+
+
 AMX_DirectUpgradeArtifactsAllowed = {
     scope = character
 

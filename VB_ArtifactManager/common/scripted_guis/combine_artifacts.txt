@@ -1,0 +1,39 @@
+combine_artifacts_set_primary = {
+	scope = character
+	saved_scopes = { artifact }
+	is_shown = { always = yes }
+	effect = {
+        if = {
+            limit = {
+                scope:artifact = {
+                    NOT = {
+                        exists = var:historical_unique_artifact
+                    }
+                }
+            }
+        }
+
+		remove_variable = AM_CAP_artifact_primary
+		set_variable = {
+			name = AM_CAP_artifact_primary
+			months = 3
+			value = scope:artifact
+		}
+	}
+}
+
+combine_artifacts_set_secondary = {
+	scope = character
+	saved_scopes = { artifact }
+	is_shown = { always = yes }
+	effect = {
+		remove_variable = AM_CAP_artifact_secondary
+
+		set_variable = {
+			name = AM_CAP_artifact_secondary
+			months = 3
+			value = scope:artifact
+		}
+	}
+}
+
