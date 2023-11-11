@@ -115,6 +115,7 @@ am_option_toggle_receiver_courtiers = {
 
 
 ###################################################
+# gifting options
 
 am_option_toggle_illustrious = {
     scope = character
@@ -133,9 +134,8 @@ am_option_toggle_illustrious = {
             set_global_variable = am_option_illustrious
         }
         else = {
-            remove_global_variable  =  am_option_illustrious
+            remove_global_variable = am_option_illustrious
         }
-
     }
 }
 
@@ -184,3 +184,95 @@ am_option_toggle_masterwork = {
 
     }
 }
+
+###################################################
+# action options
+
+am_option_toggle_operation_illustrious = {
+    scope = character
+    is_shown = {
+        NOT = {
+            has_global_variable = am_option_operation_illustrious
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_option_operation_illustrious
+                }
+            }
+            set_global_variable = am_option_operation_illustrious
+        }
+        else = {
+            remove_global_variable = am_option_operation_illustrious
+        }
+    }
+}
+
+am_option_toggle_operation_famed = {
+    scope = character
+    is_shown = {
+        NOT = {
+            has_global_variable = am_option_operation_famed
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_option_operation_famed
+                }
+            }
+            set_global_variable = am_option_operation_famed
+        }
+        else = {
+            remove_global_variable = am_option_operation_famed
+        }
+    }
+}
+
+am_option_toggle_operation_masterwork = {
+    scope = character
+    is_shown = {
+        NOT = {
+            has_global_variable = am_option_operation_masterwork
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_option_operation_masterwork
+                }
+            }
+            set_global_variable = am_option_operation_masterwork
+        }
+        else = {
+            remove_global_variable = am_option_operation_masterwork
+        }
+    }
+}
+
+am_option_toggle_operation_common = {
+    scope = character
+    is_shown = {
+        NOT = {
+            has_global_variable = am_option_operation_common
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_option_operation_common
+                }
+            }
+            set_global_variable = am_option_operation_common
+        }
+        else = {
+            remove_global_variable = am_option_operation_common
+        }
+    }
+}
+

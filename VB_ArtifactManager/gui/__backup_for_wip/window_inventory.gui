@@ -15,13 +15,10 @@ window = {
 	state = {
 		name = _show
 		using = Animation_FadeIn_Standard
-		# Vanilla Vars
 		on_start = "[GetVariableSystem.Clear( 'court_artifacts' )]"
 		on_start = "[GetVariableSystem.Clear( 'claims' )]"
-		# Modded Vars
 		on_start = "[GetVariableSystem.Set( 'artifacts_active_tab', 'personal_artifacts_tab' )]"
 		on_start = "[GetVariableSystem.Set( 'operations_active_tab', 'tab_operations_list' )]"
-		on_start = "[GetVariableSystem.Set( 'operations_panel_active', 'maintenance_actions_tab' )]"
 	}
 
 	state = {
@@ -30,19 +27,11 @@ window = {
 		on_finish = "[AccessLocalPlayerCachedData.AccessNewArtifacts.ClearNewArtifactsOfCategory( 'inventory' )]"
 	}
 
-	## covers the whole window
 	vbox = {
 		using = Window_Margins
 
-		# top banner, just contains "Inventory"
 		header_pattern = {
 			layoutpolicy_horizontal = expanding
-
-			## show the portrait of the owner.
-			portrait_shoulders = {
-				position = { -10 -100 }
-				allow_outside = yes
-			}		
 
 			blockoverride "header_text"
 			{
@@ -54,30 +43,18 @@ window = {
 				onclick = "[InventoryView.Close]"
 			}
 		}
-		# end of top banner
 
-		## rest of the window not covered by the banner
+		
 		hbox = {
 			layoutpolicy_horizontal = expanding
-			layoutpolicy_vertical = expanding
+			layoutpolicy_vertical = growing
 
-			### artifact display panels
+			# area that will contain the artifact tabs
 			vbox = {
 				layoutpolicy_horizontal = expanding
 				layoutpolicy_vertical = growing
-
-				max_width = 600
-				min_width = 600
-
-				text_label_center = {
-					layoutpolicy_horizontal = expanding
-					align = center|nobaseline
-					text = "SELECT_ARTIFACT_PANEL"
-					margin = { 0 2 }
-					max_width = 400
-				}
-
-				# the tabs buttons go here
+	
+				# the tabs go here
 				hbox = {
 					name = "tabs"
 					layoutpolicy_horizontal = expanding
@@ -132,63 +109,8 @@ window = {
 						}
 					}
 
-					button_tab = {
-						name = "vanity_artifacts_tab"
-						size = { 120 50 }
-						min_width = 120
-						layoutpolicy_horizontal = expanding
-		
-						datacontext = "[GetScriptedGui('AMX_VanityArtifactsAllowed')]"
-						visible = "[ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-						onclick = "[GetVariableSystem.Set( 'artifacts_active_tab', 'vanity_artifacts_tab' )]"
-						down = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'vanity_artifacts_tab' )]"
-		
-						hbox = {
-		
-							expand = {}
-		
-							text_single = {
-								margin_left = 5
-								text = "VANITY_ARTIFACTS_TAB_TITLE"
-								default_format = "#high"
-							}
-		
-							expand = {}
-		
-						}
-					}
-
-					button_tab = {
-						name = "library_artifacts_tab"
-						size = { 120 50 }
-						min_width = 120
-						layoutpolicy_horizontal = expanding
-		
-						datacontext = "[GetScriptedGui('AMX_LibraryArtifactsAllowed')]"
-						visible = "[ScriptedGui.IsShown(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-						onclick = "[GetVariableSystem.Set( 'artifacts_active_tab', 'library_artifacts_tab' )]"
-						down = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'library_artifacts_tab' )]"
-		
-						hbox = {
-		
-							expand = {}
-		
-							text_single = {
-								margin_left = 5
-								text = "LIBRARY_ARTIFACTS_TAB_TITLE"
-								default_format = "#high"
-							}
-		
-							expand = {}
-		
-						}
-					}
-
 				}
-				#end of tabs buttons
-
-				#############################################################
-				## actual tab panels follows
+				#end of tabs
 
 				# PERSONAL ARTIFACTS DISPLAY
 				hbox = {
@@ -196,7 +118,6 @@ window = {
 					layoutpolicy_vertical = expanding
 					parentanchor = top|left
 					min_width = 300
-					margin_top = 50
 					visible = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'personal_artifacts_tab' )]"
 
 					widget = {
@@ -204,7 +125,6 @@ window = {
 						layoutpolicy_horizontal = expanding
 						layoutpolicy_vertical = expanding
 						size = { 510 0 }
-
 		
 						background = {
 							texture = "gfx/interface/icons/inventory/character_paperdoll.dds"
@@ -227,14 +147,14 @@ window = {
 							name = "regalia_slot"
 							datacontext = "[Inventory.GetSlot('regalia')]"
 							parentanchor = vcenter|right
-							position = { -50 -50 }
+							position = { 0 -50 }
 						}
 		
 						widget_inventory_slot = {
 							name = "weapon_slot"
 							datacontext = "[Inventory.GetSlot('weapon')]"
 							parentanchor = vcenter|left
-							position = { 50 -50 }
+							position = { 0 -50 }
 						}
 
 						widget_inventory_slot = {
@@ -278,6 +198,7 @@ window = {
 								position = { 185 0 }
 							}
 						}
+	
 					}
 				}
 				# END PERSONAL ARTIFACTS
@@ -291,18 +212,6 @@ window = {
 
 					###FARLEFT SIDE Show Displayed Court Artifacts
 					widget = { 
-
-						background = {
-							texture = "gfx/interface/icons/inventory/court_artifact_background.dds"
-							#fittype = centercrop
-							fittype = fill
-							alpha = 0.6
-							margin_bottom = -50
-							margin_left = -10
-							margin_right = -10
-							margin_top = -60
-						}
-
 						name = "farleft side"
 						layoutpolicy_horizontal = expanding
 						layoutpolicy_vertical = expanding
@@ -315,163 +224,126 @@ window = {
 							position = { 0 80 }
 						}
 
-						# left side wall ornamens
-						widget_inventory_slot = {
-							name = "wall_small_1_slot"
-							datacontext = "[Inventory.GetSlot('wall_small_1')]"
-							parentanchor = vcenter|left
-							position = { 30 -250 }
-						}
-						
-						widget_inventory_slot = {
-							name = "wall_small_2_slot"
-							datacontext = "[Inventory.GetSlot('wall_small_2')]"
-							parentanchor = vcenter|left
-							position = { 15 -110 }
-						}
-						
-						widget_inventory_slot = {
-							name = "wall_small_3_slot"
-							datacontext = "[Inventory.GetSlot('wall_small_3')]"
-							parentanchor = vcenter|left
-							position = { 0 20 }
-						}
-
-						# right side wall ornaments
 						widget_inventory_slot = {
 							name = "wall_big_1_slot"
 							datacontext = "[Inventory.GetSlot('wall_big_1')]"
 							parentanchor = vcenter|right
-							position = { -30 -250 }
+							position = { -10 -123 }
 						}
 						
 						widget_inventory_slot = {
 							name = "wall_big_2_slot"
 							datacontext = "[Inventory.GetSlot('wall_big_2')]"
 							parentanchor = vcenter|right
-							position = { -20 -110 }
+							position = { -10 0 }
 						}
 						
 						widget_inventory_slot = {
 							name = "wall_big_3_slot"
 							datacontext = "[Inventory.GetSlot('wall_big_3')]"
 							parentanchor = vcenter|right
-							position = { 0 20 }
+							position = { -10 123 }
 						}
 						
-						# pedestal things
+						widget_inventory_slot = {
+							name = "wall_small_1_slot"
+							datacontext = "[Inventory.GetSlot('wall_small_1')]"
+							parentanchor = vcenter|left
+							position = { 10 -123 }
+						}
+						
+						widget_inventory_slot = {
+							name = "wall_small_2_slot"
+							datacontext = "[Inventory.GetSlot('wall_small_2')]"
+							parentanchor = vcenter|left
+							position = { 10 0 }
+						}
+						
+						widget_inventory_slot = {
+							name = "wall_small_3_slot"
+							datacontext = "[Inventory.GetSlot('wall_small_3')]"
+							parentanchor = vcenter|left
+							position = { 10 123 }
+						}
+
 						widget = { #Pedestal Buttons
 							name = "pedestal_widget_position"
 							parentanchor = center
-							position = { -62 -60 }
+							position = { -62 -100 }
 							allow_outside = yes
 							
 							widget_inventory_slot = {
 								name = "pedestal_1_slot"
 								datacontext = "[Inventory.GetSlot('pedestal_1')]"
 								parentanchor = center
-								position = { -30 -30 }
+								position = { 0 0 }
 							}
 							
 							widget_inventory_slot = {
 								name = "pedestal_2_slot"
 								datacontext = "[Inventory.GetSlot('pedestal_2')]"
 								parentanchor = center
-								position = { 150 -30 }
+								position = { 123 0 }
 							}
 							
 							widget_inventory_slot = {
 								name = "pedestal_3_slot"
 								datacontext = "[Inventory.GetSlot('pedestal_3')]"
 								parentanchor = center
-								position = { -40 100 }
+								position = { 0 123 }
 							}
 							
 							widget_inventory_slot = {
 								name = "pedestal_4_slot"
 								datacontext = "[Inventory.GetSlot('pedestal_4')]"
 								parentanchor = center
-								position = { 160 100 }
+								position = { 123 123 }
 							}
-						}
-
-						widget_inventory_slot = {
-							name = "sculpture_1_slot"
-							datacontext = "[Inventory.GetSlot('sculpture_1')]"
-							parentanchor = bottom|hcenter
-							position = { -220 -140 }
-						}
-
-						widget_inventory_slot = {
-							name = "sculpture_2_slot"
-							datacontext = "[Inventory.GetSlot('sculpture_2')]"
-							parentanchor = bottom|hcenter
-							position = { 220 -140 }
 						}
 
 						widget_inventory_slot = {
 							name = "lectern_1_slot"
 							datacontext = "[Inventory.GetSlot('lectern_1')]"
 							parentanchor = bottom|hcenter
-							position = { -100 -124 }
+							position = { -62 -124 }
 						}
 
 						widget_inventory_slot = {
 							name = "lectern_2_slot"
 							datacontext = "[Inventory.GetSlot('lectern_2')]"
 							parentanchor = bottom|hcenter
-							position = { 100 -124 }
+							position = { 62 -124 }
 						}
 						
+						widget_inventory_slot = {
+							name = "sculpture_1_slot"
+							datacontext = "[Inventory.GetSlot('sculpture_1')]"
+							parentanchor = bottom|hcenter
+							position = { -92 0 }
+						}
+
+						widget_inventory_slot = {
+							name = "sculpture_2_slot"
+							datacontext = "[Inventory.GetSlot('sculpture_2')]"
+							parentanchor = bottom|hcenter
+							position = { 92 0 }
+						}
 					}
+
+
 				}
 				# END COURT ARTIFACTS
 
-				# VANITY ARTIFACTS DISPLAY
-				hbox = {
-					layoutpolicy_horizontal = expanding
-					layoutpolicy_vertical = expanding
-					parentanchor = top|left
-					visible = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'vanity_artifacts_tab' )]"
+			}
 
-				}
-				# END VANITY ARTIFACTS
-
-				# LIBRARY ARTIFACTS DISPLAY
-				hbox = {
-					layoutpolicy_horizontal = expanding
-					layoutpolicy_vertical = expanding
-					parentanchor = top|left
-					visible = "[GetVariableSystem.HasValue( 'artifacts_active_tab', 'library_artifacts_tab' )]"
-
-				}
-				# END LIBRARY ARTIFACTS
-
-
-				## end of tab panels
-				#############################################################
-
-				expand = {}
-			}			
-			### end of artifact panels
-
-			### the listings area
+			# the listings area
 			vbox = {
 				layoutpolicy_horizontal = expanding
 				layoutpolicy_vertical = expanding
-				min_width = 300
+				min_width = 150
 				max_width = 300
-				margin_bottom = 15
 				parentanchor = top|left
 	
-				text_label_center = {
-					layoutpolicy_horizontal = expanding
-					align = center|nobaseline
-					text = "SELECT_ARTIFACT"
-					margin = { 0 2 }
-					max_width = 300
-				}
-
 				vbox = {
 					name = "right_side"
 					layoutpolicy_vertical = expanding
@@ -484,6 +356,14 @@ window = {
 						visible = "[And( Not( VariableSystem.Exists( 'claims' ) ), Not( VariableSystem.Exists( 'court_artifacts' ) ) )]"
 						layoutpolicy_horizontal = expanding
 						margin_bottom = 5
+	
+						text_label_center = {
+							layoutpolicy_horizontal = expanding
+							align = center|nobaseline
+							text = "SELECT_ARTIFACT"
+							margin = { 0 2 }
+							max_width = 440
+						}
 	
 						hbox = {
 							name = "artifact_slot_tabs"
@@ -512,7 +392,7 @@ window = {
 									text_single = {
 										min_width = 30
 										align = center
-										text = "[Inventory.GetNumOfArtifactInCategory( 'inventory' )]"
+										text = "[Inventory.GetNumOfArtifacts ]"
 									}
 								}
 							}
@@ -905,13 +785,13 @@ window = {
 				}
 	
 			}
-			### the listings area
+			# the listings area
 
-			### the antiquarian area
+			# the antiquarian area
 			vbox = {
 				layoutpolicy_horizontal = expanding
 				layoutpolicy_vertical = expanding
-				min_width = 300
+				min_width = 400
 
 				hbox = {
 					layoutpolicy_horizontal = expanding
@@ -1014,8 +894,6 @@ window = {
 								}
 							}
 
-							# DECISIONS, DECISIONS.
-
 							button_decision_entry = {
 								name = "commission_decision"
 								datacontext = "[GetDecisionWithKey('commission_artifact_decision')]"
@@ -1025,8 +903,6 @@ window = {
 								onclick = "[OpenGameViewData( 'decision_detail', Decision.Self )]"
 							}
 
-							# END OF DECISIONS
-
 						}
 					}
 				}
@@ -1035,7 +911,6 @@ window = {
 					layoutpolicy_horizontal = expanding
 					parentanchor = top|left
 					visible = "[Character.IsLocalPlayer]"
-					margin_top = 30
 
 					text_label_center = {
 						layoutpolicy_horizontal = expanding
@@ -1045,516 +920,135 @@ window = {
 						max_width = 440
 					}
 
-					# the tabs
 					vbox = {
 						layoutpolicy_horizontal = expanding
 						#layoutpolicy_vertical = expanding
 						parentanchor = top|left
-						min_width = 300
+						min_width = 350
 
 						hbox = {
-							name = "artifact_actions_options_tabs"
-							layoutpolicy_horizontal = expanding
-
-							button_tab = {
-								name = "maintenance_actions_tab"
-								size = { 120 30 }
-								min_width = 80
-								layoutpolicy_horizontal = expanding
-
-								onclick = "[GetVariableSystem.Set( 'operations_panel_active', 'maintenance_actions_tab' )]"
-								down = "[GetVariableSystem.HasValue( 'operations_panel_active', 'maintenance_actions_tab' )]"
-				
-								hbox = {
-				
-									expand = {}
-				
-									text_single = {
-										margin_left = 5
-										text = "MAINTENANCE_ACTIONS"
-										default_format = "#medium"
-									}
-				
-									expand = {}
-								}
-							}
-
-							button_tab = {
-								name = "distribute_actions_tab"
-								size = { 120 30 }
-								min_width = 80
-								layoutpolicy_horizontal = expanding
-
-								onclick = "[GetVariableSystem.Set( 'operations_panel_active', 'distribute_actions_tab' )]"
-								down = "[GetVariableSystem.HasValue( 'operations_panel_active', 'distribute_actions_tab' )]"
-				
-								hbox = {
-				
-									expand = {}
-				
-									text_single = {
-										margin_left = 5
-										text = "DISTRIBUTE_ACTIONS"
-										default_format = "#medium"
-									}
-				
-									expand = {}
-								}
-							}
-						}
-
-						# operations panel
-						vbox = {
-							layoutpolicy_horizontal = expanding
-							layoutpolicy_vertical = expanding
-							parentanchor = top|left
-							min_width = 300
-							visible = "[GetVariableSystem.HasValue( 'operations_panel_active', 'maintenance_actions_tab' )]"
-
-							hbox = {
-								layoutpolicy_horizontal = expanding
-								layoutpolicy_vertical = expanding
-
-								vbox = {
-									layoutpolicy_horizontal = expanding
-									layoutpolicy_vertical = expanding
-									spacing = 5
-									margin_top = 20
-									margin_left = 20
-
-									hbox = {
-										layoutpolicy_horizontal = expanding
-										text_single = {
-											align = left
-											text = "OPERATIONS_OPTIONS"
-										}
-										expand = {}
-									}
-
-									button_checkbox_label = {
-										name = "artifact_operation_illustrious"
-										layoutpolicy_horizontal = expanding
-				
-										datacontext = "[GetScriptedGui('am_option_toggle_operation_illustrious')]"
-										onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-				
-										blockoverride "checkbox"
-										{
-											checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-										}
-				
-										blockoverride "text"
-										{
-											text = "OPTION_ILLUSTRIOUS"
-										}
-									}
-
-									button_checkbox_label = {
-										name = "artifact_operation_famed"
-										layoutpolicy_horizontal = expanding
-				
-										datacontext = "[GetScriptedGui('am_option_toggle_operation_famed')]"
-										onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-				
-										blockoverride "checkbox"
-										{
-											checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-										}
-				
-										blockoverride "text"
-										{
-											text = "OPTION_FAMED"
-										}
-									}
-
-									button_checkbox_label = {
-										name = "artifact_operation_masterwork"
-										layoutpolicy_horizontal = expanding
-				
-										datacontext = "[GetScriptedGui('am_option_toggle_operation_masterwork')]"
-										onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-				
-										blockoverride "checkbox"
-										{
-											checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-										}
-				
-										blockoverride "text"
-										{
-											text = "OPTION_MASTERWORK"
-										}
-									}
-
-									button_checkbox_label = {
-										name = "artifact_operation_common"
-										layoutpolicy_horizontal = expanding
-				
-										datacontext = "[GetScriptedGui('am_option_toggle_operation_common')]"
-										onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-				
-										blockoverride "checkbox"
-										{
-											checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-										}
-				
-										blockoverride "text"
-										{
-											text = "OPTION_COMMON"
-										}
-									}
-
-									expand = {}
-								}
-
-								vbox = {
-									layoutpolicy_horizontal = expanding
-									layoutpolicy_vertical = expanding
-									spacing = 5
-									margin_top = 15
-
-									hbox = {
-										spacing = 5
-										layoutpolicy_horizontal = expanding
-										
-										button_round = {
-											name = "repair_all"
-											size = { 35 35 }
-											visible = "[Artifact.GetOwner.IsLocalPlayer]"
-											enabled = "[GetScriptedGui('AM_has_repairables').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
-											button_icon_highlight = {
-												size = { 30 30 }
-												parentanchor = center
-												texture = "gfx/interface/icons/flat_icons/reforge.dds"
-											}
-											tooltip = "REPAIR_ALL_ARTIFACTS"
-											onclick = "[GetVariableSystem.Set('repair_all_artifacts', 'yes')]"
-										}
-										text_single = {
-											text = "REPAIR_ALL_ARTIFACTS_BRIEF"
-										}
-										expand = {}
-									}								
-
-									hbox = {
-										spacing = 5
-										layoutpolicy_horizontal = expanding
-										
-										button_round = {
-											name = "repair_selected"
-											size = { 35 35 }
-											visible = "[Artifact.GetOwner.IsLocalPlayer]"
-											enabled = "[GetScriptedGui('AM_has_selected_repairables').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
-
-											button_icon_highlight = {
-												size = { 30 30 }
-												parentanchor = center
-												texture = "gfx/interface/icons/flat_icons/dots.dds"
-											}
-											button_icon_highlight = {
-												size = { 25 25 }
-												position = { 5 3 }
-												parentanchor = topcenter
-												texture = "gfx/interface/icons/flat_icons/reforge.dds"
-											}
-											tooltip = "REPAIR_SELECTED_ARTIFACTS"
-											onclick = "[GetVariableSystem.Set('repair_selected_artifacts', 'yes')]"
-										}
-										text_single = {
-											#text = "REPAIR_SELECTED_ARTIFACTS_BRIEF"
-											text ="Repair Selected"
-										}
-										expand = {}
-									}								
-
-									hbox = {
-										spacing = 5
-										layoutpolicy_horizontal = expanding
-
-										button_round = {
-											name = "sell_all_unused"
-											size = { 35 35 }
-											visible = "[Artifact.GetOwner.IsLocalPlayer]"
-											enabled = "[GetScriptedGui('AM_has_unused_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
-											button_icon_highlight = {
-												size = { 30 30 }
-												parentanchor = center
-												texture = "gfx/interface/icons/flat_icons/prison_ransom.dds"
-											}
-											tooltip = "SELL_ALL_UNUSED_ARTIFACTS"
-											onclick = "[GetVariableSystem.Set('auction_unused_artifact', 'yes')]"
-										}
-										text_single = {
-											text = "SELL_ALL_UNUSED_ARTIFACTS_BRIEF"
-										}
-										expand = {}
-									}
-
-									hbox = {
-										spacing = 5
-										layoutpolicy_horizontal = expanding
-
-										button_round = {
-											name = "sell_selected_unused"
-											size = { 35 35 }
-											visible = "[Artifact.GetOwner.IsLocalPlayer]"
-											enabled = "[GetScriptedGui('AM_has_selected_unused_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
-
-											button_icon_highlight = {
-												size = { 30 30 }
-												parentanchor = center
-												texture = "gfx/interface/icons/flat_icons/dots.dds"
-											}
-											button_icon_highlight = {
-												size = { 25 25 }
-												position = { 0 -5 }
-												parentanchor = center
-												texture = "gfx/interface/icons/flat_icons/prison_ransom.dds"
-											}
-											tooltip = "SELL_SELECTED_UNUSED_ARTIFACTS"
-											onclick = "[GetVariableSystem.Set('auction_selected_unused_artifact', 'yes')]"
-										}
-										text_single = {
-											#text = "SELL_SELECTED_UNUSED_ARTIFACTS_BRIEF"
-											text = "Sell Selected"
-										}
-										expand = {}
-									}
-
-
-									expand = {}
-								}
-							}
-						}
-
-						vbox = {
-							layoutpolicy_horizontal = expanding
-							layoutpolicy_vertical = expanding
-							parentanchor = top|left
-							min_width = 300
-							margin_top = 20
-							visible = "[GetVariableSystem.HasValue( 'operations_panel_active', 'distribute_actions_tab' )]"
-
+							spacing = 10
 							hbox = {
 								spacing = 5
+								
 								button_round = {
-									name = "gift_inventory_artifacts"
+									name = "repair_all"
 									size = { 35 35 }
 									visible = "[Artifact.GetOwner.IsLocalPlayer]"
-									enabled = "[GetScriptedGui('AM_has_unused_inventory_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
-
+									enabled = "[GetScriptedGui('AM_has_repairables').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
 									button_icon_highlight = {
 										size = { 30 30 }
 										parentanchor = center
-										texture = "gfx/interface/icons/flat_icons/duel.dds"
+										texture = "gfx/interface/icons/flat_icons/reforge.dds"
 									}
-									tooltip = "GIFT_INVENTORY_ARTIFACTS"
-									onclick = "[GetVariableSystem.Set('giveaway_inventory_artifacts', 'yes')]"
+									tooltip = "REPAIR_ALL_ARTIFACTS"
+									onclick = "[GetVariableSystem.Set('repair_all_artifacts', 'yes')]"
 								}
 								text_single = {
-									text = "GIFT_INVENTORY_ARTIFACTS_BRIEF"
+									text = "REPAIR_ALL_ARTIFACTS_BRIEF"
 								}
-							}
-
+							}								
 							hbox = {
 								spacing = 5
 								button_round = {
-									name = "gift_court_artifacts"
+									name = "sell_all_unused"
 									size = { 35 35 }
 									visible = "[Artifact.GetOwner.IsLocalPlayer]"
-									enabled = "[GetScriptedGui('AM_has_unused_court_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+									enabled = "[GetScriptedGui('AM_has_unused_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
 									button_icon_highlight = {
 										size = { 30 30 }
 										parentanchor = center
-										texture = "gfx/interface/icons/flat_icons/royal_court.dds"
+										texture = "gfx/interface/icons/flat_icons/prison_ransom.dds"
 									}
-									tooltip = "GIFT_COURT_ARTIFACTS"
-									onclick = "[GetVariableSystem.Set('giveaway_court_artifacts', 'yes')]"
+									tooltip = "SELL_ALL_UNUSED_ARTIFACTS"
+									onclick = "[GetVariableSystem.Set('auction_unused_artifact', 'yes')]"
 								}
 								text_single = {
-									text = "GIFT_COURT_ARTIFACTS_BRIEF"
+									text = "SELL_ALL_UNUSED_ARTIFACTS_BRIEF"
 								}
 							}
-
-							divider_light = {
-								layoutpolicy_horizontal = expanding
-							}
-
-							text_single = {
-								text = "RECEIVER_OPTIONS"
-							}
-
-							hbox = {
-								spacing = 5
-
-								button_checkbox_label = {
-									name = "gift_option_close_family"
-									layoutpolicy_horizontal = expanding
-
-									datacontext = "[GetScriptedGui('am_option_toggle_receiver_close_family')]"
-									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-			
-									blockoverride "checkbox"
-									{
-										checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-									}
-			
-									blockoverride "text"
-									{
-										text = "RECEIVER_CLOSE_FAMILY"
-									}
-								}
-
-								button_checkbox_label = {
-									name = "gift_option_extended_family"
-									layoutpolicy_horizontal = expanding
-			
-									datacontext = "[GetScriptedGui('am_option_toggle_receiver_extended_family')]"
-									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-			
-									blockoverride "checkbox"
-									{
-										checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-									}
-			
-									blockoverride "text"
-									{
-										text = "RECEIVER_EXTENDED_FAMILY"
-									}
-								}
-							}
-
-							hbox = {
-								spacing = 5
-
-								button_checkbox_label = {
-									name = "gift_option_vassals"
-									layoutpolicy_horizontal = expanding
-			
-									datacontext = "[GetScriptedGui('am_option_toggle_receiver_vassals')]"
-									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-			
-									blockoverride "checkbox"
-									{
-										checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-									}
-			
-									blockoverride "text"
-									{
-										text = "RECEIVER_VASSALS"
-									}
-								}
-
-								button_checkbox_label = {
-									name = "gift_option_knights"
-									layoutpolicy_horizontal = expanding
-			
-									datacontext = "[GetScriptedGui('am_option_toggle_receiver_knights')]"
-									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-			
-									blockoverride "checkbox"
-									{
-										checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-									}
-			
-									blockoverride "text"
-									{
-										text = "RECEIVER_KNIGHTS"
-									}
-								}
-
-								button_checkbox_label = {
-									name = "gift_option_courtiers"
-									layoutpolicy_horizontal = expanding
-			
-									datacontext = "[GetScriptedGui('am_option_toggle_receiver_courtiers')]"
-									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-			
-									blockoverride "checkbox"
-									{
-										checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-									}
-			
-									blockoverride "text"
-									{
-										text = "RECEIVER_COURTIERS"
-									}
-								}
-							}
-
-							divider_light = {
-								layoutpolicy_horizontal = expanding
-							}
-
-							text_single = {
-								text = "GIFTING_OPTIONS"
-							}
-
-							hbox = {
-								spacing = 5
-
-								button_checkbox_label = {
-									name = "gift_available_illustrious"
-									layoutpolicy_horizontal = expanding
-			
-									datacontext = "[GetScriptedGui('am_option_toggle_illustrious')]"
-									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-			
-									blockoverride "checkbox"
-									{
-										checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-									}
-			
-									blockoverride "text"
-									{
-										text = "OPTION_ILLUSTRIOUS"
-									}
-								}
-
-								button_checkbox_label = {
-									name = "gift_available_famed"
-									layoutpolicy_horizontal = expanding
-			
-									datacontext = "[GetScriptedGui('am_option_toggle_famed')]"
-									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-			
-									blockoverride "checkbox"
-									{
-										checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-									}
-			
-									blockoverride "text"
-									{
-										text = "OPTION_FAMED"
-									}
-								}
-
-								button_checkbox_label = {
-									name = "gift_available_masterwork"
-									layoutpolicy_horizontal = expanding
-			
-									datacontext = "[GetScriptedGui('am_option_toggle_masterwork')]"
-									onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-			
-									blockoverride "checkbox"
-									{
-										checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-									}
-			
-									blockoverride "text"
-									{
-										text = "OPTION_MASTERWORK"
-									}
-								}
-
-							}
-
 						}
 
+						hbox = {
+							spacing = 5
+							button_round = {
+								name = "gift_inventory_artifacts"
+								size = { 35 35 }
+								visible = "[Artifact.GetOwner.IsLocalPlayer]"
+								enabled = "[GetScriptedGui('AM_has_unused_inventory_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
 
+								button_icon_highlight = {
+									size = { 30 30 }
+									parentanchor = center
+									texture = "gfx/interface/icons/flat_icons/duel.dds"
+								}
+								tooltip = "GIFT_INVENTORY_ARTIFACTS"
+								onclick = "[GetVariableSystem.Set('giveaway_inventory_artifacts', 'yes')]"
+							}
+							text_single = {
+								text = "GIFT_INVENTORY_ARTIFACTS_BRIEF"
+							}
+						}
+
+						hbox = {
+							spacing = 5
+							button_round = {
+								name = "gift_court_artifacts"
+								size = { 35 35 }
+								visible = "[Artifact.GetOwner.IsLocalPlayer]"
+								enabled = "[GetScriptedGui('AM_has_unused_court_artifacts').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
+								button_icon_highlight = {
+									size = { 30 30 }
+									parentanchor = center
+									texture = "gfx/interface/icons/flat_icons/royal_court.dds"
+								}
+								tooltip = "GIFT_COURT_ARTIFACTS"
+								onclick = "[GetVariableSystem.Set('giveaway_court_artifacts', 'yes')]"
+							}
+							text_single = {
+								text = "GIFT_COURT_ARTIFACTS_BRIEF"
+							}
+						}
+
+						hbox = {
+							spacing = 5
+							visible = "[GetVariableSystem.HasValue( 'operations_active_tab', 'tab_operations_list' )]"
+							button_round = {
+								name = "option_toggle_show"
+								size = { 35 35 }
+								button_icon_highlight = {
+									size = { 30 30 }
+									parentanchor = center
+									texture = "gfx/interface/icons/flat_icons/dots.dds"
+								}
+								onclick = "[GetVariableSystem.Set( 'operations_active_tab', 'tab_operations_options' )]"
+							}
+
+							text_single = {
+								text = "SHOW_ADVANCED_OPTIONS"
+							}
+						}
+
+						hbox = {
+							spacing = 5
+							visible = "[GetVariableSystem.HasValue( 'operations_active_tab', 'tab_operations_options' )]"
+							button_round = {
+								name = "option_toggle_hide"
+								size = { 35 35 }
+								button_icon_highlight = {
+									size = { 30 30 }
+									parentanchor = center
+									texture = "gfx/interface/icons/flat_icons/cancel.dds"
+								}
+								onclick = "[GetVariableSystem.Set( 'operations_active_tab', 'tab_operations_list' )]"
+							}
+
+							text_single = {
+								text = "HIDE_ADVANCED_OPTIONS"
+							}
+						}
 
 					}
-					# end of the tabs
-
 
 					vbox = {
 						layoutpolicy_horizontal = expanding
@@ -1562,7 +1056,182 @@ window = {
 						parentanchor = top|left
 						min_width = 350
 						spacing = 5
+						visible = "[GetVariableSystem.HasValue( 'operations_active_tab', 'tab_operations_options' )]"
 
+						divider_light = {
+							layoutpolicy_horizontal = expanding
+						}
+
+						text_single = {
+							text = "RECEIVER_OPTIONS"
+						}
+
+						hbox = {
+							spacing = 5
+
+							button_checkbox_label = {
+								name = "gift_option_close_family"
+								layoutpolicy_horizontal = expanding
+
+								datacontext = "[GetScriptedGui('am_option_toggle_receiver_close_family')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "RECEIVER_CLOSE_FAMILY"
+								}
+							}
+
+							button_checkbox_label = {
+								name = "gift_option_extended_family"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_receiver_extended_family')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "RECEIVER_EXTENDED_FAMILY"
+								}
+							}
+
+
+						}
+
+						hbox = {
+							spacing = 5
+
+							button_checkbox_label = {
+								name = "gift_option_vassals"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_receiver_vassals')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "RECEIVER_VASSALS"
+								}
+							}
+
+							button_checkbox_label = {
+								name = "gift_option_knights"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_receiver_knights')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "RECEIVER_KNIGHTS"
+								}
+							}
+
+							button_checkbox_label = {
+								name = "gift_option_courtiers"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_receiver_courtiers')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "RECEIVER_COURTIERS"
+								}
+							}
+						}
+
+						divider_light = {
+							layoutpolicy_horizontal = expanding
+						}
+
+						text_single = {
+							text = "GIFTING_OPTIONS"
+						}
+
+						hbox = {
+							spacing = 5
+
+							button_checkbox_label = {
+								name = "gift_available_illustrious"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_illustrious')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "OPTION_ILLUSTRIOUS"
+								}
+							}
+
+							button_checkbox_label = {
+								name = "gift_available_famed"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_famed')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "OPTION_FAMED"
+								}
+							}
+
+							button_checkbox_label = {
+								name = "gift_available_masterwork"
+								layoutpolicy_horizontal = expanding
+		
+								datacontext = "[GetScriptedGui('am_option_toggle_masterwork')]"
+								onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+		
+								blockoverride "checkbox"
+								{
+									checked = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+								}
+		
+								blockoverride "text"
+								{
+									text = "OPTION_MASTERWORK"
+								}
+							}
+
+						}
 
 					}
 
@@ -1570,16 +1239,10 @@ window = {
 
 				expand = {}
 			}
-			### end of antiquarian area
-
-
-			expand = {}
+			#end of antiquarian area
 
 		}
-		## rest of the window not covered by the banner
-
 	}
-	## end of full window vbox
 }
 
 types InventoryViewTypes

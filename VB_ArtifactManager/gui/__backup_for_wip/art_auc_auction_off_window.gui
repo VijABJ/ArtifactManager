@@ -1,0 +1,175 @@
+window = {
+	name = "auction_off_artifact_window"
+	position = { 0 20 }
+	parentanchor = center
+	layer = frontend
+
+	using = Window_Background
+	using = Window_Decoration_Spike
+
+	state = {
+		name = _show
+		using = Animation_FadeIn_Quick
+		using = Sound_WindowShow_Standard
+	}
+
+	state = {
+		name = _hide
+		using = Animation_FadeOut_Quick
+		using = Sound_WindowHide_Standard
+	}
+
+	visible = "[And(GetVariableSystem.HasValue('window_auction_artifact', 'yes'),IsInGame)]"
+	datacontext = "[GetPlayer.MakeScope.Var('art_auct_selected_artifact').Artifact]"
+	vbox = {
+		margin_bottom = 28
+		set_parent_size_to_minimum = yes
+
+		using = Window_Margins
+		using = Window_Background
+
+		header_pattern = {
+			layoutpolicy_horizontal = expanding
+			minimumsize = { 100% 0 }
+
+			blockoverride "header_text"
+			{
+				text = "AUCTION_OFF_ARTIFACT"
+			}
+
+			blockoverride "button_close"
+			{
+				onclick = "[GetVariableSystem.Set('window_auction_artifact', 'no')]"
+				onclick = "[GetScriptedGui('art_auct_close_window').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+			}
+		}
+
+		vbox = {
+			margin_bottom = 5
+			minimumsize = { 500 -1 }
+	
+			layoutpolicy_horizontal = expanding
+			layoutpolicy_vertical = expanding
+	
+			background = {
+				using = Background_Area_With_Header
+			}
+	
+			text_single = {
+				text = "AUCTION_OFF_ARTIFACT_EFFECT_HEADER"
+				layoutpolicy_horizontal = expanding
+				margin = { 15 4 }
+			}
+	
+			vbox = {
+				layoutpolicy_horizontal = expanding
+				margin = { 10 0 }
+				margin_top = 2
+				spacing = 2
+	
+				text_multi = {
+					visible = "[Not(GreaterThan_CFixedPoint(GetPlayer.MakeScope.Var('art_auct_selected_artifact_piety_value').GetValue,'(CFixedPoint)0'))]"
+					name = "effects_info"
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					autoresize = yes
+					max_width = 450
+					margin_top = 10
+					text = "AUCTION_OFF_ARTIFACT_EFFECTS"
+				}
+	
+				text_multi = {
+					visible = "[GreaterThan_CFixedPoint(GetPlayer.MakeScope.Var('art_auct_selected_artifact_piety_value').GetValue,'(CFixedPoint)0')]"
+					name = "effects_info_piety"
+					layoutpolicy_horizontal = expanding
+					layoutpolicy_vertical = expanding
+					autoresize = yes
+					max_width = 450
+					text = "AUCTION_OFF_ARTIFACT_EFFECTS_ICONOCLAST"
+				}
+	
+				expand = {}
+			}
+	
+			vbox = {
+				name = "artifact_icon"
+				margin_right = 6
+				margin_bottom = 4
+				spacing = 4
+
+				widget = {
+					size = { 80 80 }
+
+					button_artifact = {}
+
+					tooltipwidget = {
+						artifact_tooltip = {}
+					}
+				}
+			}
+		}
+
+		expand = { minimumsize = { 0 10 } }
+
+		button_primary_big = {
+			text = "AUCTION_OFF_ARTIFACT_BUTTON_TXT"
+
+			clicksound = "event:/DLC/EP1/SFX/UI/inventory_artifact_place"
+			#clicksound = "event:/DLC/EP1/SFX/UI/artifact_reforge"
+			onclick = "[GetVariableSystem.Set('window_auction_artifact', 'no')]"
+			onclick = "[GetScriptedGui('art_auct_sell_artifact').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('artifact_to_destroy', Artifact.MakeScope).End)]"
+		}
+	}
+}
+
+types art_auc_types {
+	type art_auc_btn_simple = button_round {
+		visible = "[Artifact.GetOwner.IsLocalPlayer]"
+		name = "auction_off"
+		size = { 28 28 }
+
+		button_icon_highlight = {
+			parentanchor = center
+			size = { 25 25 }
+			texture = "gfx/interface/icons/flat_icons/prison_ransom.dds"
+		}
+
+		onclick = "[GetVariableSystem.Set('window_auction_artifact', 'yes')]"
+		onclick = "[GetScriptedGui('art_auct_set_artifact_id').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('artifact', Artifact.MakeScope).End)]"
+		tooltip = "AUCTION_OFF_ARTIFACT_TT"
+	}
+
+	type art_auc_btn_w_text = hbox {
+		visible = "[Artifact.GetOwner.IsLocalPlayer]"
+		layoutpolicy_horizontal = expanding
+
+		hbox = {
+			spacing = 5
+
+			button_round = {
+				name = "auction_off"
+				size = { 30 30 }
+
+				button_icon_highlight = {
+					parentanchor = center
+					size = { 20 20 }
+					texture = "gfx/interface/icons/flat_icons/prison_ransom.dds"
+				}
+
+				onclick = "[GetVariableSystem.Set('window_auction_artifact', 'yes')]"
+				onclick = "[GetScriptedGui('art_auct_set_artifact_id').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).AddScope('artifact', Artifact.MakeScope).End)]"
+				tooltip = "AUCTION_OFF_ARTIFACT_TT"
+			}
+
+			text_single = {
+				text = "AUCTION_OFF_ARTIFACT"
+				max_width = 200
+				align = nobaseline
+			}
+
+			expand = {}
+		}
+
+		expand = {}
+	}
+}
