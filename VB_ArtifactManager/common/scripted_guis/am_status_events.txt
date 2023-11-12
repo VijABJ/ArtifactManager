@@ -784,7 +784,6 @@ AM_has_picked_combination = {
             root = { NOT = { has_character_flag = performed_artifact_voodoo } }
         }
     }
-
 }
 
 AMX_DirectUpgradeArtifactsAllowed = {
@@ -818,3 +817,130 @@ AMX_ArmoryArtifactsAllowed = {
         has_game_rule = amx_armory_artifacts_enabled
     }
 }
+
+AM_can_interact_with_artifact = {
+	scope = character
+	saved_scope = { target }
+    is_shown = { 
+        OR = {
+            ##  if it's already equipped, it's ok to have it enabled
+            scope:target = { is_equipped = yes }
+            ##
+            ## weapons/armor items has extra slots when Armory is enabled
+            ##
+            AND = {
+                scope:target = { artifact_slot_type = primary_armament }
+                OR  = {
+                    NOT  = { any_equipped_character_artifact = { artifact_slot_type = primary_armament } }
+                    has_game_rule = amx_armory_artifacts_enabled  
+                }
+            }
+            AND = {
+                scope:target = { artifact_slot_type = armor }
+                OR  = {
+                    NOT  = { any_equipped_character_artifact = { artifact_slot_type = armor } }
+                    has_game_rule = amx_armory_artifacts_enabled  
+                }
+            }
+            AND = {
+                scope:target = { artifact_slot_type = helmet }
+                OR  = {
+                    NOT  = { any_equipped_character_artifact = { artifact_slot_type = helmet } }
+                    has_game_rule = amx_armory_artifacts_enabled  
+                }
+            }
+            AND = {
+                scope:target = { artifact_slot_type = regalia } 
+                OR  = {
+                    NOT  = { any_equipped_character_artifact = { artifact_slot_type = regalia } }
+                    has_game_rule = amx_armory_artifacts_enabled  
+                }
+            }
+            AND = {
+                scope:target = { artifact_slot_type = miscellaneous }
+                OR  = {
+                    any_equipped_character_artifact = { 
+                        count < 4
+                        artifact_slot_type = miscellaneous 
+                    } 
+                    has_game_rule = amx_armory_artifacts_enabled  
+                }
+            }
+            ##
+            ## court artifacts are impacted a bit more...
+            ##
+            AND = {
+                scope:target = { category = court }
+                root = { has_royal_court = yes }
+                OR = {
+                    scope:target = { artifact_slot_type = throne } # no extra thrones, so this should always be true if true :)
+                    OR = {
+                        scope:target = { artifact_slot_type = wall_big }
+                        OR = {
+                            any_equipped_character_artifact = { 
+                                count < 3
+                                artifact_slot_type = wall_big 
+                            } 
+                            OR = {
+                                has_game_rule = amx_vanity_artifacts_enabled  
+                                has_game_rule = amx_armory_artifacts_enabled  
+                            }
+                        }
+                    }
+                    OR = {
+                        scope:target = { artifact_slot_type = wall_small }
+                        OR = {
+                            any_equipped_character_artifact = { 
+                                count < 3
+                                artifact_slot_type = wall_small 
+                            } 
+                            OR = {
+                                has_game_rule = amx_vanity_artifacts_enabled  
+                                has_game_rule = amx_library_artifacts_enabled  
+                            }
+                        }
+                    }
+                    OR = {
+                        scope:target = { artifact_slot_type = sculpture }
+                        OR = {
+                            any_equipped_character_artifact = { 
+                                count < 2
+                                artifact_slot_type = sculpture 
+                            } 
+                            OR = {
+                                has_game_rule = amx_vanity_artifacts_enabled  
+                                has_game_rule = amx_library_artifacts_enabled  
+                                has_game_rule = amx_armory_artifacts_enabled  
+                            }
+                        }
+                    }
+                    OR = {
+                        scope:target = { artifact_slot_type = book }
+                        OR = {
+                            any_equipped_character_artifact = { 
+                                count < 2
+                                artifact_slot_type = book 
+                            } 
+                            OR = {
+                                has_game_rule = amx_library_artifacts_enabled  
+                            }
+                        }
+                    }
+                    OR = {
+                        scope:target = { artifact_slot_type = pedestal }
+                        OR = {
+                            any_equipped_character_artifact = { 
+                                count < 2
+                                artifact_slot_type = pedestal 
+                            } 
+                            OR = {
+                                has_game_rule = amx_vanity_artifacts_enabled  
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

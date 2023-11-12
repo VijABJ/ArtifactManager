@@ -18,6 +18,8 @@ All of the content are their authors' property, and I was just trying to
 reduce the clutter in my mod list, and my UI.  Ping me if this isn't 
 something you'd like available, and I'll take it down.
 
+Note:  All the extra features are disabled in the game rules by default.
+
 ADDED FEATURES:
 [oList]
 [*] Added game rules for stuff.
@@ -25,7 +27,7 @@ ADDED FEATURES:
 [*] Mass distribute artifacts with minimal clicks.
 [*] Repair ALL with one click.
 [*] Sell ALL unused with one click.
-[*] Combine and Upgrade artifacts game rules.  Combine is now an ongoing task.
+[*] Combine and Upgrade artifacts game rules. 
 [*] Upgrading artifacts in-place.
 [/oList]
 
@@ -39,21 +41,50 @@ else with already maxed out modifiers.  The upgrade cost depends on what rarity 
 [*] Common = 5000g
 [/oList]
 
-I'll be working to add mechanics to combine artifacts, and I'm open to suggestions.
+[h2]Combining Artifacts[/h2]
 
-TODO:
-[list]
-[*] Add combining artifacts replacement.
-[*] More balancing of upgrading options/costs.
-[/list]
+Combining artifacts is now a thing.  There's an extra tab, and two extra buttons.  In order to use it,
+you need to do the following:
+[oList]
+[*] Select a primary artifact.
+[*] Select a secondary artifact that's not also the primary.  
+[*] Go to the advanced actions, and you should have another button.
+[*] Click and lose lots of gold!
+[/oList]
+
+Now for the cost, which would need feedback.  The cost scales on the quality
+of both artifacts individually.  The resulting artifact will be the the next
+quality up OF THE PRIMARY artifact!  This might be an important detail since
+the cost are different depending.  Here're the current values:
+
+Cost scale of primary:
+[oList]
+[*] Illustrious = 6500g
+[*] Famed = 5000g
+[*] Masterwork = 3500g
+[*] Common = 2000g
+[/oList]
+
+Cost scale of secondary:
+[oList]
+[*] Illustrious = 4000g
+[*] Famed = 3000g
+[*] Masterwork = 2000g
+[*] Common = 1000g
+[/oList]
+
+And yes, these two values are added together!  Watch out!  Furthermore, you can
+only do this once every 5 years.  Might make that a game rule as well.  Open
+to suggestions.
 
 FILTERS for bulk operations are available.  You can filter whom to give it to, and what quality to give.
 (IGNORE the Dynasty option -- didn't work and was replaced with Close Family option instead)
 
-[b]Changes Since (reverse chronological)[/b]
+
+[h2]Changes Since (reverse chronological)[h2]
 
 [list]
-[*] WIP Combine artifacts.  Not useable yet.
+[*] Working version of combine artifacts.
 [*] Filters for repair and selling artifacts.
 [*] Gifting court artifacts now only pick landed targets, except courtiers.
 [*] Added icons for the other artifact types.

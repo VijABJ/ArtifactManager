@@ -458,7 +458,7 @@ window = {
 					widget = {
 
 						background = {
-							#texture = "gfx/interface/icons/inventory/vanity_room_background.dds"
+							texture = "gfx/interface/icons/inventory/vanity_room_background.dds"
 							#fittype = centercrop
 							fittype = fill
 							alpha = 0.6
@@ -597,7 +597,7 @@ window = {
 
 					widget = {
 						background = {
-							#texture = "gfx/interface/icons/inventory/artifacts_library_background.dds"
+							texture = "gfx/interface/icons/inventory/artifacts_library_background.dds"
 							#fittype = centercrop
 							fittype = fill
 							alpha = 0.6
@@ -723,7 +723,7 @@ window = {
 
 					widget = {
 						background = {
-							#texture = "gfx/interface/icons/inventory/armory_extras_background.dds"
+							texture = "gfx/interface/icons/inventory/armory_extras_background.dds"
 							#fittype = centercrop
 							fittype = fill
 							alpha = 0.6
@@ -1277,7 +1277,9 @@ window = {
 										{
 											onclick = "[InventoryView.OnClickArtifact( Artifact.Self )]"
 											#enable interact for court artifact only for character with a royal court
-											enabled = "[And( InventoryView.GetCharacter.IsLocalPlayer, Or( Artifact.IsInventoryArtifact, Character.HasRoyalCourt ) )]"
+											datacontext = "[GetScriptedGui('AM_can_interact_with_artifact')]"
+											enabled = "[And( And( InventoryView.GetCharacter.IsLocalPlayer, Or( Artifact.IsInventoryArtifact, Character.HasRoyalCourt ) ), GetScriptedGui('AM_can_interact_with_artifact').IsShown(GuiScope.SetRoot(Character.MakeScope).AddScope('target', Artifact.MakeScope).End))]"
+											#enabled = "[And( InventoryView.GetCharacter.IsLocalPlayer, Or( Artifact.IsInventoryArtifact, Character.HasRoyalCourt ) )]"
 											down = "[Inventory.IsEquipped( Artifact.Self )]"
 										}
 	
@@ -1330,7 +1332,9 @@ window = {
 										{
 											onclick = "[InventoryView.OnClickArtifact( Artifact.Self )]"
 											#enable interact for court artifact only for character with a royal court
-											enabled = "[And( InventoryView.GetCharacter.IsLocalPlayer, Or( Artifact.IsInventoryArtifact, Character.HasRoyalCourt ) )]"
+											datacontext = "[GetScriptedGui('AM_can_interact_with_artifact')]"
+											enabled = no
+											enabled = "[And( And( InventoryView.GetCharacter.IsLocalPlayer, Or( Artifact.IsInventoryArtifact, Character.HasRoyalCourt ) ), GetScriptedGui('AM_can_interact_with_artifact').IsShown(GuiScope.SetRoot(Character.MakeScope).AddScope('target', Artifact.MakeScope).End))]"
 											down = "[Inventory.IsEquipped( Artifact.Self )]"
 										}
 	
@@ -1683,7 +1687,7 @@ window = {
 									layoutpolicy_horizontal = expanding
 									layoutpolicy_vertical = expanding
 									spacing = 5
-									margin_top = 15
+									margin_top = 35
 
 									hbox = {
 										spacing = 5
@@ -2041,7 +2045,6 @@ window = {
 									text_label_center = {
 										text = "COMBINE_PRIMARY_ITEM_LABEL"
 									}
-
 
 									hbox = {
 										datacontext = "[GetPlayer.MakeScope.Var('AM_CAP_artifact_primary').Artifact]"
