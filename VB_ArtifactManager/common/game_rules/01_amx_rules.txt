@@ -1,9 +1,19 @@
-# combine artifacts mechanics
+﻿# combine artifacts mechanics
 amx_combine_artifacts = {
     default = amx_combine_artifacts_disabled
 
     amx_combine_artifacts_enabled = {}
     amx_combine_artifacts_disabled = {}
+}
+
+amx_combine_artifacts_cooldown = {
+    default = amx_combine_artifacts_cooldown_5years
+
+    amx_combine_artifacts_cooldown_none = {}
+    amx_combine_artifacts_cooldown_1year = {}
+    amx_combine_artifacts_cooldown_3years = {}
+    amx_combine_artifacts_cooldown_5years = {}
+    amx_combine_artifacts_cooldown_lifetime = {}
 }
 
 # upgrade decision, which is a bit of a hack at the moment

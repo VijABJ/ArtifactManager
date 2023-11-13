@@ -9,6 +9,7 @@
   ARMORY_ARTIFACTS_TAB_TITLE:0 "Armory"
   # options checkboxes
   COMPACT_VIEW_OPTION:0 "Compact View"
+  COMPACT_VIEW_OPTION_TT:0 "Toggle Artifact Compact View"
   KEEP_OPEN_ON_DISTRO_OPTION_TT:0 "Close inventory window when distributing artifact"
   KEEP_OPEN_ON_DISTRO_OPTION:0 "Keep open on distribute"
   # distribute artifact event strings
@@ -126,6 +127,20 @@
   setting_amx_combine_artifacts_enabled_desc:0 "Mechanics for combining artifacts will be enabled."
   setting_amx_combine_artifacts_disabled:0 "Disable"
   setting_amx_combine_artifacts_disabled_desc:0 "Mechanics for combining artifacts will be disabled."
+
+  # gamerule - cooldown for combine artifacts
+  rule_amx_combine_artifacts_cooldown:0 "#G AMX: #! Combine Cooldown"
+  rule_amx_combine_artifacts_cooldown_desc:0 "Select how long between allowed combine artifacts operations."
+  setting_amx_combine_artifacts_cooldown_none:0 "No cooldown"
+  setting_amx_combine_artifacts_cooldown_none_desc:0 "Can combine artifacts all the time, anytime."
+  setting_amx_combine_artifacts_cooldown_1year:0 "Once a year"
+  setting_amx_combine_artifacts_cooldown_1year_desc:0 "Can combine artifacts once a year."
+  setting_amx_combine_artifacts_cooldown_3years:0 "Every 3 years"
+  setting_amx_combine_artifacts_cooldown_3years_desc:0 "Can combine artifacts every three years."
+  setting_amx_combine_artifacts_cooldown_5years:0 "Every 5 years"
+  setting_amx_combine_artifacts_cooldown_5years_desc:0 "Can combine artifacts every five years."
+  setting_amx_combine_artifacts_cooldown_lifetime:0 "Once in a lifetime"
+  setting_amx_combine_artifacts_cooldown_lifetime_desc:0 "Can combine artifacts only once in a character's lifetime."
 
   # gamerule - toggle artifact upgrading
   rule_amx_direct_upgrade_artifact:0 "#G AMX: #! Directly Upgrading Artifacts"

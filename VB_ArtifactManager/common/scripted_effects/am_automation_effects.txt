@@ -32,8 +32,6 @@ auto_repair = {
                 }
 			}
 			save_scope_as = this_artifact
-
-            #### add repair code here ####
 			if = { 
 				limit ={
 					exists = artifact_market_value
@@ -92,7 +90,6 @@ auto_vendor = {
                 }
 			}
 			save_scope_as = this_artifact
-            # gold
 			if = { 
 				limit ={
 					exists = artifact_market_value
@@ -102,7 +99,6 @@ auto_vendor = {
 						value = scope:this_artifact.artifact_market_value
 					}
 				}
-				destroy_artifact = scope:this_artifact
 			}
 			else = {
 				root = {
@@ -111,8 +107,8 @@ auto_vendor = {
 						multiply = 3.5
 					}
 				}
-				destroy_artifact = scope:this_artifact
 			}
+            destroy_artifact = scope:this_artifact
         }
     }
 }

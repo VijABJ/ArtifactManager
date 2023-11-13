@@ -1,5 +1,0 @@
-gui/auction_unused_artifact_window.gui = auction_unused_artifact_window
-gui/repair_all_artifacts_window.gui = repair_all_artifacts_window
-gui/giveaway_inventory_artifacts_window.gui=giveaway_inventory_artifacts_window
-gui/giveaway_court_artifacts_window.gui=giveaway_court_artifacts_window
-gui/upgrade_artifact_window.gui=upgrade_artifact_window

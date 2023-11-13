@@ -28,6 +28,7 @@ window = {
 		name = _hide
 		using = Animation_FadeOut_Standard
 		on_finish = "[AccessLocalPlayerCachedData.AccessNewArtifacts.ClearNewArtifactsOfCategory( 'inventory' )]"
+		on_finish = "[AccessLocalPlayerCachedData.AccessNewArtifacts.ClearNewArtifactsOfCategory( 'court' )]"
 	}
 
 	## covers the whole window
@@ -1017,7 +1018,7 @@ window = {
 							layoutpolicy_horizontal = expanding
 	
 							onclick = "[VariableSystem.Toggle( 'artifact_compact_view' )]"
-							tooltip = "Toggle Artifact Compact View"
+							tooltip = "COMPACT_VIEW_OPTION_TT"
 	
 							blockoverride "checkbox"
 							{
@@ -1284,7 +1285,6 @@ window = {
 											onclick = "[InventoryView.OnClickArtifact( Artifact.Self )]"
 											#enable interact for court artifact only for character with a royal court
 											datacontext = "[GetScriptedGui('AM_can_interact_with_artifact')]"
-											enabled = no
 											enabled = "[And( And( InventoryView.GetCharacter.IsLocalPlayer, Or( Artifact.IsInventoryArtifact, Character.HasRoyalCourt ) ), GetScriptedGui('AM_can_interact_with_artifact').IsShown(GuiScope.SetRoot(Character.MakeScope).AddScope('target', Artifact.MakeScope).End))]"
 											down = "[Inventory.IsEquipped( Artifact.Self )]"
 										}
@@ -1683,7 +1683,7 @@ window = {
 											button_icon_highlight = {
 												size = { 25 25 }
 												position = { 5 3 }
-												parentanchor = left|topcenter
+												parentanchor = left|vcenter
 												texture = "gfx/interface/icons/flat_icons/reforge.dds"
 											}
 										}
@@ -1729,7 +1729,7 @@ window = {
 											button_icon_highlight = {
 												size = { 25 25 }
 												position = { 5 3 }
-												parentanchor = left|topcenter
+												parentanchor = left|vcenter
 												texture = "gfx/interface/icons/flat_icons/prison_ransom.dds"
 											}
 										}
@@ -2688,7 +2688,7 @@ types InventoryViewTypes
 			spriteborder = { 20 20 }
 
 			icon =  {
-				texture = "[Illustration.GetTextureForCulture( Artifact.GetCulture )]"
+				texture = "[Illustration.GetTexture( Artifact.GetCulture.MakeScope )]"
 				spriteType = Corneredtiled
 				size = { 100% 15% }
 				color = "[Artifact.GetRarityColor]"
@@ -2697,7 +2697,7 @@ types InventoryViewTypes
 			}
 
 			icon =  {
-				texture = "[Illustration.GetTextureForCulture( Artifact.GetCulture )]"
+				texture = "[Illustration.GetTexture( Artifact.GetCulture.MakeScope )]"
 				spriteType = Corneredtiled
 				size = { 100% 15% }
 				color = "[Artifact.GetRarityColor]"
@@ -3111,7 +3111,7 @@ types InventoryViewTypes
 			spriteborder = { 20 20 }
 
 			icon =  {
-				texture = "[Illustration.GetTextureForCulture( Artifact.GetCulture )]"
+				texture = "[Illustration.GetTexture( Artifact.GetCulture.MakeScope )]"
 				spriteType = Corneredtiled
 				size = { 100% 10% }
 				color = "[Artifact.GetRarityColor]"
@@ -3120,7 +3120,7 @@ types InventoryViewTypes
 			}
 
 			icon =  {
-				texture = "[Illustration.GetTextureForCulture( Artifact.GetCulture )]"
+				texture = "[Illustration.GetTexture( Artifact.GetCulture.MakeScope )]"
 				spriteType = Corneredtiled
 				size = { 100% 10% }
 				color = "[Artifact.GetRarityColor]"

@@ -85,7 +85,7 @@ distributeartifacts.1 = {
     }
     stress_impact = {
 		  greedy = medium_stress_impact_gain
-      generous = small_stress_impact_loss
+      generous = minor_stress_impact_loss
 	  }
 	}
 

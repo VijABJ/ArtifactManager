@@ -780,8 +780,11 @@ AM_has_picked_combination = {
             has_game_rule = amx_combine_artifacts_enabled
             exists = var:AM_CAP_artifact_secondary
             exists = var:AM_CAP_artifact_primary
-            #all_inventory_artifact_slots  = full
-            root = { NOT = { has_character_flag = performed_artifact_voodoo } }
+            #root = { NOT = { has_character_flag = performed_artifact_voodoo } }
+            custom_description = {
+                text = "You have recently combined artifacts."
+                root = { NOT = { has_character_flag = performed_artifact_voodoo } }
+            }
         }
     }
 }

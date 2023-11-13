@@ -474,9 +474,35 @@ AM_perform_artifact_combination = {
             }
 
             root = {
-                add_character_flag = {
-                    flag = performed_artifact_voodoo
-                    years = 5
+                if = {
+                    limit = { has_game_rule = amx_combine_artifacts_cooldown_1year }
+                    add_character_flag = {
+                        flag = performed_artifact_voodoo
+                        years = 1
+                    }
+                }
+                else_if = {
+                    limit = { has_game_rule = amx_combine_artifacts_cooldown_3years }
+                    add_character_flag = {
+                        flag = performed_artifact_voodoo
+                        years = 3
+                    }
+                }
+                else_if = {
+                    limit = { has_game_rule = amx_combine_artifacts_cooldown_5years }
+                    add_character_flag = {
+                        flag = performed_artifact_voodoo
+                        years = 5
+                    }
+                }
+                else_if = {
+                    limit = { has_game_rule = amx_combine_artifacts_cooldown_lifetime }
+                    add_character_flag = {
+                        flag = performed_artifact_voodoo
+                        years = 999
+                    }
+                } else {
+                    remove_character_flag = performed_artifact_voodoo
                 }
             }
             
