@@ -276,3 +276,324 @@ am_option_toggle_operation_common = {
     }
 }
 
+##################### automation options
+
+#-- period options
+
+am_toggle_automation_period_quarter = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_period_quarter
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_period_quarter
+                }
+            }
+            set_global_variable = am_automation_period_quarter
+            remove_global_variable = am_automation_period_annual
+            remove_global_variable = am_automation_period_3years
+            remove_global_variable = am_automation_period_5years
+        }
+    }
+}
+
+am_toggle_automation_period_annual = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_period_annual
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_period_annual
+                }
+            }
+            set_global_variable = am_automation_period_annual
+            remove_global_variable = am_automation_period_quarter
+            remove_global_variable = am_automation_period_3years
+            remove_global_variable = am_automation_period_5years
+        }
+    }
+}
+
+am_toggle_automation_period_3years = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_period_3years
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_period_3years
+                }
+            }
+            set_global_variable = am_automation_period_3years
+            remove_global_variable = am_automation_period_quarter
+            remove_global_variable = am_automation_period_annual
+            remove_global_variable = am_automation_period_5years
+        }
+    }
+}
+
+am_toggle_automation_period_5years = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_period_5years
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_period_5years
+                }
+            }
+            set_global_variable = am_automation_period_5years
+            remove_global_variable = am_automation_period_quarter
+            remove_global_variable = am_automation_period_3years
+            remove_global_variable = am_automation_period_annual
+        }
+    }
+}
+
+#-- illustrious
+
+am_toggle_automation_manual_illustrious = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_manual_illustrious
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_manual_illustrious
+                }
+            }
+            set_global_variable = am_automation_manual_illustrious
+            remove_global_variable = am_automation_repair_illustrious
+            remove_global_variable = am_automation_vendor_illustrious
+        }
+    }
+}
+
+am_toggle_automation_repair_illustrious = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_repair_illustrious
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_repair_illustrious
+                }
+            }
+            set_global_variable = am_automation_repair_illustrious
+            remove_global_variable = am_automation_manual_illustrious
+            remove_global_variable = am_automation_vendor_illustrious
+        }
+    }
+}
+
+am_toggle_automation_vendor_illustrious = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_vendor_illustrious
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_vendor_illustrious
+                }
+            }
+            set_global_variable = am_automation_vendor_illustrious
+            remove_global_variable = am_automation_manual_illustrious
+            remove_global_variable = am_automation_repair_illustrious
+        }
+    }
+}
+
+#-- famed
+
+am_toggle_automation_manual_famed = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_manual_famed
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_manual_famed
+                }
+            }
+            set_global_variable = am_automation_manual_famed
+            remove_global_variable = am_automation_repair_famed
+            remove_global_variable = am_automation_vendor_famed
+        }
+    }
+}
+
+am_toggle_automation_repair_famed = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_repair_famed
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_repair_famed
+                }
+            }
+            set_global_variable = am_automation_repair_famed
+            remove_global_variable = am_automation_manual_famed
+            remove_global_variable = am_automation_vendor_famed
+        }
+    }
+}
+
+am_toggle_automation_vendor_famed = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_vendor_famed
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_vendor_famed
+                }
+            }
+            set_global_variable = am_automation_vendor_famed
+            remove_global_variable = am_automation_manual_famed
+            remove_global_variable = am_automation_repair_famed
+        }
+    }
+}
+
+
+#-- masterwork
+
+am_toggle_automation_manual_masterwork = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_manual_masterwork
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_manual_masterwork
+                }
+            }
+            set_global_variable = am_automation_manual_masterwork
+            remove_global_variable = am_automation_repair_masterwork
+            remove_global_variable = am_automation_vendor_masterwork
+        }
+    }
+}
+
+am_toggle_automation_repair_masterwork = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_repair_masterwork
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_repair_masterwork
+                }
+            }
+            set_global_variable = am_automation_repair_masterwork
+            remove_global_variable = am_automation_manual_masterwork
+            remove_global_variable = am_automation_vendor_masterwork
+        }
+    }
+}
+
+am_toggle_automation_vendor_masterwork = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_vendor_masterwork
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_vendor_masterwork
+                }
+            }
+            set_global_variable = am_automation_vendor_masterwork
+            remove_global_variable = am_automation_manual_masterwork
+            remove_global_variable = am_automation_repair_masterwork
+        }
+    }
+}
+
+#-- common
+
+am_toggle_automation_manual_common = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_manual_common
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_manual_common
+                }
+            }
+            set_global_variable = am_automation_manual_common
+            remove_global_variable = am_automation_repair_common
+            remove_global_variable = am_automation_vendor_common
+        }
+    }
+}
+
+am_toggle_automation_repair_common = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_repair_common
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_repair_common
+                }
+            }
+            set_global_variable = am_automation_repair_common
+            remove_global_variable = am_automation_manual_common
+            remove_global_variable = am_automation_vendor_common
+        }
+    }
+}
+
+am_toggle_automation_vendor_common = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_automation_vendor_common
+    }
+    effect = {
+        if = {
+            limit = {
+                NOT = {
+                    has_global_variable = am_automation_vendor_common
+                }
+            }
+            set_global_variable = am_automation_vendor_common
+            remove_global_variable = am_automation_manual_common
+            remove_global_variable = am_automation_repair_common
+        }
+    }
+}
+

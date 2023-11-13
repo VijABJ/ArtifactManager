@@ -3,6 +3,7 @@
 on_game_start = {
     on_actions = {
         on_courtinventory_start
+        on_artifact_manager_start
     }
 }
 
@@ -10,6 +11,15 @@ on_courtinventory_start = {
     effect = {
         set_global_variable = {
 	    name = courtinventory_is_loaded
+	    value = yes
+        }
+    }
+}
+
+on_artifact_manager_start = {
+    effect = {
+        set_global_variable = {
+	    name = artifact_manager_is_loaded
 	    value = yes
         }
     }

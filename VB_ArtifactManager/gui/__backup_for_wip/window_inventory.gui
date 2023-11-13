@@ -930,7 +930,7 @@ window = {
 							spacing = 10
 							hbox = {
 								spacing = 5
-								
+
 								button_round = {
 									name = "repair_all"
 									size = { 35 35 }

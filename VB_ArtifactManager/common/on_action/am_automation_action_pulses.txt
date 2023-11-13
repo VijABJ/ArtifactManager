@@ -1,0 +1,27 @@
+quarterly_playable_pulse = {
+	events = {
+        am_automation_events.0011
+		am_automation_events.0001
+	}
+}
+
+yearly_playable_pulse = {
+	events = {
+        am_automation_events.0012
+		am_automation_events.0002
+	}
+}
+
+three_year_playable_pulse = {
+	events = {
+        am_automation_events.0013
+		am_automation_events.0003
+	}
+}
+
+five_year_playable_pulse = {
+	events = {
+        am_automation_events.0014
+		am_automation_events.0004
+	}
+}

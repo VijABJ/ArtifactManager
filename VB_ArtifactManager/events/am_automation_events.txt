@@ -1,0 +1,125 @@
+namespace = am_automation_events
+
+# auto repair events
+
+am_automation_events.0001 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_ai = no
+        exists = global_var:am_automation_period_quarter
+	}
+	
+	immediate = {
+		save_temporary_scope_as = character
+		auto_repair = { }
+	}
+}
+
+am_automation_events.0002 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_ai = no
+        exists = global_var:am_automation_period_annual
+	}
+	
+	immediate = {
+		save_temporary_scope_as = character
+		auto_repair = { }
+	}
+}
+
+am_automation_events.0003 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_ai = no
+        exists = global_var:am_automation_period_3years
+	}
+	
+	immediate = {
+		save_temporary_scope_as = character
+		auto_repair = { }
+	}
+}
+
+am_automation_events.0004 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_ai = no
+        exists = global_var:am_automation_period_5years
+	}
+	
+	immediate = {
+		save_temporary_scope_as = character
+		auto_repair = { }
+	}
+}
+
+# auto vendor events
+
+am_automation_events.0011 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_ai = no
+        exists = global_var:am_automation_period_quarter
+	}
+	
+	immediate = {
+		save_temporary_scope_as = character
+		auto_vendor = { }
+	}
+}
+
+am_automation_events.0012 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_ai = no
+        exists = global_var:am_automation_period_annual
+	}
+	
+	immediate = {
+		save_temporary_scope_as = character
+		auto_vendor = { }
+	}
+}
+
+am_automation_events.0013 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_ai = no
+        exists = global_var:am_automation_period_3years
+	}
+	
+	immediate = {
+		save_temporary_scope_as = character
+		auto_vendor = { }
+	}
+}
+
+am_automation_events.0014 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_ai = no
+        exists = global_var:am_automation_period_5years
+	}
+	
+	immediate = {
+		save_temporary_scope_as = character
+		auto_vendor = { }
+	}
+}

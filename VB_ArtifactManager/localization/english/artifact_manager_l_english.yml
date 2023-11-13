@@ -9,6 +9,7 @@
   ARMORY_ARTIFACTS_TAB_TITLE:0 "Armory"
   # options checkboxes
   COMPACT_VIEW_OPTION:0 "Compact View"
+  KEEP_OPEN_ON_DISTRO_OPTION_TT:0 "Close inventory window when distributing artifact"
   KEEP_OPEN_ON_DISTRO_OPTION:0 "Keep open on distribute"
   # distribute artifact event strings
   DISTRIBUTE_ARTIFACT_DESC:0 "It is time to find a new home for my [target.GetName]. But who deserves to be its new owner?"
@@ -60,6 +61,24 @@
   REPAIR_SELECTED_ARTIFACTS_EFFECT_HEADER:0 "Effects"
   REPAIR_SELECTED_ARTIFACTS_EFFECTS:0 "All selected artifacts will be repaired, for gold cost (this might take you to negative gold)."
   REPAIR_SELECTED_ARTIFACTS_BUTTON_TXT:0 "Repair the selected artifacts."
+  # automation
+  ARTIFACT_AUTOMATION_OPTIONS:0 "Automation Options"
+  ARTIFACT_AUTOMATION_OPTIONS_TT:0 "Select interval between automatic operations, and set options for each quality below."
+  AUTOMATION_PERIOD_QUARTER:0 "Quarter"
+  AUTOMATION_PERIOD_QUARTER_TT:0 "Every 3 quarter (3 month period)"
+  AUTOMATION_PERIOD_ANNUAL:0 "Annual"
+  AUTOMATION_PERIOD_ANNUAL_TT:0 "Every year"
+  AUTOMATION_PERIOD_3YEARS:0 "3 Years"
+  AUTOMATION_PERIOD_3YEARS_TT:0 "Every 3 years"
+  AUTOMATION_PERIOD_5YEARS:0 "5 Years"
+  AUTOMATION_PERIOD_5YEARS_TT:0 "Every 5 years"
+  AUTOMATION_OPTION_NONE:0 "Manual"
+  AUTOMATION_OPTION_NONE_TT:0 "Disable automation"
+  AUTOMATION_OPTION_REPAIR:0 "Auto-Repair"
+  AUTOMATION_OPTION_REPAIR_TT:0 "Periodically repair artifacts"
+  AUTOMATION_OPTION_VENDOR:0 "Auto-Sell"
+  AUTOMATION_OPTION_VENDOR_TT:0 "Periodically sell unwanted artifacts"
+
 
   # gifting
   GIFT_INVENTORY_ARTIFACTS:0 "Give away all unused inventory artifacts"
