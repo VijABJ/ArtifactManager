@@ -14,6 +14,7 @@ So far, here are the mods I’ve combined:
 [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2776119489]Court Artifacts in Inventory[/url]
 [*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2752573001]Distribute Artifacts (note: only on default list view)[/url]
 [*] [url=https://steamcommunity.com/workshop/filedetails/?id=2747305366]Auction Off Artifact[/url] 
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2752107106]Edit Artifact Description[/url]
 [/oList]
 
 Extra credits and thanks to the following:
@@ -22,7 +23,6 @@ Extra credits and thanks to the following:
 [*] [url=https://steamcommunity.com/profiles/76561198127983144]JmBl[/url] - for the custom artwork.
 [*] [url=https://steamcommunity.com/id/Krumps]Krumps[/url] - Spanish localization. 
 [*] [url=https://steamcommunity.com/profiles/76561198385823171]Dillo[/url] - German localization
-
 [/list]
 
 [h1]To The Original Authors[/h1]
@@ -30,13 +30,13 @@ All of the content are their authors’ property, and I was just trying to
 reduce the clutter in my mod list, and my UI.  Ping me if this isn’t 
 something you’d like available, and I’ll take it down.
 
-Note:  All the extra features are disabled in the game rules by default.
-
 [h1]FEATURES:[/h1]
 
 [b]Note:  All the extra features are disabled in the game rules by default.[/b]
 
 [list]
+[*] Combine artifacts gamerule to change cooldown.
+[*] Auto-repair and auto-sell added.  
 [*] Added game rules for stuff.
 [*] Integrated edit artifact description mod.
 [*] Mass distribute artifacts with minimal clicks.
@@ -110,6 +110,8 @@ FILTERS for bulk operations are available.  You can filter whom to give it to, a
 [h2]Changes Since (reverse chronological)[h2]
 
 [list]
+[*] Automation and combine artifacts game rules.
+[*] Automation of repair and selling unwanted.
 [*] Custom backgrounds for artifact panels.
 [*] Working version of combine artifacts.
 [*] Filters for repair and selling artifacts.
