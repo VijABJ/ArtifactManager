@@ -11,23 +11,22 @@ auto_repair = {
 
 		every_character_artifact = {
 			limit = {
-				is_equipped = no
                 OR = {
                     AND = {
                         rarity = common
-                        exists = global_var:am_automation_vendor_common
+                        exists = global_var:am_automation_repair_common
                     }
                     AND = {
                         rarity = masterwork
-                        exists = global_var:am_automation_vendor_masterwork
+                        exists = global_var:am_automation_repair_masterwork
                     }
                     AND = {
                         rarity = famed
-                        exists = global_var:am_automation_vendor_famed
+                        exists = global_var:am_automation_repair_famed
                     }
                     AND = {
                         rarity = illustrious
-                        exists = global_var:am_automation_vendor_illustrious
+                        exists = global_var:am_automation_repair_illustrious
                     }
                 }
 			}
