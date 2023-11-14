@@ -947,3 +947,10 @@ AM_can_interact_with_artifact = {
     }
 }
 
+AM_artifact_trader_detected = {
+	scope = character
+    is_shown = { 
+        global_var:exists = artifact_trader_is_loaded
+    }
+}
+
