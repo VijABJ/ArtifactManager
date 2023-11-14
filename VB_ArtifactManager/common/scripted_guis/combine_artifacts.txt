@@ -14,11 +14,54 @@ combine_artifacts_set_primary = {
         }
 
 		remove_variable = AM_CAP_artifact_primary
+		remove_variable = AM_CAP_artifact_primary_cost
+
 		set_variable = {
 			name = AM_CAP_artifact_primary
 			months = 3
 			value = scope:artifact
 		}
+
+        # calculate cost
+        set_variable = {
+            name = AM_CAP_artifact_primary_cost
+            value = {
+				value = 0  
+				# get the base cost depending on rarity
+				if = {
+					limit = { scope:artifact = { rarity = illustrious } }
+					add = 6500 
+				}
+				else_if = {
+					limit = { scope:artifact = { rarity = famed } }
+					add = 5000 
+				}
+				else_if = {
+					limit = { scope:artifact = { rarity = masterwork } }
+					add = 3500 
+				}
+				else = {
+					add = 2000 
+				}
+				# adjust cost depending on game rule
+				if = {
+					limit = { has_game_rule = amx_combine_artifacts_cost_75percent }
+					multiply = 0.75
+				}
+				else_if = {
+					limit = { has_game_rule = amx_combine_artifacts_cost_50percent }
+					multiply = 0.5
+				}
+				else_if = {
+					limit = { has_game_rule = amx_combine_artifacts_cost_25percent }
+					multiply = 0.25
+				}
+				else_if = {
+					limit = { has_game_rule = amx_combine_artifacts_cost_none }
+					multiply = 0
+				}
+			}
+        }
 	}
 }
 
@@ -28,10 +71,53 @@ combine_artifacts_set_secondary = {
 	is_shown = { always = yes }
 	effect = {
 		remove_variable = AM_CAP_artifact_secondary
+		remove_variable = AM_CAP_artifact_secondary_cost
+
 		set_variable = {
 			name = AM_CAP_artifact_secondary
 			months = 3
 			value = scope:artifact
+		}
+
+        # calculate cost
+        set_variable = {
+            name = AM_CAP_artifact_secondary_cost
+            value = {
+				value = 0
+				# determine extra cost from secondary
+				if = {
+					limit = { scope:artifact = { rarity = illustrious } }
+					add = 4000 
+				}
+				else_if = {
+					limit = { scope:artifact = { rarity = famed } }
+					add = 3000 
+				}
+				else_if = {
+					limit = { scope:artifact = { rarity = masterwork } }
+					add = 2000 
+				}
+				else = {
+					add = 1000 
+				}
+				# adjust cost depending on game rule
+				if = {
+					limit = { has_game_rule = amx_combine_artifacts_cost_75percent }
+					multiply = 0.75
+				}
+				else_if = {
+					limit = { has_game_rule = amx_combine_artifacts_cost_50percent }
+					multiply = 0.5
+				}
+				else_if = {
+					limit = { has_game_rule = amx_combine_artifacts_cost_25percent }
+					multiply = 0.25
+				}
+				else_if = {
+					limit = { has_game_rule = amx_combine_artifacts_cost_none }
+					multiply = 0
+				}
+			}
 		}
 	}
 }

@@ -20,7 +20,6 @@ window = {
 	}
 
 	visible = "[And(GetVariableSystem.HasValue('combine_artifacts_dialog', 'yes'),IsInGame)]"
-    #datacontext = "[GetPlayer.MakeScope.Var('AM_upgrade_op_selected_artifact').Artifact]"
 	vbox = {
 		margin_bottom = 28
 		set_parent_size_to_minimum = yes
@@ -75,7 +74,6 @@ window = {
 					max_width = 450
 					margin_top = 10
 					text = "COMBINE_SELECTED_ARTIFACTS_EFFECTS"
-                    #text = "[Artifact.GetName] is upgraded, requires [gold_i][GetPlayer.MakeScope.Var('AM_combine_op_gold_cost').GetValue|0] [gold|E]."
 				}
 	
 				expand = {}

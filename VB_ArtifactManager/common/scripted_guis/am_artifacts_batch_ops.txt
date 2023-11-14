@@ -414,7 +414,9 @@ AM_perform_artifact_combination = {
         if = {
             AND = {
                 exists = var:AM_CAP_artifact_primary
+                exists = var:AM_CAP_artifact_primary_cost
                 exists = var:AM_CAP_artifact_secondary
+                exists = var:AM_CAP_artifact_secondary_cost
             }
 
             var:AM_CAP_artifact_primary = {
@@ -442,100 +444,30 @@ AM_perform_artifact_combination = {
                         set_artifact_rarity = masterwork
                     }
 
-                    # and compute how much
-                    set_local_variable = {
-                        name = cost_primary
-                        value = {
-                            value = 0  
-                            # get the base cost depending on rarity
-                            if = {
-                                limit = { rarity = illustrious}
-                                add = 6500 
-                            }
-                            else_if = {
-                                limit = { rarity = famed }
-                                add = 5000 
-                            }
-                            else_if = {
-                                limit = { rarity = masterwork }
-                                add = 3500 
-                            }
-                            else = {
-                                add = 2000 
-                            }
-                            # adjust cost depending on game rule
-                            if = {
-                                limit = { has_game_rule = amx_combine_artifacts_cost_75percent }
-                                multiply = 0.75
-                            }
-                            else_if = {
-                                limit = { has_game_rule = amx_combine_artifacts_cost_50percent }
-                                multiply = 0.5
-                            }
-                            else_if = {
-                                limit = { has_game_rule = amx_combine_artifacts_cost_25percent }
-                                multiply = 0.25
-                            }
-                            else_if = {
-                                limit = { has_game_rule = amx_combine_artifacts_cost_none }
-                                multiply = 0
-                            }
-                        }
-                    }
                     root = {
-                        remove_short_term_gold = local_var:cost_primary
+                        remove_short_term_gold = var:AM_CAP_artifact_primary_cost
                     }
                 }
             }
 
             scope:that_artifact = {
                 hidden_effect = {
-                    set_local_variable = {
-                        name = cost_secondary
-                        value = {
-                            value = 0  
-                            # determine extra cost from secondary
-                            if = {
-                                limit = { rarity = illustrious}
-                                add = 4000 
-                            }
-                            else_if = {
-                                limit = { rarity = famed }
-                                add = 3000 
-                                set_artifact_rarity = illustrious
-                            }
-                            else_if = {
-                                limit = { rarity = masterwork }
-                                add = 2000 
-                                set_artifact_rarity = famed
-                            }
-                            else = {
-                                add = 1000 
-                                set_artifact_rarity = masterwork
-                            }
-                            # adjust cost depending on game rule
-                            if = {
-                                limit = { has_game_rule = amx_combine_artifacts_cost_75percent }
-                                multiply = 0.75
-                            }
-                            else_if = {
-                                limit = { has_game_rule = amx_combine_artifacts_cost_50percent }
-                                multiply = 0.5
-                            }
-                            else_if = {
-                                limit = { has_game_rule = amx_combine_artifacts_cost_25percent }
-                                multiply = 0.25
-                            }
-                            else_if = {
-                                limit = { has_game_rule = amx_combine_artifacts_cost_none }
-                                multiply = 0
-                            }
-                        }
+                    if = {
+                        limit = { rarity = famed }
+                        set_artifact_rarity = illustrious
+                    }
+                    else_if = {
+                        limit = { rarity = masterwork }
+                        set_artifact_rarity = famed
+                    }
+                    else_if = {
+                        limit = { rarity = common }
+                        set_artifact_rarity = masterwork
                     }
                     # can now get rid of the artifact
                     destroy_artifact = this
                     root = {
-                        remove_short_term_gold = local_var:cost_secondary
+                        remove_short_term_gold = var:AM_CAP_artifact_secondary_cost
                     }
                 }
             }
@@ -574,7 +506,9 @@ AM_perform_artifact_combination = {
             }
             
             remove_variable = AM_CAP_artifact_primary
+            remove_variable = AM_CAP_artifact_primary_cost
             remove_variable = AM_CAP_artifact_secondary
+            remove_variable = AM_CAP_artifact_secondary_cost
         }
     }
 
