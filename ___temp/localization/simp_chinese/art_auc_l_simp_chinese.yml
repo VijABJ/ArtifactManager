@@ -1,7 +1,0 @@
-﻿l_simp_chinese:
- AUCTION_OFF_ARTIFACT_EFFECT_HEADER:0 "#T 效果:#!"
- AUCTION_OFF_ARTIFACT:0 "拍卖宝物"
- AUCTION_OFF_ARTIFACT_TT:0 "#T $AUCTION_OFF_ARTIFACT$#!\n用这件传家宝换一把金子。"
- AUCTION_OFF_ARTIFACT_EFFECTS:0 "[Artifact.GetName]卖出了[gold_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_value').GetValue|0] [gold|E]。"
- AUCTION_OFF_ARTIFACT_EFFECTS_ICONOCLAST:0 "[Artifact.GetName]是一件宗教圣物。 依照你的[GetPlayer.GetFaith.GetAdjective]信仰，它会被公开销毁而非出售，你将获得[piety_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_piety_value').GetValue|0] [piety|E]。"
- AUCTION_OFF_ARTIFACT_BUTTON_TXT:0 "从我的宫殿消失吧!"

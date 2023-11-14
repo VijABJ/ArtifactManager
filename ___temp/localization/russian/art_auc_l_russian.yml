@@ -1,7 +1,0 @@
-﻿l_russian:
- AUCTION_OFF_ARTIFACT_EFFECT_HEADER:0 "#T Effect:#!"
- AUCTION_OFF_ARTIFACT:0 "Продать артефакт на аукционе"
- AUCTION_OFF_ARTIFACT_TT:0 "#T $AUCTION_OFF_ARTIFACT$#!\nПродать этот артефакт за золото."
- AUCTION_OFF_ARTIFACT_EFFECTS:0 "[Artifact.GetName] продать за [gold_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_value').GetValue|0] [gold|E]."
- AUCTION_OFF_ARTIFACT_EFFECTS_ICONOCLAST:0 "[Artifact.GetName] является религиозным артефактом. Из-за соответствия с вашей [GetPlayer.GetFaith.GetAdjective] верой, он будет публично уничтожен, а не продан, вы получите [piety_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_piety_value').GetValue|0] [piety|E]."
- AUCTION_OFF_ARTIFACT_BUTTON_TXT:0 "Продать!"
