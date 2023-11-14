@@ -37,7 +37,7 @@
   COMBINE_OP_SECONDARY_TT:0 "$COMBINE_OP_SECONDARY$"
   COMBINE_SELECTED_ARTIFACTS:0 "Combining Artifacts"
   COMBINE_SELECTED_ARTIFACTS_EFFECTS_HEADER:0 "Effects"
-  COMBINE_SELECTED_ARTIFACTS_EFFECTS:0 "Combine the secondary artifact into the primary artifact."
+  COMBINE_SELECTED_ARTIFACTS_EFFECTS:0 "This operation will require [gold_i][GetPlayer.MakeScope.Var('AM_CAP_artifact_primary_cost').GetValue|0] [gold|E] for the primary, and [gold_i][GetPlayer.MakeScope.Var('AM_CAP_artifact_secondary_cost').GetValue|0] [gold|E] for the secondary.  The secondary artifact will be destroyed."
   COMBINE_SELECTED_ARTIFACTS_BUTTON_TXT:0 "Combine them!"
     # inventory screen
   REPAIR_ALL_ARTIFACTS:0 "Repair all artifacts"
