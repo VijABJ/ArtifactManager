@@ -1,0 +1,7 @@
+﻿l_korean:
+ AUCTION_OFF_ARTIFACT_EFFECT_HEADER:0 "#T 영향:#!"
+ AUCTION_OFF_ARTIFACT:0 "유물을 판매한다."
+ AUCTION_OFF_ARTIFACT_TT:0 "#T $AUCTION_OFF_ARTIFACT$#!\n이 유물을 팔아 자금을 마련한다."
+ AUCTION_OFF_ARTIFACT_EFFECTS:0 "[Artifact.GetName] 의 가격은 [gold_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_value').GetValue|0] [gold|E] 이다."
+ AUCTION_OFF_ARTIFACT_EFFECTS_ICONOCLAST:0 "[Artifact.GetName] 은(는) 종교적인 유물이다. 당신은 [GetPlayer.GetFaith.GetAdjective] 신자이므로, 이것은 판매되지않고 파괴될 것이며, 당신은 [piety_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_piety_value').GetValue|0] [piety|E] 를 얻는다."
+ AUCTION_OFF_ARTIFACT_BUTTON_TXT:0 "내 궁정에서 꺼져!"

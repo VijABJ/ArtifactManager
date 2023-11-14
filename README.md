@@ -20,9 +20,10 @@ So far, here are the mods I’ve combined:
 Extra credits and thanks to the following:
 
 [list]
-[*] [url=https://steamcommunity.com/profiles/76561198127983144]JmBl[/url] - for the custom artwork.
+[*] [url=https://steamcommunity.com/profiles/76561198127983144]JmBl[/url] - Custom artwork, and testing.
 [*] [url=https://steamcommunity.com/id/Krumps]Krumps[/url] - Spanish localization. 
-[*] [url=https://steamcommunity.com/profiles/76561198385823171]Dillo[/url] - German localization
+[*] [url=https://steamcommunity.com/profiles/76561198385823171]Dillo[/url] - German localization.
+[*] [url=https://steamcommunity.com/id/Crony/]Crony[/url] - French localization, loc cleanup, and testing.
 [/list]
 
 [h1]To The Original Authors[/h1]
@@ -35,6 +36,7 @@ something you’d like available, and I’ll take it down.
 [b]Note:  All the extra features are disabled in the game rules by default.[/b]
 
 [list]
+[*] Game rules to adjust costs of combine and upgrade operatins.
 [*] Combine artifacts gamerule to change cooldown.
 [*] Auto-repair and auto-sell added.  
 [*] Added game rules for stuff.

@@ -1,0 +1,7 @@
+﻿l_german:
+ AUCTION_OFF_ARTIFACT_EFFECT_HEADER:0 "#T Effect:#!"
+ AUCTION_OFF_ARTIFACT:0 "Verkaufe Artefakt"
+ AUCTION_OFF_ARTIFACT_TT:0 "#T $AUCTION_OFF_ARTIFACT$#!\nArtefakt wird für Gold verkauft."
+ AUCTION_OFF_ARTIFACT_EFFECTS:0 "[Artifact.GetName] wird verkauft für [gold_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_value').GetValue|0] [gold|E]."
+ AUCTION_OFF_ARTIFACT_EFFECTS_ICONOCLAST:0 "[Artifact.GetName] ist ein religiöses Artefakt. In verbindung mit [GetPlayer.GetFaith.GetAdjective] Glauben, wird es nicht verkauft sondern öffentlich zerstört, du erhältst [piety_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_piety_value').GetValue|0] [piety|E]."
+ AUCTION_OFF_ARTIFACT_BUTTON_TXT:0 "Verkaufen!"

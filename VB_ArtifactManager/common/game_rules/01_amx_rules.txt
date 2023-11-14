@@ -16,12 +16,32 @@ amx_combine_artifacts_cooldown = {
     amx_combine_artifacts_cooldown_lifetime = {}
 }
 
+amx_combine_artifacts_cost_scaling = {
+    default = amx_combine_artifacts_cost_default
+
+    amx_combine_artifacts_cost_default = {}
+    amx_combine_artifacts_cost_75percent = {}
+    amx_combine_artifacts_cost_50percent = {}
+    amx_combine_artifacts_cost_25percent = {}
+    amx_combine_artifacts_cost_none = {}
+}
+
 # upgrade decision, which is a bit of a hack at the moment
 amx_direct_upgrade_artifact = {
     default = amx_direct_upgrade_artifacts_disabled
     
     amx_direct_upgrade_artifacts_enabled = {}
     amx_direct_upgrade_artifacts_disabled = {}
+}
+
+amx_upgrade_artifacts_cost_scaling = {
+    default = amx_upgrade_artifacts_cost_default
+
+    amx_upgrade_artifacts_cost_default = {}
+    amx_upgrade_artifacts_cost_75percent = {}
+    amx_upgrade_artifacts_cost_50percent = {}
+    amx_upgrade_artifacts_cost_25percent = {}
+    amx_upgrade_artifacts_cost_none = {}
 }
 
 # enable vanity tab

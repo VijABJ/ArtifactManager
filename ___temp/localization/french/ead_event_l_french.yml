@@ -1,0 +1,11 @@
+﻿l_french:
+ ead_artifact_desc: "[GetPlayer.GetLocalizedText( 'test_saved_text' )]"
+ ead_artifact_desc_append: "[selected_artifact.GetDesc]\n\n[GetPlayer.GetLocalizedText( 'test_saved_text' )]"
+ ead_artifact_desc_append_end: "[selected_artifact.GetDesc] [GetPlayer.GetLocalizedText( 'test_saved_text' )]"
+ ead_desc_edit_event.1.title: "Changer la description de l'artefact"
+ ead_desc_edit_event.1.desc: "Ecrivez et choisissez une option.\nAjouter à la description créera un nouveau paragraphe.\n\nUtilisez la troisième option si vous ne voulez pas créer de nouveau paragraphe."
+ artifact_new_desc: "Nouvelle description"
+ artifact_append_desc: "Ajouter à la description"
+ artifact_append_at_end: "Ajouter à la fin de la phrase"
+ ead_edit_artifact_desc_tt: "#T Editer la description"
+ ead_default: "Entrez la description"

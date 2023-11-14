@@ -1,4 +1,4 @@
-﻿l_english:
+﻿l_jomini:
   SELECT_ARTIFACT_PANEL:0 "Select Artifact Panel"
   PERSONAL_ARTIFACTS_TAB_TITLE:0 "Equipped Artifacts"
   COURT_ARTIFACTS_TAB_TITLE:0 "Royal Court"
@@ -145,30 +145,16 @@
   # gamerule - cost scaling for combine artifacts
   rule_amx_combine_artifacts_cost_scaling:0 "#G AMX: #! Combine Cost Scaling"
   rule_amx_combine_artifacts_cost_scaling_desc:0 "Select scaling for combine artifacts cost."
-  setting_amx_combine_artifacts_cost_default:0 "Default"
-  setting_amx_combine_artifacts_cost_default_desc:0 "Cost tops out at 6500g primary / 4000g secondary."
-  setting_amx_combine_artifacts_cost_75percent:0 "75%"
-  setting_amx_combine_artifacts_cost_75percent_desc:0 "Scale cost down by 75%."
-  setting_amx_combine_artifacts_cost_50percent:0 "50%"
-  setting_amx_combine_artifacts_cost_50percent_desc:0 "Scale cost down by 50%."
-  setting_amx_combine_artifacts_cost_25percent:0 "25%"
-  setting_amx_combine_artifacts_cost_25percent_desc:0 "Scale cost down by 25%."
-  setting_amx_combine_artifacts_cost_none:0 "Free"
-  setting_amx_combine_artifacts_cost_none_desc:0 "Combining artifacts is always free."
-
-  # gamerule - cost scaling for upgrade artifacts
-  rule_amx_upgrade_artifacts_cost_scaling:0 "#G AMX: #! Upgrade Cost Scaling"
-  rule_amx_upgrade_artifacts_cost_scaling_desc:0 "Select scaling for upgrade artifacts cost."
-  setting_amx_upgrade_artifacts_cost_default:0 "Default"
-  setting_amx_upgrade_artifacts_cost_default_desc:0 "Costs top out at 5000g."
-  setting_amx_upgrade_artifacts_cost_75percent:0 "75%"
-  setting_amx_upgrade_artifacts_cost_75percent_desc:0 "Scale cost down by 75%."
-  setting_amx_upgrade_artifacts_cost_50percent:0 "50%"
-  setting_amx_upgrade_artifacts_cost_50percent_desc:0 "Scale cost down by 50%."
-  setting_amx_upgrade_artifacts_cost_25percent:0 "25%"
-  setting_amx_upgrade_artifacts_cost_25percent_desc:0 "Scale cost down by 25%."
-  setting_amx_upgrade_artifacts_cost_none:0 "Free"
-  setting_amx_upgrade_artifacts_cost_none_desc:0 "Upgrading artifacts is always free."
+  amx_combine_artifacts_cost_default:0 "Default"
+  amx_combine_artifacts_cost_default_desc:0 "Cost tops out at 6500g primary / 4000g secondary."
+  amx_combine_artifacts_cost_75percent:0 "75%"
+  amx_combine_artifacts_cost_75percent_desc:0 "Scale cost down by 75%."
+  amx_combine_artifacts_cost_50percent:0 "50%"
+  amx_combine_artifacts_cost_50percent_desc:0 "Scale cost down by 50%."
+  amx_combine_artifacts_cost_25percent:0 "25%"
+  amx_combine_artifacts_cost_25percent_desc:0 "Scale cost down by 25%."
+  amx_combine_artifacts_cost_none:0 "Free"
+  amx_combine_artifacts_cost_none_desc:0 "Combining artifacts is always free."
 
   # gamerule - toggle artifact upgrading
   rule_amx_direct_upgrade_artifact:0 "#G AMX: #! Directly Upgrading Artifacts"
@@ -177,6 +163,34 @@
   setting_amx_direct_upgrade_artifacts_enabled_desc:0 "Mechanics for directly upgrading artifacts will be enabled."
   setting_amx_direct_upgrade_artifacts_disabled:0 "Disable"
   setting_amx_direct_upgrade_artifacts_disabled_desc:0 "Mechanics for directly upgrading artifacts will be disabled."
+
+  # gamerule - cost scaling for upgrade artifacts
+  rule_amx_upgrade_artifacts_cost_scaling:0 "#G AMX: #! Upgrade Cost Scaling"
+  rule_amx_upgrade_artifacts_cost_scaling_desc:0 "Select scaling for upgrade artifacts cost."
+  amx_upgrade_artifacts_cost_default:0 "Default"
+  amx_upgrade_artifacts_cost_default_desc:0 "Costs top out at 5000g."
+  amx_upgrade_artifacts_cost_75percent:0 "75%"
+  amx_upgrade_artifacts_cost_75percent_desc:0 "Scale cost down by 75%."
+  amx_upgrade_artifacts_cost_50percent:0 "50%"
+  amx_upgrade_artifacts_cost_50percent_desc:0 "Scale cost down by 50%."
+  amx_upgrade_artifacts_cost_25percent:0 "25%"
+  amx_upgrade_artifacts_cost_25percent_desc:0 "Scale cost down by 25%."
+  amx_upgrade_artifacts_cost_none:0 "Free"
+  amx_upgrade_artifacts_cost_none_desc:0 "Upgrading artifacts is always free."
+
+  # gamerule - cost scaling for upgrade artifacts
+  rule_amx_upgrade_artifacts_cost_scaling:0 "#G AMX: #! Upgrade Cost Scaling"
+  rule_amx_upgrade_artifacts_cost_scaling_desc:0 "Select scaling for upgrade artifacts cost."
+  amx_upgrade_artifacts_cost_default:0 "Default"
+  amx_upgrade_artifacts_cost_default_desc:0 "Costs top out at 5000g."
+  amx_upgrade_artifacts_cost_75percent:0 "75%"
+  amx_upgrade_artifacts_cost_75percent_desc:0 "Scale cost down by 75%."
+  amx_upgrade_artifacts_cost_50percent:0 "50%"
+  amx_upgrade_artifacts_cost_50percent_desc:0 "Scale cost down by 50%."
+  amx_upgrade_artifacts_cost_25percent:0 "25%"
+  amx_upgrade_artifacts_cost_25percent_desc:0 "Scale cost down by 25%."
+  amx_upgrade_artifacts_cost_none:0 "Free"
+  amx_upgrade_artifacts_cost_none_desc:0 "Upgrading artifacts is always free."
 
   # gamerule - toggle vanity room in artifacts inventory
   rule_amx_vanity_artifacts:0 "#G AMX: #! Vanity Artifacts"

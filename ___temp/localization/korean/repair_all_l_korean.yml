@@ -1,0 +1,13 @@
+﻿l_korean:
+  at_least_one_artifact_needs_repair_desc:0 "적어도 하나의 아티팩트를 수리해야 합니다."
+  repair_artifacts:0 "유물 수리"
+  repair_artifacts_tooltip:0 "모든 [artifact|E]를 수리하십시오."
+  repair_artifacts_desc:0 "내 유물 중 일부는 시간이 지남에 따라 고통 받고 있습니다. 나는 그들 각자를 이전의 영광으로 회복시키는 데 약간의 도움을 사용할 수 있습니다."
+  repair_all_employ_suggestion:0 "$ANTIQUARIAN$를 고용해야 할 수도 있습니다."
+  repair_all_summon_antiquarian:0 "$ANTIQUARIAN$을(를) 소환하십시오!"
+  repair_artifacts.1.t:0 "유물 복원"
+  repair_artifacts.1.d:0 "귀하의 $ANTIQUARIAN$ [antiquarian.GetName]은(는) 이후 귀하의 존재에 도착합니다. \"저는 [ROOT.Char.GetTitleTierName]을(를) 섬기고 있습니다. 이 겸손한 종이 어떻게 도움이 될까요?\"라고 그는 말합니다. 소장품의 상태, 귀중한 가보와 유물 중 일부가 시대의 시험을 어떻게 겪고 있는지 설명합니다. 당신은 그들 모두를 이전의 영광으로 회복하기를 원합니다. \"그래서 이해가 안 됩니다\" - [고골 수집가.GetName]이(가) 귀하의 수집품을 자세히 살펴보며 말합니다. \"[ROOT.Char.GetTitleTierName]님, 제가 그것들을 처리해 드릴까요?\""
+  repair_artifacts.1.a:0 "예, 모두 수리하십시오!"
+  repair_artifacts.1.b:0 "네, 저도 보상해 드리겠습니다."
+  repair_artifacts.1.c:0 "마음이 바뀌었어요."
+  repair_artifacts_effect_desc:0 "모든 유물의 내구도가 복원됩니다."

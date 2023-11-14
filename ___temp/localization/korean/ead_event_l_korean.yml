@@ -1,0 +1,11 @@
+﻿l_korean:
+ ead_artifact_desc: "[GetPlayer.GetLocalizedText( 'test_saved_text' )]"
+ ead_artifact_desc_append: "[selected_artifact.GetDesc]\n\n[GetPlayer.GetLocalizedText( 'test_saved_text' )]"
+ ead_artifact_desc_append_end: "[selected_artifact.GetDesc] [GetPlayer.GetLocalizedText( 'test_saved_text' )]"
+ ead_desc_edit_event.1.title: "Change Artifact Description"
+ ead_desc_edit_event.1.desc: "Enter text and select an option.\nAppended descriptions will start in a new paragraph.\n\nUse the third option if you don't want to start a new paragraph."
+ artifact_new_desc: "New Description"
+ artifact_append_desc: "Append To Description"
+ artifact_append_at_end: "Append to end of sentence."
+ ead_edit_artifact_desc_tt: "#T Edit Artifact Desc"
+ ead_default: "Enter Desc"

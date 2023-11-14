@@ -11,41 +11,44 @@ AM_upgrade_artifact_set_id = {
 			months = 3
 			value = scope:artifact
 		}
-        if = {
-            limit = {
-                scope:artifact = { rarity = illustrious }
-            }
-            set_variable = {
-                name = AM_upgrade_op_gold_cost
-                months = 3
-                value = 1000
-            }
-        }
-        else_if = {
-            limit = {
-                scope:artifact = { rarity = famed }
-            }
-            set_variable = {
-                name = AM_upgrade_op_gold_cost
-                months = 3
-                value = 2200
-            }
-        }
-        else_if = {
-            limit = {
-                scope:artifact = { rarity = masterwork }
-            }
-            set_variable = {
-                name = AM_upgrade_op_gold_cost
-                months = 3
-                value = 3300
-            }
-        }
-        else = {
-            set_variable = {
-                name = AM_upgrade_op_gold_cost
-                months = 3
-                value = 5000
+        # calculate cost
+        set_variable = {
+            name = AM_upgrade_op_gold_cost
+            value = {
+                value = 0
+                # base cost from difference in rarity
+                if = {
+                    limit = { scope:artifact = { rarity = illustrious } }
+                    add = 1000
+                }
+                else_if = {
+                    limit = { scope:artifact = { rarity = famed } }
+                    add = 2200
+                }
+                else_if = {
+                    limit = { scope:artifact = { rarity = masterwork } }
+                    add = 3300
+                }
+                else = {
+                    add = 5000
+                }
+                # adjust for game rule
+                if = {
+                    limit = { has_game_rule = amx_upgrade_artifacts_cost_75percent }
+                    multiply = 0.75
+                }
+                else_if = {
+                    limit = { has_game_rule = amx_upgrade_artifacts_cost_50percent }
+                    multiply = 0.5
+                }
+                else_if = {
+                    limit = { has_game_rule = amx_upgrade_artifacts_cost_25percent }
+                    multiply = 0.25
+                }
+                else_if = {
+                    limit = { has_game_rule = amx_upgrade_artifacts_cost_none }
+                    multiply = 0
+                }
             }
         }
 	}
@@ -63,42 +66,12 @@ AM_upgrade_artifact_closed = {
 AM_perform_artifact_upgrade = {
 	scope = character
 	saved_scopes = { target }
-
     effect = {
         # remove the gold cost first
-        if = {
-            limit = {
-                scope:target = { rarity = illustrious }
-            }
-            root = {
-                remove_short_term_gold = 1000
-            }
-        }
-        else_if = {
-            limit = {
-                scope:target = { rarity = famed }
-            }
-            root = {
-                remove_short_term_gold = 2200
-            }
-        }
-        else_if = {
-            limit = {
-                scope:target = { rarity = masterwork }
-            }
-            root = {
-                remove_short_term_gold = 3300
-            }
-        }
-        else_if = {
-            root = {
-                remove_short_term_gold = 5000
-            }
-        }
+        root = { remove_short_term_gold = var:AM_upgrade_op_gold_cost }
 
-        remove_variable = AM_upgrade_op_selected_artifact
-        remove_variable = AM_upgrade_op_gold_cost
-
+        remove_variable = var:AM_upgrade_op_selected_artifact
+        remove_variable = var:AM_upgrade_op_gold_cost
 
         # now change the values of the artifact itself
         scope:target = { 
