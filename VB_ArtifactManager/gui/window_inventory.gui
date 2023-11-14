@@ -856,11 +856,11 @@ window = {
 			vbox = {
 				layoutpolicy_horizontal = expanding
 				layoutpolicy_vertical = expanding
-				min_width = 600
-				max_width = 600
+				min_width = 560
+				max_width = 560
 				margin_bottom = 300
-				margin_right = 10
-				margin_left = 10
+				margin_right = 5
+				margin_left = 5
 				parentanchor = top|left
 	
 				text_label_center = {
@@ -1031,25 +1031,25 @@ window = {
 							}
 						}
 
-						button_checkbox_label = {
+						button_standard = {
 							name = "keep_open_on_distro_toggle"
-	
-							onclick = "[VariableSystem.Toggle( 'keep_open_on_distro' )]"
+							size = { 40 30 }
+							align = center|vcenter|nobaseline
+
 							tooltip = "KEEP_OPEN_ON_DISTRO_OPTION_TT"
-	
-							blockoverride "checkbox"
-							{
-								checked = "[VariableSystem.Exists( 'keep_open_on_distro' )]"
-							}
-	
-							blockoverride "text"
-							{
-								text = "KEEP_OPEN_ON_DISTRO_OPTION"
+
+							datacontext = "[GetScriptedGui('am_toggle_pin_inventory_window')]"
+							onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+							down = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+
+							button_icon_highlight = {
+								size = { 25 25 }
+								texture = "gfx/interface/icons/flat_icons/plus.dds"
+								parentanchor = center|vcenter
 							}
 						}
 
 						#expand = {}
-
 					}
 	
 					hbox = { # claims sorting

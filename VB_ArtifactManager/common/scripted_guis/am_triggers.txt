@@ -597,3 +597,20 @@ am_toggle_automation_vendor_common = {
     }
 }
 
+##
+
+am_toggle_pin_inventory_window = {
+    scope = character
+    is_shown = {
+        has_global_variable = am_pin_inventory_window
+    }
+    effect = {
+        if = {
+            limit = { has_global_variable = am_pin_inventory_window }
+            remove_global_variable = am_pin_inventory_window
+        }
+        else = {
+            set_global_variable = am_pin_inventory_window
+        }
+    }
+}
