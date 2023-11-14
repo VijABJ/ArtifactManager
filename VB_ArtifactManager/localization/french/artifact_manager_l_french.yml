@@ -10,8 +10,8 @@
   # options checkboxes
   COMPACT_VIEW_OPTION:0 "Vue compacte"
   COMPACT_VIEW_OPTION_TT:0 "Cochez pour activer la liste d'artefacts compactée."
-  KEEP_OPEN_ON_DISTRO_OPTION_TT:0 "Cochez pour garder la fenêtre d'inventaire ouverte lors de la distribution des artefacts."
-  KEEP_OPEN_ON_DISTRO_OPTION:0 "Ne pas fermer"
+  KEEP_OPEN_ON_DISTRO_OPTION_TT:0 "Keep inventory window open when distributing artifact"
+  CLOSE_ON_DISTRO_OPTION_TT:0 "Cochez pour garder la fenêtre d'inventaire ouverte lors de la distribution des artefacts."
   # distribute artifact event strings
   DISTRIBUTE_ARTIFACT_DESC:0 "Il est probablement temps de me séparer de mon cher [target.GetName]. Mais qui mériterait donc d'en hériter?"
   DISTRIBUTE_ARTIFACT_TITLE:0 "Distribuer [target.GetName]"

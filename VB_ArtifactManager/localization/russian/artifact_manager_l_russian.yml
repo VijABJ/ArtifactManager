@@ -10,8 +10,8 @@
   # options checkboxes
   COMPACT_VIEW_OPTION:0 "Compact View"
   COMPACT_VIEW_OPTION_TT:0 "Toggle Artifact Compact View"
-  KEEP_OPEN_ON_DISTRO_OPTION_TT:0 "Close inventory window when distributing artifact"
-  KEEP_OPEN_ON_DISTRO_OPTION:0 "Keep open on distribute"
+  KEEP_OPEN_ON_DISTRO_OPTION_TT:0 "Keep inventory window open when distributing artifact"
+  CLOSE_ON_DISTRO_OPTION_TT:0 "Close inventory window when distributing artifact"
   # distribute artifact event strings
   DISTRIBUTE_ARTIFACT_DESC:0 "It is time to find a new home for my [target.GetName]. But who deserves to be its new owner?"
   DISTRIBUTE_ARTIFACT_TITLE:0 "Distribute [target.GetName]"

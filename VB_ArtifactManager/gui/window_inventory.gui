@@ -1036,16 +1036,23 @@ window = {
 							size = { 40 30 }
 							align = center|vcenter|nobaseline
 
-							tooltip = "KEEP_OPEN_ON_DISTRO_OPTION_TT"
-
 							datacontext = "[GetScriptedGui('am_toggle_pin_inventory_window')]"
 							onclick = "[ScriptedGui.Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
-							down = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
 
 							button_icon_highlight = {
+								visible = "[ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
 								size = { 25 25 }
 								texture = "gfx/interface/icons/flat_icons/plus.dds"
 								parentanchor = center|vcenter
+								tooltip = "KEEP_OPEN_ON_DISTRO_OPTION_TT"
+							}
+
+							button_icon_highlight = {
+								visible = "[Not(ScriptedGui.IsShown( GuiScope.SetRoot( GetPlayer.MakeScope ).End))]"
+								size = { 25 25 }
+								texture = "gfx/interface/icons/flat_icons/minus.dds"
+								parentanchor = center|vcenter
+								tooltip = "CLOSE_ON_DISTRO_OPTION_TT"
 							}
 						}
 
