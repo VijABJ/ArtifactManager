@@ -69,7 +69,7 @@ window = {
 
 				max_width = 580
 				min_width = 580
-				margin_bottom = 180
+				margin_bottom = 265
 
 				text_label_center = {
 					layoutpolicy_horizontal = expanding
@@ -858,7 +858,7 @@ window = {
 				layoutpolicy_vertical = expanding
 				min_width = 600
 				max_width = 600
-				margin_bottom = 300
+				margin_bottom = 330
 				margin_right = 5
 				margin_left = 5
 				parentanchor = top|left
@@ -2303,6 +2303,7 @@ window = {
 									}
 
 									hbox = {
+										visible = "[GetScriptedGui('AM_has_picked_primary_for_combine_op').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
 										datacontext = "[GetPlayer.MakeScope.Var('AM_CAP_artifact_primary').Artifact]"
 										widget = {
 											size = { 80 80 }
@@ -2312,6 +2313,21 @@ window = {
 											tooltipwidget = {
 												artifact_tooltip = {}
 											}
+										}
+									}
+									hbox = {
+										visible = "[Not(GetScriptedGui('AM_has_picked_primary_for_combine_op').IsShown(GuiScope.SetRoot(Character.MakeScope).End))]"
+										background = {
+											using = Background_Area
+										}
+
+										text_single = {
+											size = { 80 80 }
+											margin = {5 5 5 5}
+											multiline = yes
+											max_width = 140
+											align = center
+											text = "COMBINE_MISSING_PRIMARY_ARTIFACT"
 										}
 									}
 								}
@@ -2325,6 +2341,7 @@ window = {
 									}
 
 									hbox = {
+										visible = "[GetScriptedGui('AM_has_picked_secondary_for_combine_op').IsShown(GuiScope.SetRoot(Character.MakeScope).End)]"
 										datacontext = "[GetPlayer.MakeScope.Var('AM_CAP_artifact_secondary').Artifact]"
 										widget = {
 											size = { 80 80 }
@@ -2334,6 +2351,21 @@ window = {
 											tooltipwidget = {
 												artifact_tooltip = {}
 											}
+										}
+									}
+									hbox = {
+										visible = "[Not(GetScriptedGui('AM_has_picked_secondary_for_combine_op').IsShown(GuiScope.SetRoot(Character.MakeScope).End))]"
+										background = {
+											using = Background_Area
+										}
+
+										text_single = {
+											size = { 80 80 }
+											margin = {5 5 5 5}
+											multiline = yes
+											max_width = 140
+											align = center
+											text = "COMBINE_MISSING_SECONDARY_ARTIFACT"
 										}
 									}
 								}

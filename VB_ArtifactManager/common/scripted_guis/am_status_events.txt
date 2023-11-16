@@ -771,6 +771,20 @@ AM_is_artifact_combinable_as_secondary = {
     }
 }
 
+AM_has_picked_primary_for_combine_op = {
+	scope = character
+    is_shown = {
+        exists = var:AM_CAP_artifact_primary
+    }
+}
+
+AM_has_picked_secondary_for_combine_op = {
+	scope = character
+    is_shown = {
+        exists = var:AM_CAP_artifact_secondary
+    }
+}
+
 AM_has_picked_combination = {
 	scope = character
     is_shown = {
