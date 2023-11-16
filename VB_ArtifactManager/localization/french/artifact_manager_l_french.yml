@@ -39,6 +39,8 @@
   COMBINE_SELECTED_ARTIFACTS_EFFECTS_HEADER:0 "Effets:"
   COMBINE_SELECTED_ARTIFACTS_EFFECTS:0 "Cette opération requiert [gold_i][GetPlayer.MakeScope.Var('AM_CAP_artifact_primary_cost').GetValue|0] [gold|E] pour l'artefact primaire, et [gold_i][GetPlayer.MakeScope.Var('AM_CAP_artifact_secondary_cost').GetValue|0] [gold|E] pour le secondaire. L'artefact secondaire sera ensuite détruit."
   COMBINE_SELECTED_ARTIFACTS_BUTTON_TXT:0 "Fusionnez les donc!"
+  COMBINE_MISSING_PRIMARY_ARTIFACT:0 "Pick an artifact from the artifact list"
+  COMBINE_MISSING_SECONDARY_ARTIFACT:0 "Pick an artifact from the artifact list"
   # inventory screen
   REPAIR_ALL_ARTIFACTS:0 "Réparer tous les artefacts"
   REPAIR_ALL_ARTIFACTS_BRIEF:0 "Tout réparer"
