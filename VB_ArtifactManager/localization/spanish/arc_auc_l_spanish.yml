@@ -1,7 +1,7 @@
 ﻿l_spanish:
  AUCTION_OFF_ARTIFACT_EFFECT_HEADER:0 "#T Efecto:#!"
  AUCTION_OFF_ARTIFACT:0 "Subastar artefacto"
- AUCTION_OFF_ARTIFACT_TT:0 "#T $AUCTION_OFF_ARTIFACT$#!\nEmpeñar esta reliquia de la familia por una suma de oro."
+ AUCTION_OFF_ARTIFACT_TT:0 "#T $AUCTION_OFF_ARTIFACT$#!\nEmpeñar esta reliquia familiar por una suma de oro."
  AUCTION_OFF_ARTIFACT_EFFECTS:0 "[Artifact.GetName] es vendido por [gold_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_value').GetValue|0] de [gold|E]."
  AUCTION_OFF_ARTIFACT_EFFECTS_ICONOCLAST:0 "[Artifact.GetName] es un artefacto religioso. De acuerdo con tu fe [GetPlayer.GetFaith.GetAdjective], no se venderá, sino que se destruirá públicamente, obteniendo [piety_i][GetPlayer.MakeScope.Var('art_auct_selected_artifact_piety_value').GetValue|0] de [piety|E]."
- AUCTION_OFF_ARTIFACT_BUTTON_TXT:0 "¡Sácalo de mi palacio!"
+ AUCTION_OFF_ARTIFACT_BUTTON_TXT:0 "¡Sácadlo de mi palacio!"
