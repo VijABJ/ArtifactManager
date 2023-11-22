@@ -883,77 +883,73 @@ AM_can_interact_with_artifact = {
                     has_game_rule = amx_armory_artifacts_enabled  
                 }
             }
-            ##
-            ## court artifacts are impacted a bit more...
-            ##
             AND = {
-                scope:target = { category = court }
-                root = { has_royal_court = yes }
+                scope:target = { artifact_slot_type = throne } # no extra thrones, so this should always be true if true :)
+                OR  = {
+                    NOT  = { any_equipped_character_artifact = { artifact_slot_type = throne } }
+                }
+            }
+            AND = {
+                scope:target = { artifact_slot_type = wall_small }
                 OR = {
-                    scope:target = { artifact_slot_type = throne } # no extra thrones, so this should always be true if true :)
+                    any_equipped_character_artifact = { 
+                        count < 3
+                        artifact_slot_type = wall_small 
+                    } 
                     OR = {
-                        scope:target = { artifact_slot_type = wall_big }
-                        OR = {
-                            any_equipped_character_artifact = { 
-                                count < 3
-                                artifact_slot_type = wall_big 
-                            } 
-                            OR = {
-                                has_game_rule = amx_vanity_artifacts_enabled  
-                                has_game_rule = amx_armory_artifacts_enabled  
-                            }
-                        }
+                        has_game_rule = amx_vanity_artifacts_enabled  
+                        has_game_rule = amx_library_artifacts_enabled  
                     }
+                }
+            }
+            AND = {
+                scope:target = { artifact_slot_type = wall_big }
+                OR = {
+                    any_equipped_character_artifact = { 
+                        count < 3
+                        artifact_slot_type = wall_big 
+                    } 
                     OR = {
-                        scope:target = { artifact_slot_type = wall_small }
-                        OR = {
-                            any_equipped_character_artifact = { 
-                                count < 3
-                                artifact_slot_type = wall_small 
-                            } 
-                            OR = {
-                                has_game_rule = amx_vanity_artifacts_enabled  
-                                has_game_rule = amx_library_artifacts_enabled  
-                            }
-                        }
+                        has_game_rule = amx_vanity_artifacts_enabled  
+                        has_game_rule = amx_armory_artifacts_enabled  
                     }
+                }
+            }
+            AND = {
+                scope:target = { artifact_slot_type = pedestal }
+                OR = {
+                    any_equipped_character_artifact = { 
+                        count < 4
+                        artifact_slot_type = pedestal 
+                    } 
                     OR = {
-                        scope:target = { artifact_slot_type = sculpture }
-                        OR = {
-                            any_equipped_character_artifact = { 
-                                count < 2
-                                artifact_slot_type = sculpture 
-                            } 
-                            OR = {
-                                has_game_rule = amx_vanity_artifacts_enabled  
-                                has_game_rule = amx_library_artifacts_enabled  
-                                has_game_rule = amx_armory_artifacts_enabled  
-                            }
-                        }
+                        has_game_rule = amx_vanity_artifacts_enabled  
                     }
+                }
+            }
+            AND = {
+                scope:target = { artifact_slot_type = sculpture }
+                OR = {
+                    any_equipped_character_artifact = { 
+                        count < 2
+                        artifact_slot_type = sculpture 
+                    } 
                     OR = {
-                        scope:target = { artifact_slot_type = book }
-                        OR = {
-                            any_equipped_character_artifact = { 
-                                count < 2
-                                artifact_slot_type = book 
-                            } 
-                            OR = {
-                                has_game_rule = amx_library_artifacts_enabled  
-                            }
-                        }
+                        has_game_rule = amx_vanity_artifacts_enabled  
+                        has_game_rule = amx_library_artifacts_enabled  
+                        has_game_rule = amx_armory_artifacts_enabled  
                     }
+                }
+            }
+            AND = {
+                scope:target = { artifact_slot_type = book }
+                OR = {
+                    any_equipped_character_artifact = { 
+                        count < 2
+                        artifact_slot_type = book 
+                    } 
                     OR = {
-                        scope:target = { artifact_slot_type = pedestal }
-                        OR = {
-                            any_equipped_character_artifact = { 
-                                count < 2
-                                artifact_slot_type = pedestal 
-                            } 
-                            OR = {
-                                has_game_rule = amx_vanity_artifacts_enabled  
-                            }
-                        }
+                        has_game_rule = amx_library_artifacts_enabled  
                     }
                 }
             }
@@ -964,7 +960,7 @@ AM_can_interact_with_artifact = {
 AM_artifact_trader_detected = {
 	scope = character
     is_shown = { 
-        global_var:exists = artifact_trader_is_loaded
+        global_var:exists = at_artifact_trade_loaded
     }
 }
 
